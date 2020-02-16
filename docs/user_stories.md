@@ -9,3 +9,25 @@
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
+
+## Customer stuff
+
+### Create/Edit account information
+
+### View/Edit/Place orders
+
+### View meals etc.
+
+### Misc. History/Menu/etc.
+
+## Administrator stuff
+
+### Add/edit meals
+
+### Schedule weeks
+
+### Look at various information 
+
+## Servers
+
+### Checkout meals
