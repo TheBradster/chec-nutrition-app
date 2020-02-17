@@ -52,63 +52,69 @@
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US7 View placed orders
-  - Description: xxx (Description of user store goes here)
+- US7 View status of orders
+  - Description: As a customer, I would like to view orders I've already placed and their status, so that I can know what days I've already taken care of. (Status would be either, nothing ordered that day, order has been placed, order has been placed and checkout completed, and order finalized i.e. within 24 hours so it cannot be edited)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
 - US8 Place an order for a day
-  - Description: xxx (Description of user store goes here)
+  - Description: As a customer, I would like to place an order (specifying such information as pickup location, etc.), so that I can receive food on that day.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
 - US9 Allergy notification when placing order
-  - Description: xxx (Description of user store goes here)
+  - Description: As a customer, I would like to be alerted of ingredients that I am allergic to in my order when I place it, so that I am aware and can potentially edit my order.  
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
 - US10 Edit an order for a day
-  - Description: xxx (Description of user store goes here)
+  - Description: As a customer, I would like to edit/cancel my order (more than 24 hours before hand), so that I can alter what I am to receive if I change my mind or if my plans change.  
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
 - US11 View an order for a day
-  - Description: xxx (Description of user store goes here)
+  - Description: As a customer, I would like to view a summary of my order, so that I can look up pickup location and time and have a general reminder of what I ordered.  
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US12 View placed orders and checkout
-  - Description: xxx (Description of user store goes here)
+- US12 View placed orders
+  - Description: As a customer, I would like to view a list of my placed orders in my "cart", so that I can review my orders before paying for them.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
+- US13 Checkout and pay for orders
+  - Description: As a customer, I would like to checkout, thus paying for my orders.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
 ### View meals etc.
 
-- US13 View meals
+- US14 View meals
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US14 View meals procedure
+- US15 View meals procedure
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US15 Customer specific allergy information highlighted
+- US16 Customer specific allergy information highlighted
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
   
-- US16 Rate meals
+- US17 Rate meals
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
@@ -116,25 +122,25 @@
 
 ### Misc. History/Menu/notifications etc.
 
-- US17 View history
+- US18 View history
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US18 Navigation Menu
+- US19 Navigation Menu
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US19 Weekly notification
+- US20 Weekly notification
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US20 Order reminder notification
+- US21 Order reminder notification
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
