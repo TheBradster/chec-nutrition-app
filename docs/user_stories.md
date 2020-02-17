@@ -47,36 +47,42 @@
 ### View/Edit/Place orders
 
 - US6 View overview of week's offerings and orders
+  - Description: As a customer, I would like to view what meals are available each day, so that I can plan my meals for the week.  
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
+- US7 View placed orders
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US7 Place an order for a day
+- US8 Place an order for a day
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US8 Allergy notification when placing order
+- US9 Allergy notification when placing order
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US9 Edit an order for a day
+- US10 Edit an order for a day
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US10 View an order for a day
+- US11 View an order for a day
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US11 View placed orders and checkout
+- US12 View placed orders and checkout
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
@@ -84,25 +90,25 @@
 
 ### View meals etc.
 
-- US12 View meals
+- US13 View meals
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US13 View meals procedure
+- US14 View meals procedure
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US14 Customer specific allergy information highlighted
+- US15 Customer specific allergy information highlighted
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
   
-- US15 Rate meals
+- US16 Rate meals
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
@@ -110,25 +116,25 @@
 
 ### Misc. History/Menu/notifications etc.
 
-- US16 View history
+- US17 View history
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US17 Navigation Menu
+- US18 Navigation Menu
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US18 Weekly notification
+- US19 Weekly notification
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-- US19 Order reminder notification
+- US20 Order reminder notification
   - Description: xxx (Description of user store goes here)
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
