@@ -94,7 +94,7 @@
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-### View meals etc.
+### View meals etc
 
 - US14 View meals
   - Description: xxx (Description of user store goes here)
@@ -120,7 +120,7 @@
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
-### Misc. History/Menu/notifications etc.
+### Misc. History/Menu/notifications etc
 
 - US18 View history
   - Description: xxx (Description of user store goes here)
@@ -150,10 +150,53 @@
 
 ### Add/edit meals
 
+- US22 Add meals
+  - Description: As an administrator, I would like to add meals to the system, so that I can expand the number of available meals.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
+- US23 Edit meals
+  - Description: As an administrator, I would like to edit meals, so that I can keep them up to date incase of a change of ingredients, procedure, or anything else.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
 ### Schedule weeks
 
-### Look at various information 
+- US24 Schedule meals
+  - Description: As an administrator, I would like to assign dates meals to create the schedule which defines which meals can be ordered on which days.  
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
+### Look at various information  
+
+- US25 View data
+  - Description: As an administrator, I would like to view data, such as order histories and ratings, so that I can make decision for the business.  
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
 
 ## Servers
 
-### Checkout meals
+### Checkout meals  
+
+- US26 View orders
+  - Description: As an server, I would like to view orders, so that I can know what I need to prepare and how much.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
+- US27 Complete orders
+  - Description: As an server, I would like to update an order as complete, once it has been picked up.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
+- US28 Complete orders
+  - Description: As an server, I would like to report dishware as returned if the customer has returned it, so that data can be collected regarding the percentage of dishware retained.  
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
