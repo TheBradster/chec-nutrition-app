@@ -97,7 +97,7 @@
 ### View meals etc
 
 - US14 View meals
-  - Description: As a customer, I would like to view which meals are currently available to me for a given week's order so that I may plan my dinners for the week accordingly.
+  - Description: As a customer, I would like to view details about a meal, including its ingredients and nutritional content, so that I can make an informed decision on what meal to choose.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: Not started
