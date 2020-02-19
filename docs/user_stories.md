@@ -15,13 +15,13 @@
 ### Create/Edit account information
 
 - US1 Logging in to an account
-  - Description: xxx (Description of user store goes here)
+  - Description: As a customer, I would like to log in to my account, so that I have access.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
 - US2 Registering for an account
-  - Description: xxx (Description of user store goes here)
+  - Description: As a customer, I would like to register for an account, so that I can have access.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
@@ -33,13 +33,13 @@
   - Status: xxx (US status)
   
 - US4 View account information
-  - Description: xxx (Description of user store goes here)
+  - Description: As a customer, I would like to view my account information, so that I can decide whether or not to edit it.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
 - US5 Edit account information
-  - Description: xxx (Description of user store goes here)
+  - Description: As a customer, I would like to edit my account information, so that I can make changes to my liking or needs.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
