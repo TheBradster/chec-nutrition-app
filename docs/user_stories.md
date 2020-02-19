@@ -27,7 +27,7 @@
   - Status: xxx (US status)
 
 - US3 Setting up an account
-  - Description: (something about setting up initial values for things such as pickup location etc.) xxx (Description of user store goes here)
+  - Description: (something about setting up initial values for things such as pickup location etc.) As a customer, I would like to set up an account, so that it complements to my needs or liking.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
