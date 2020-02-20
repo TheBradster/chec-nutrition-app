@@ -15,25 +15,19 @@
 ### Create/Edit account information
 
 - US1 Logging in to an account
-  - Description: As a customer, I would like to log in to my account, so that I have access.
+  - Description: As a customer, I would like to log in to my account, so that I can access an experience customized to my liking.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
 - US2 Registering for an account
-  - Description: As a customer, I would like to register for an account, so that I can have access.
-  - Estimate: xxx (Number of days of work required to implement the US)
-  - Priority: xxx (US priority number goes here)
-  - Status: xxx (US status)
-
-- US3 Setting up an account
-  - Description: As a customer, I would like to set up an account, so that it complements to my needs or liking.
+  - Description: As a customer, I would like to register for an account.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
   
 - US4 View account information
-  - Description: As a customer, I would like to view my account information, so that I can decide whether or not to edit it.
+  - Description: As a customer, I would like to view my account information, so that I can see an overview of my settings decide whether or not to edit it.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
