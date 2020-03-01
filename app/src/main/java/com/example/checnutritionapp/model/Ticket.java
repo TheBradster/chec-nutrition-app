@@ -15,8 +15,13 @@ public class Ticket {
     }
 
     // Properties
-    public void changeServing(int amount) {
+    public boolean changeServing(int amount) {
         mNumServings += amount;
+        if (mNumServings < 0) {
+            mNumServings = 0;
+            return false;
+        }
+        else { return true; }
     }
 
     public int numberOfServings() {
