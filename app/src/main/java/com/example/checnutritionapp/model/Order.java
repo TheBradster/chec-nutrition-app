@@ -2,6 +2,10 @@ package com.example.checnutritionapp.model;
 
 import java.util.Date;
 
+/**
+ * Model that represents an "order". Needs a date that corresponds to when the order is ready
+ * and an array of Meal objects to be created.
+ */
 public class Order {
 
     // Fields
@@ -12,7 +16,7 @@ public class Order {
     private String mLocation;
 
     // Constructors
-    public Order(Date readyDate/*, Meal[] meals */) {
+    public Order(Date readyDate, Meal[] meals) {
         // this.mTickets[] = makeTickets(meals); // Generate tickets
         this.mPayedFor = false;
         this.mPlacedTime = new Date();
@@ -29,6 +33,7 @@ public class Order {
         this.mPayedFor = true;
     }
 
+    // TODO replace with Date getCutOffTime() or boolean pastCutOffTime()
     public Date getPlacedTime() {
         return mPlacedTime;
     }
