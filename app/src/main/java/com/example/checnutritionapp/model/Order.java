@@ -9,7 +9,7 @@ import java.util.Date;
 public class Order {
 
     // Fields
-    // private Ticket[] mTickets; // Tickets interface between meals and orders
+    private Ticket[] mTickets; // Tickets interface between meals and orders
     private boolean mPayedFor;
     private Date mPlacedTime;
     private Date mReadyDate;
@@ -17,7 +17,7 @@ public class Order {
 
     // Constructors
     public Order(Date readyDate, Meal[] meals) {
-        // this.mTickets[] = makeTickets(meals); // Generate tickets
+        this.mTickets = Ticket.makeOrderTickets(this, meals); // Generate tickets
         this.mPayedFor = false;
         this.mPlacedTime = new Date();
         this.mReadyDate = readyDate;
