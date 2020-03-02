@@ -1,9 +1,11 @@
 package com.example.checnutritionapp.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -30,6 +32,17 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        // Button
+        final Button orderButton = (Button) root.findViewById(R.id.orderButton);
+        orderButton.setText("ORDER");
+        orderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setText("Button has been pressed");
+            }
+        });
+
         return root;
     }
 }
