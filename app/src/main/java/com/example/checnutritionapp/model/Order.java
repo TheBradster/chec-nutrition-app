@@ -1,12 +1,13 @@
 package com.example.checnutritionapp.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Model that represents an "order". Needs a date that corresponds to when the order is ready
  * and an array of Meal objects to be created.
  */
-public class Order {
+public class Order implements Serializable {
 
     // Fields
     private Ticket[] mTickets; // Tickets interface between meals and orders
