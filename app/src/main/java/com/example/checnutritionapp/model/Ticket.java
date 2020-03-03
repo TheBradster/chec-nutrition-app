@@ -44,4 +44,9 @@ public class Ticket implements Serializable {
         }
         return tickets;
     }
+
+    @Override
+    public String toString() {
+        return "[" + mMeal.getName() + ": servings: " + mNumServings + "]";
+    }
 }

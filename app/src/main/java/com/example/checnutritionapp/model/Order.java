@@ -1,6 +1,7 @@
 package com.example.checnutritionapp.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -49,6 +50,14 @@ public class Order implements Serializable {
 
     public String getLocation() {
         return this.mLocation;
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat format = new SimpleDateFormat("EEEE");
+        return "Ready Date: " + format.format(mReadyDate) + "\n"
+                + "Pickup Location: " + mLocation + "\n"
+                + "Meals: " + java.util.Arrays.deepToString(mTickets) + "\n";
     }
 
 
