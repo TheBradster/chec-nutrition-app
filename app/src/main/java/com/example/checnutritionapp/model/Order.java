@@ -26,10 +26,10 @@ public class Order implements Serializable {
         this.mLocation = null;
     }
 
-    // Properties
-//     public Ticket[] getTickets() {
-//          return mTickets;
-//     }
+     // Properties
+     public Ticket[] getTickets() {
+          return mTickets;
+     }
 
     public void pay() {
         this.mPayedFor = true;
