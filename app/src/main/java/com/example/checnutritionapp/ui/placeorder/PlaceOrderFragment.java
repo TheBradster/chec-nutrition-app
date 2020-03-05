@@ -13,10 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.model.Ticket;
+
+import org.w3c.dom.Text;
 
 public class PlaceOrderFragment extends Fragment implements View.OnClickListener {
 
@@ -68,8 +71,15 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
             case R.id.minus2: tickets[1].changeServing(-1); break;
             default: Log.wtf("PlaceOrderFragment", "WTF");
         }
-
+        updateServing();
         Log.d(getClass().toString(), mOrder.toString());
+    }
+
+    private void updateServing() {
+        TextView servings1 = (TextView) getView().findViewById(R.id.servings1);
+        servings1.setText(String.valueOf(mOrder.getTickets()[0].numberOfServings()));
+        TextView servings2 = (TextView) getView().findViewById(R.id.servings2);
+        servings2.setText(String.valueOf(mOrder.getTickets()[1].numberOfServings()));
     }
 
 }

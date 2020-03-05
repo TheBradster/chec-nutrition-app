@@ -125,7 +125,7 @@
         app:layout_constraintTop_toTopOf="@+id/plus2" />
 
     <TextView
-        android:id="@+id/servigns1"
+        android:id="@+id/servings1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
