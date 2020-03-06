@@ -12,10 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.model.Location;
 import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.model.Ticket;
 
@@ -57,6 +60,15 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         minus1.setOnClickListener(this);
         Button minus2 = (Button) getView().findViewById(R.id.minus2);
         minus2.setOnClickListener(this);
+
+        // Set up location dropdown
+        Spinner locationSelect = getView().findViewById(R.id.location);
+        // TODO replace with something with JSON files
+        Location[] locations = {new Location("Location 1", "Address 1"),
+                new Location("Location 2", "Address 2"),
+                new Location("Location 3", "Address 2")};
+        ArrayAdapter<Location> adpt = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, locations);
+        locationSelect.setAdapter(adpt);
     }
 
     @Override
