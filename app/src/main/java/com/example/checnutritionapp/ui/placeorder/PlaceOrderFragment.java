@@ -65,9 +65,9 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         // Set up location dropdown
         Spinner locationSelect = getView().findViewById(R.id.location);
         // TODO replace with something with JSON files
-        Location[] locations = {new Location("Location 1", "Address 1"),
-                new Location("Location 2", "Address 2"),
-                new Location("Location 3", "Address 2")};
+        Location[] locations = {new Location("Location 1", "1111 Road Street, City, TN 55555"),
+                new Location("Location 2", "2120 Fennell Pl, Nesbit, MS 38651"),
+                new Location("Location 3", "0000 Something, City, XX 00000")};
         ArrayAdapter<Location> adpt = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, locations);
         locationSelect.setAdapter(adpt);
 
@@ -75,7 +75,9 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         AdapterView.OnItemSelectedListener selectListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                // update text view to display pickup address
+                TextView address = getView().findViewById(R.id.address);
+                address.setText(((Location) parent.getSelectedItem()).getAddress());
             }
 
             @Override
@@ -83,6 +85,9 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
 
             }
         };
+        locationSelect.setOnItemSelectedListener(selectListener);
+
+        
     }
 
     @Override
