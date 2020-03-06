@@ -67,7 +67,8 @@ public class Order implements Serializable {
     public String toString() {
         return "Ready Date: " + pickupDayOfWeek() + "\n"
                 + "Pickup Location: " + mLocation + "\n"
-                + "Meals: " + java.util.Arrays.deepToString(mTickets) + "\n";
+                + "Meals: " + java.util.Arrays.deepToString(mTickets) + "\n"
+                + "Total: " + orderTotal();
     }
 
 

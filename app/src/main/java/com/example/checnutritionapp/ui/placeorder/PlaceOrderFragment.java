@@ -75,9 +75,12 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         AdapterView.OnItemSelectedListener selectListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Location location = (Location) parent.getSelectedItem();
+                // update underlying object
+                mOrder.setLocation(location);
                 // update text view to display pickup address
                 TextView address = getView().findViewById(R.id.address);
-                address.setText(((Location) parent.getSelectedItem()).getAddress());
+                address.setText(location.getAddress());
             }
 
             @Override
@@ -91,7 +94,14 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         TextView pickupTime = getView().findViewById(R.id.pickupTime);
         pickupTime.setText("Between 5:00 PM and 7:00 PM on " + mOrder.pickupDayOfWeek());
 
-
+        // Place order button
+        Button placeOrder = getView().findViewById(R.id.placeorderbutton);
+        placeOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("PlaceOrderFragment", "Order Placed\n" + mOrder.toString());
+            }
+        });
     }
 
     @Override
