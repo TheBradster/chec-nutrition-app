@@ -90,6 +90,8 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         // Set correct pickup time
         TextView pickupTime = getView().findViewById(R.id.pickupTime);
         pickupTime.setText("Between 5:00 PM and 7:00 PM on " + mOrder.pickupDayOfWeek());
+
+
     }
 
     @Override
@@ -113,6 +115,8 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         servings1.setText(String.valueOf(mOrder.getTickets()[0].numberOfServings()));
         TextView servings2 = (TextView) getView().findViewById(R.id.servings2);
         servings2.setText(String.valueOf(mOrder.getTickets()[1].numberOfServings()));
+        TextView total = getView().findViewById(R.id.total);
+        total.setText("Total: $" + String.format("%.2f", mOrder.orderTotal()));
     }
 
 }

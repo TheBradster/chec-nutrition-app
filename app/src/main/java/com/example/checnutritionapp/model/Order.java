@@ -57,6 +57,12 @@ public class Order implements Serializable {
         return format.format(mReadyDate);
     }
 
+    public double orderTotal() {
+        double total = 0;
+        for (Ticket ticket : mTickets) { total += ticket.total(); }
+        return total;
+    }
+
     @Override
     public String toString() {
         return "Ready Date: " + pickupDayOfWeek() + "\n"
