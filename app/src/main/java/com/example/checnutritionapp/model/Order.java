@@ -15,7 +15,7 @@ public class Order implements Serializable {
     private boolean mPayedFor;
     private Date mPlacedTime;
     private Date mReadyDate;
-    private String mLocation;
+    private Location mLocation;
 
     // Constructors
     public Order(Date readyDate, Meal[] meals) {
@@ -44,11 +44,11 @@ public class Order implements Serializable {
         return mReadyDate;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.mLocation = location;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return this.mLocation;
     }
 
