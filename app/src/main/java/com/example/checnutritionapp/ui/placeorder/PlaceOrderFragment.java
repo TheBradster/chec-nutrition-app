@@ -87,7 +87,9 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         };
         locationSelect.setOnItemSelectedListener(selectListener);
 
-        
+        // Set correct pickup time
+        TextView pickupTime = getView().findViewById(R.id.pickupTime);
+        pickupTime.setText("Between 5:00 PM and 7:00 PM on " + mOrder.pickupDayOfWeek());
     }
 
     @Override

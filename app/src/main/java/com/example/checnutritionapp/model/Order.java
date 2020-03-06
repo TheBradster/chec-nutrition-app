@@ -52,10 +52,14 @@ public class Order implements Serializable {
         return this.mLocation;
     }
 
+    public String pickupDayOfWeek() {
+        SimpleDateFormat format = new SimpleDateFormat("EEEE");
+        return format.format(mReadyDate);
+    }
+
     @Override
     public String toString() {
-        SimpleDateFormat format = new SimpleDateFormat("EEEE");
-        return "Ready Date: " + format.format(mReadyDate) + "\n"
+        return "Ready Date: " + pickupDayOfWeek() + "\n"
                 + "Pickup Location: " + mLocation + "\n"
                 + "Meals: " + java.util.Arrays.deepToString(mTickets) + "\n";
     }
