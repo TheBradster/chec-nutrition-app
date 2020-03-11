@@ -60,23 +60,18 @@ public class HomeFragment extends Fragment {
             transferToMeal(imageButtons[i]);
         }
 
-        // Button
-        /* final Button orderButton = (Button) root.findViewById(R.id.orderButton);
-        orderButton.setText("ORDER");
-        orderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("HomeFragment", "Button has been pressed");
-                // Create intent to be passed to activity for placing order
-                Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
-                // Create new meals for the test
-                Meal[] meals = {new Meal("Meal 1"), new Meal("Meal 2")};
-                // Create order object to be further customized on in the next activity
-                intent.putExtra("Order", new Order(new Date(), meals));
-                startActivity(intent);
+        // Instantiate the day buttons as established in home_fragment.xml
+        final Button d1 = (Button) root.findViewById(R.id.button2);
+        final Button d2 = (Button) root.findViewById(R.id.button3);
+        final Button d3 = (Button) root.findViewById(R.id.button4);
+        final Button d4 = (Button) root.findViewById(R.id.button5);
 
-            }
-        }); */
+        Button[] dayButtons = {d1, d2, d3, d4};
+
+        // Enable the link between the respective day buttons and their order pages
+        for (int i = 0; i < 4; i++) {
+            transferToPlaceOrder(dayButtons[i]);
+        }
 
         return root;
     }
@@ -86,6 +81,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MealActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void transferToPlaceOrder(Button i) {
+        i.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
+                // Create new meals for the test
+                Meal[] meals = {new Meal("Sample #1"), new Meal("Sample #2")};
+                intent.putExtra("Order", new Order(new Date(), meals));
                 startActivity(intent);
             }
         });
