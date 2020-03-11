@@ -18,5 +18,6 @@
     <string name="wed">Wednesday</string>
     <string name="thu">Thursday</string>
     <string name="description">A meal being offered</string>
+    <string name="alert">Plan your week!</string>
 
 </resources>
