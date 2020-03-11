@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
         }
 
         // Button
-        final Button orderButton = (Button) root.findViewById(R.id.orderButton);
+        /* final Button orderButton = (Button) root.findViewById(R.id.orderButton);
         orderButton.setText("ORDER");
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
 
             }
-        });
+        }); */
 
         return root;
     }
