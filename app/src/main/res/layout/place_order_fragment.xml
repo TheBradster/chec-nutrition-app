@@ -10,7 +10,9 @@
     <Button
         android:id="@+id/minus2"
         android:layout_width="57dp"
-        android:layout_height="51dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="42dp"
         android:text="-"
         app:layout_constraintBottom_toTopOf="@+id/divider2"
@@ -20,7 +22,7 @@
     <Button
         android:id="@+id/plus2"
         android:layout_width="57dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="9dp"
         android:layout_marginLeft="9dp"
         android:text="+"
@@ -58,13 +60,13 @@
         tools:src="@drawable/food2" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="290dp"
-        android:layout_height="48dp"
+        android:id="@+id/placeorderbutton"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="16dp"
         android:text="Place Order"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/total"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
@@ -72,9 +74,11 @@
         android:layout_width="1dp"
         android:layout_height="601dp"
         android:background="?android:attr/listDivider"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/divider2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="invisible" />
 
     <View
         android:id="@+id/divider2"
@@ -83,17 +87,19 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:background="?android:attr/listDivider"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        app:layout_constraintVertical_bias="0.556"
+        tools:visibility="invisible" />
 
     <Button
         android:id="@+id/plus1"
         android:layout_width="57dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="@+id/minus1"
         app:layout_constraintStart_toStartOf="parent" />
@@ -101,7 +107,7 @@
     <Button
         android:id="@+id/minus1"
         android:layout_width="57dp"
-        android:layout_height="51dp"
+        android:layout_height="45dp"
         android:layout_marginStart="9dp"
         android:layout_marginLeft="9dp"
         android:layout_marginEnd="9dp"
@@ -119,19 +125,117 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
+        android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/plus2"
         app:layout_constraintEnd_toStartOf="@+id/minus2"
         app:layout_constraintStart_toEndOf="@+id/plus2"
         app:layout_constraintTop_toTopOf="@+id/plus2" />
 
     <TextView
-        android:id="@+id/servigns1"
+        android:id="@+id/servings1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
+        android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/minus1"
         app:layout_constraintEnd_toStartOf="@+id/minus1"
         app:layout_constraintStart_toEndOf="@+id/plus1"
         app:layout_constraintTop_toTopOf="@+id/plus1" />
+
+    <Spinner
+        android:id="@+id/location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:entries="@android:array/emailAddressTypes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading1" />
+
+    <TextView
+        android:id="@+id/heading1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Location"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minus1" />
+
+    <TextView
+        android:id="@+id/heading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Address"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+    <TextView
+        android:id="@+id/heading3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Pickup Time"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="2120 Fennell Pl, Nesbit MS 38651"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading2" />
+
+    <TextView
+        android:id="@+id/pickupTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Between 5:00 PM and 7:00 PM on Wednesday"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading3" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Total: $0.00"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/placeorderbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/placeorderbutton"
+        app:layout_constraintTop_toTopOf="@+id/placeorderbutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
