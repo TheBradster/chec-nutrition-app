@@ -65,22 +65,23 @@ public class HomeFragment extends Fragment {
         final Button d2 = (Button) root.findViewById(R.id.button3);
         final Button d3 = (Button) root.findViewById(R.id.button4);
         final Button d4 = (Button) root.findViewById(R.id.button5);
+
         // Button
         final Button orderButton = (Button) root.findViewById(R.id.orderButton);
         orderButton.setText("ORDER");
         orderButton.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View v) {
-           Log.d("HomeFragment", "Button has been pressed");
-           // Create intent to be passed to activity for placing order
-           Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
-           // Create new meals for the test
-           Meal[] meals = {new Meal("Meal 1", 5), new Meal("Meal 2", 1.3)};
-           // Create order object to be further customized on in the next activity
-           intent.putExtra("Order", new Order(new Date(), meals));
-           startActivity(intent);
-       }
-   });
+            @Override
+            public void onClick(View v) {
+                Log.d("HomeFragment", "Button has been pressed");
+                // Create intent to be passed to activity for placing order
+                Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
+                // Create new meals for the test
+                Meal[] meals = {new Meal("Meal 1", 5), new Meal("Meal 2", 1.3)};
+                // Create order object to be further customized on in the next activity
+                intent.putExtra("Order", new Order(new Date(), meals));
+                startActivity(intent);
+            }
+        });
 
         Button[] dayButtons = {d1, d2, d3, d4};
 
