@@ -100,6 +100,7 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
             @Override
             public void onClick(View v) {
                 Log.d("PlaceOrderFragment", "Order Placed\n" + mOrder.toString());
+                getActivity().finish();
             }
         });
     }
