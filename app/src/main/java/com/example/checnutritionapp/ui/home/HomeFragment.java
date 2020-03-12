@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -16,6 +17,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.MainActivity;
+import com.example.checnutritionapp.MealActivity;
 import com.example.checnutritionapp.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Meal;
@@ -41,6 +43,23 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // Instantiate the meal buttons as established in home_fragment.xml
+        final ImageButton m1 = (ImageButton) root.findViewById(R.id.imageButton2);
+        final ImageButton m2 = (ImageButton) root.findViewById(R.id.imageButton3);
+        final ImageButton m3 = (ImageButton) root.findViewById(R.id.imageButton4);
+        final ImageButton m4 = (ImageButton) root.findViewById(R.id.imageButton5);
+        final ImageButton m5 = (ImageButton) root.findViewById(R.id.imageButton6);
+        final ImageButton m6 = (ImageButton) root.findViewById(R.id.imageButton7);
+        final ImageButton m7 = (ImageButton) root.findViewById(R.id.imageButton8);
+        final ImageButton m8 = (ImageButton) root.findViewById(R.id.imageButton9);
+
+        ImageButton[] imageButtons = {m1, m2, m3, m4, m5, m6, m7, m8};
+
+        // Enable the link between the respective meal buttons and their meal pages
+        for (int i = 0; i < 8; i++) {
+            transferToMeal(imageButtons[i]);
+        }
+
         // Button
         final Button orderButton = (Button) root.findViewById(R.id.orderButton);
         orderButton.setText("ORDER");
@@ -60,5 +79,15 @@ public class HomeFragment extends Fragment {
         });
 
         return root;
+    }
+
+    private void transferToMeal(ImageButton i) {
+        i.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MealActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
