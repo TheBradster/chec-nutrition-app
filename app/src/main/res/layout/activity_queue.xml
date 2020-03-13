@@ -6,16 +6,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="416dp"
+        android:layout_height="122dp"
+        android:background="#FFFFFF"
+        android:gravity="start"
+        android:textIsSelectable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
+        android:text="\n Thursday 02/06/2020                                       Total: $0.00\n\n [meal]: 0                                              Pickup:\n\n [meal]: 0                                             Time:"/>
+
     <TextView
-        android:id="@+id/nav_queue"
-        android:layout_width="216dp"
-        android:layout_height="69dp"
-        android:text="Stinky Poopy Butts!"
-        android:textColor="@android:color/background_dark"
+        android:id="@+id/textView2"
+        android:layout_width="159dp"
+        android:layout_height="45dp"
+        android:text="Total: $10.00"
+        android:textColor="#040000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="416dp"
+        android:layout_height="122dp"
+        android:background="#FFFFFF"
+        android:gravity="start"
+        android:textIsSelectable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201"
+        android:text="\n Monday 02/03/2020                                           Total: $10.00\n\n [meal]: 2                                              Pickup:\n\n [meal]: 0                                             Time:" />
+
+    />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="416dp"
+        android:layout_height="122dp"
+        android:background="#FFFFFF"
+        android:gravity="start"
+        android:textIsSelectable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701"
+        android:text="\n Wednesday 02/05/2020                                           Total: $0.00\n\n [meal]: 0                                              Pickup:\n\n [meal]: 0                                             Time:" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="416dp"
+        android:layout_height="122dp"
+        android:background="#FFFFFF"
+        android:gravity="start"
+        android:textIsSelectable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449"
+        android:text="\n Tuesday 02/04/2020                                             Total: $0.00\n\n [meal]: 0                                              Pickup:\n\n [meal]: 0                                             Time:" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
