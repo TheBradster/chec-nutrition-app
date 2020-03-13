@@ -40,4 +40,9 @@
         android:name="com.example.checnutritionapp.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/nav_queue"
+        android:name="com.example.checnutritionapp.ui.queue.QueueFragment"
+        android:label="Queue"
+        tools:layout="@layout/activity_queue" />
 </navigation>
