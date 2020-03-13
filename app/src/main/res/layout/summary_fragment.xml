@@ -62,56 +62,103 @@
         android:id="@+id/servings2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginBottom="58dp"
         android:text="0"
-        tools:layout_editor_absoluteX="351dp"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal1" />
 
     <TextView
         android:id="@+id/servigns1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="58dp"
         android:text="0"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="257dp" />
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal2" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="88dp"
         android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="45dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Quantity: "
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="241dp" />
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toStartOf="@+id/servigns1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal2" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="85dp"
         android:layout_height="46dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="47dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Quantity: "
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="241dp" />
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toStartOf="@+id/servings2"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal1" />
 
     <EditText
         android:id="@+id/editText6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="194dp"
+        android:layout_marginRight="194dp"
+        android:layout_marginBottom="42dp"
         android:ems="10"
         android:inputType="textPostalAddress"
         android:text="Pickup location: "
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="336dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editText7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <EditText
         android:id="@+id/editText7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginRight="192dp"
+        android:layout_marginBottom="135dp"
         android:ems="10"
         android:inputType="time"
         android:text="Pickup time: "
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="423dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
