@@ -30,6 +30,8 @@ public class Ticket implements Serializable {
         return mNumServings;
     }
 
+    public double total() { return mNumServings * mMeal.price(); }
+
     /**
      * This method is how all the tickets should be created. It allows for the list
      * of meals passed to the order in its creation to be converted into tickets.

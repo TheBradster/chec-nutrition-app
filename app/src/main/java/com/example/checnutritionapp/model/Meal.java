@@ -12,14 +12,18 @@ public class Meal implements Serializable {
     // Fields
     // TODO add rest of fields
     private String mName;
+    private double mPrice;
 
     // Constructors
-    public Meal(String name) {
+    public Meal(String name, double price) {
         mName = name;
+        mPrice = price;
     }
 
     // Properties
     public String getName() {
         return mName;
     }
+
+    public double price() { return mPrice; }
 }

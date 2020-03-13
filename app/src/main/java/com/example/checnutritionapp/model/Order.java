@@ -15,7 +15,7 @@ public class Order implements Serializable {
     private boolean mPayedFor;
     private Date mPlacedTime;
     private Date mReadyDate;
-    private String mLocation;
+    private Location mLocation;
 
     // Constructors
     public Order(Date readyDate, Meal[] meals) {
@@ -44,20 +44,31 @@ public class Order implements Serializable {
         return mReadyDate;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.mLocation = location;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return this.mLocation;
+    }
+
+    public String pickupDayOfWeek() {
+        SimpleDateFormat format = new SimpleDateFormat("EEEE");
+        return format.format(mReadyDate);
+    }
+
+    public double orderTotal() {
+        double total = 0;
+        for (Ticket ticket : mTickets) { total += ticket.total(); }
+        return total;
     }
 
     @Override
     public String toString() {
-        SimpleDateFormat format = new SimpleDateFormat("EEEE");
-        return "Ready Date: " + format.format(mReadyDate) + "\n"
+        return "Ready Date: " + pickupDayOfWeek() + "\n"
                 + "Pickup Location: " + mLocation + "\n"
-                + "Meals: " + java.util.Arrays.deepToString(mTickets) + "\n";
+                + "Meals: " + java.util.Arrays.deepToString(mTickets) + "\n"
+                + "Total: " + orderTotal();
     }
 
 
