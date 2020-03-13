@@ -1,4 +1,4 @@
-package com.example.checnutritionapp.chec.queue;
+package com.example.checnutritionapp.ui.queue;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

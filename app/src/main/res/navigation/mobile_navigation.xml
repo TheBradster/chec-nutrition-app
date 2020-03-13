@@ -42,7 +42,7 @@
         tools:layout="@layout/fragment_send" />
     <fragment
         android:id="@+id/nav_queue"
-        android:name="com.example.checnutritionapp.chec.queue.QueueFragment"
+        android:name="com.example.checnutritionapp.ui.queue.QueueFragment"
         android:label="Queue"
         tools:layout="@layout/activity_queue" />
 </navigation>
