@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.MealActivity;
 import com.example.checnutritionapp.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
@@ -84,19 +83,25 @@ public class HomeFragment extends Fragment {
                 }
         });
 
-        final Button[] dayButtons = {d1, d2, d3, d4};
-
+        // Button
         final Button summaryButton = (Button) root.findViewById(R.id.summaryButton);
         summaryButton.setText("Summary");
         summaryButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                    public void onClick(View v) {
-                    Log.d("SummaryFragment", "Button has been pressed");
-                    /* Create intent to be passed to activity for summary */
-                    Intent intent = new Intent(getActivity(), SummaryActivity.class);
-                    startActivity(intent);
-                    }
-                });
+            @Override
+            public void onClick(View v) {
+                Log.d("HomeFragment", "Button has been pressed");
+                // Create intent to be passed to activity for placing order
+                Intent intent2 = new Intent(getActivity(), SummaryActivity.class);
+                // Create new meals for the test
+                //Meal[] meals = {new Meal("Meal 1", 5), new Meal("Meal 2", 1.3)};
+                // Create order object to be further customized on in the next activity
+              //  intent2.putExtra("Order", new Order(new Date(), meals));
+                startActivity(intent2);
+            }
+        });
+
+        final Button[] dayButtons = {d1, d2, d3, d4};
+
 
         // Enable the link between the respective day buttons and their order pages
         for (int i = 0; i < 4; i++) {
