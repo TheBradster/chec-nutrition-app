@@ -16,10 +16,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.MealActivity;
 import com.example.checnutritionapp.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.SummaryActivity;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
 
@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        final View root = inflater.inflate(R.layout.fragment_home, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
@@ -70,20 +70,38 @@ public class HomeFragment extends Fragment {
         final Button orderButton = (Button) root.findViewById(R.id.orderButton);
         orderButton.setText("ORDER");
         orderButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("HomeFragment", "Button has been pressed");
+                    // Create intent to be passed to activity for placing order
+                    Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
+                    // Create new meals for the test
+                    Meal[] meals = {new Meal("Meal 1", 5), new Meal("Meal 2", 1.3)};
+                    // Create order object to be further customized on in the next activity
+                    intent.putExtra("Order", new Order(new Date(), meals));
+                    startActivity(intent);
+                }
+        });
+
+        // Button
+        final Button summaryButton = (Button) root.findViewById(R.id.summaryButton);
+        summaryButton.setText("Summary");
+        summaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("HomeFragment", "Button has been pressed");
                 // Create intent to be passed to activity for placing order
-                Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
+                Intent intent2 = new Intent(getActivity(), SummaryActivity.class);
                 // Create new meals for the test
-                Meal[] meals = {new Meal("Meal 1", 5), new Meal("Meal 2", 1.3)};
+                //Meal[] meals = {new Meal("Meal 1", 5), new Meal("Meal 2", 1.3)};
                 // Create order object to be further customized on in the next activity
-                intent.putExtra("Order", new Order(new Date(), meals));
-                startActivity(intent);
+              //  intent2.putExtra("Order", new Order(new Date(), meals));
+                startActivity(intent2);
             }
         });
 
-        Button[] dayButtons = {d1, d2, d3, d4};
+        final Button[] dayButtons = {d1, d2, d3, d4};
+
 
         // Enable the link between the respective day buttons and their order pages
         for (int i = 0; i < 4; i++) {
@@ -91,7 +109,7 @@ public class HomeFragment extends Fragment {
         }
 
         return root;
-    }
+        }
 
     private void transferToMeal(ImageButton i) {
         i.setOnClickListener(new View.OnClickListener() {

@@ -20,6 +20,9 @@ public class Meal implements Serializable {
         mPrice = price;
     }
 
+    public Meal(String meal1) {
+    }
+
     // Properties
     public String getName() {
         return mName;
