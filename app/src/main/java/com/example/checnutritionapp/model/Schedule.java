@@ -11,7 +11,17 @@ public class Schedule {
         this.schedule = schedule;
     }
 
-    public Meal[] getDay(int day) {
-        return schedule[day];
+    /**
+     * Get meals for for a given day. Monday: 0, Tuesday: 1, etc.
+     * @param day
+     * @return meal object for day of week
+     */
+    public Meal[] getDayForDay(int day) {
+        try {
+            return schedule[day];
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            throw new ArrayIndexOutOfBoundsException("Day of week integer is out of bounds.");
+        }
     }
 }
