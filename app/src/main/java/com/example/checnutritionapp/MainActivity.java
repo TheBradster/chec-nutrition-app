@@ -64,13 +64,20 @@ public class MainActivity extends AppCompatActivity {
         // Get meal data
         JSONObject mealsJSON = null;
         try {
-            mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext());
+            mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "meals.json");
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
         Log.d("Main Activity", mealsJSON.toString());
+
+        // Get meal schedule
+        // For now we're importing test data
+        JSONObject scheduleJSON = null;
+        try {
+            scheduleJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "test_schedule.json");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 

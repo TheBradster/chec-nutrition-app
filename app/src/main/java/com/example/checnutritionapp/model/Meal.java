@@ -11,11 +11,13 @@ public class Meal implements Serializable {
 
     // Fields
     // TODO add rest of fields
+    private int mId;
     private String mName;
     private double mPrice;
 
     // Constructors
-    public Meal(String name, double price) {
+    public Meal(int id, String name, double price) {
+        mId = id;
         mName = name;
         mPrice = price;
     }
@@ -27,6 +29,8 @@ public class Meal implements Serializable {
     public String getName() {
         return mName;
     }
+
+    public int getId() { return mId; }
 
     public double price() { return mPrice; }
 }

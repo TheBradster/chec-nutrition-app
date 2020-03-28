@@ -10,10 +10,17 @@ import java.io.InputStream;
 
 public class JSONUtilities {
 
-    public static JSONObject loadJSONFromAsset(Context context) throws JSONException {
+    /**
+     * Creates JSON object out of .json asset
+     * Source: https://stackoverflow.com/questions/13814503/reading-a-json-file-in-android
+     * @param context
+     * @return JSONObject
+     * @throws JSONException
+     */
+    public static JSONObject loadJSONFromAsset(Context context, String filename) throws JSONException {
         String jsonString;
         try {
-            InputStream inputStream = context.getAssets().open("meals.json");
+            InputStream inputStream = context.getAssets().open(filename);
             int size = inputStream.available();
             byte[] buffer = new byte[size];
             inputStream.read(buffer);

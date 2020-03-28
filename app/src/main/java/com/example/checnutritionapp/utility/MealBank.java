@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class MealBank {
 
-    private Map<String, Meal> mealDictionary;
+    private Map<Integer, Meal> mealDictionary;
 
     public MealBank() {
     }

@@ -1,0 +1,8 @@
+{
+  "days": {
+    "Monday": [1, 4],
+    "Tuesday": [3, 6],
+    "Wednesday": [7, 2],
+    "Thursday": [5, 8]
+  }
+}
