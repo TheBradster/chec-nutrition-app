@@ -3,6 +3,7 @@ package com.example.checnutritionapp;
 import android.os.Bundle;
 
 import com.example.checnutritionapp.utility.JSONUtilities;
+import com.example.checnutritionapp.utility.MealBank;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -69,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         Log.d("Main Activity", mealsJSON.toString());
+
+        // Process meal JSON data
+        try {
+            MealBank meals = new MealBank(mealsJSON);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         // Get meal schedule
         // For now we're importing test data

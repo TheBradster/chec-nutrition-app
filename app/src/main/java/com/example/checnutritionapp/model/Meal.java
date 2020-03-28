@@ -33,4 +33,9 @@ public class Meal implements Serializable {
     public int getId() { return mId; }
 
     public double price() { return mPrice; }
+
+    @Override
+    public String toString() {
+        return "id: " + mId + " Name: " + mName + " Price: " + mPrice;
+    }
 }

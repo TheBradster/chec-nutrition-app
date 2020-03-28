@@ -1,17 +1,27 @@
 package com.example.checnutritionapp.utility;
 
-import android.util.JsonReader;
+import android.util.Log;
 
 import com.example.checnutritionapp.model.Meal;
 
-import java.io.File;
-import java.io.InputStream;
-import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 public class MealBank {
 
-    private Map<Integer, Meal> mealDictionary;
+    private HashMap<Integer, Meal> mealDictionary = new HashMap<Integer, Meal>();
 
-    public MealBank() {
+    public MealBank(JSONObject jsonData) throws JSONException {
+        JSONArray mealsArray = jsonData.getJSONArray("Meals");
+        // Log.d("MealBank",mealsArray.toString());
+        for (int i = 0; i < mealsArray.length(); i++) {
+            JSONObject meal = mealsArray.getJSONObject(i);
+            Integer id = (Integer) meal.get("id");
+            mealDictionary.put(id, new Meal(id, meal.getString("Name"), Double.parseDouble(meal.getString("Price per serving ").substring(1))));
+        }
+        Log.d("MealBank", mealDictionary.toString());
     }
 }

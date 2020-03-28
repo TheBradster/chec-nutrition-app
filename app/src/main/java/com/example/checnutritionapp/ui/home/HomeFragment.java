@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment {
                     // Create intent to be passed to activity for placing order
                     Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
                     // Create new meals for the test
-                    Meal[] meals = {new Meal("Meal 1", 5), new Meal("Meal 2", 1.3)};
+                    Meal[] meals = {new Meal(1, "Meal 1", 5), new Meal(2, "Meal 2", 1.3)};
                     // Create order object to be further customized on in the next activity
                     intent.putExtra("Order", new Order(new Date(), meals));
                     startActivity(intent);
@@ -127,7 +127,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
                 // Create new meals for the test
-                Meal[] meals = {new Meal("Sample #1", 6), new Meal("Sample #2", 5.5)};
+                Meal[] meals = {new Meal(1, "Sample #1", 6), new Meal(2, "Sample #2", 5.5)};
                 intent.putExtra("Order", new Order(new Date(), meals));
                 startActivity(intent);
             }
