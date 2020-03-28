@@ -1,13 +1,17 @@
 package com.example.checnutritionapp.model;
 
+import java.io.Serializable;
+
 /**
  * Class represents a schedule for a week.
  */
-public class Schedule {
+public class Week implements Serializable {
 
     private Meal[][] schedule;
+    private Order[] orders;
 
-    public Schedule(Meal[][] schedule) {
+    public Week(Meal[][] schedule) {
+        this.orders = new Order[4];
         this.schedule = schedule;
     }
 
@@ -22,6 +26,19 @@ public class Schedule {
         }
         catch (ArrayIndexOutOfBoundsException e) {
             throw new ArrayIndexOutOfBoundsException("Day of week integer is out of bounds.");
+        }
+    }
+
+    public boolean orderPlaced(int day) {
+        return orders[day] != null;
+    }
+
+    public Order getOrder(int day) {
+        if (orderPlaced(day) && day < orders.length) {
+            return orders[day];
+        }
+        else {
+            throw new ArrayIndexOutOfBoundsException("Order does not exist for given day");
         }
     }
 }
