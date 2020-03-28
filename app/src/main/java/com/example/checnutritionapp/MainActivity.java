@@ -2,9 +2,11 @@ package com.example.checnutritionapp;
 
 import android.os.Bundle;
 
+import com.example.checnutritionapp.utility.JSONUtilities;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -20,6 +22,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,6 +59,19 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        // Import data
+        // Get meal data
+        JSONObject mealsJSON = null;
+        try {
+            mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        Log.d("Main Activity", mealsJSON.toString());
+
     }
 
     @Override

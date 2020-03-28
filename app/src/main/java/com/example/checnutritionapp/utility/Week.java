@@ -1,4 +1,7 @@
-package com.example.checnutritionapp.model;
+package com.example.checnutritionapp.utility;
+
+import com.example.checnutritionapp.model.Meal;
+import com.example.checnutritionapp.model.Order;
 
 import java.io.Serializable;
 
@@ -10,6 +13,18 @@ public class Week implements Serializable {
     private Meal[][] schedule;
     private Order[] orders;
 
+    /**
+     * Primary constructor. Should automatically retrieve schedule for the week.
+     * Currently it references a JSON file to get test data.
+     */
+    public Week() {
+
+    }
+
+    /**
+     * Alternate constructor where schedule array is given up front.
+     * @param schedule
+     */
     public Week(Meal[][] schedule) {
         this.orders = new Order[4];
         this.schedule = schedule;
@@ -29,10 +44,20 @@ public class Week implements Serializable {
         }
     }
 
+    /**
+     * Checks if order has been placed for given day.
+     * @param day
+     * @return
+     */
     public boolean orderPlaced(int day) {
         return orders[day] != null;
     }
 
+    /**
+     * If order has been placed for a given day, this method retrieves it.
+     * @param day
+     * @return
+     */
     public Order getOrder(int day) {
         if (orderPlaced(day) && day < orders.length) {
             return orders[day];
