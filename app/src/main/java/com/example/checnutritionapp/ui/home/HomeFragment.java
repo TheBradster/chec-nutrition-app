@@ -26,6 +26,7 @@ import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.utility.Week;
 
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class HomeFragment extends Fragment {
@@ -134,7 +135,10 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
                 // Get meals from schedule
                 Meal[] meals = week.getMealsForDay(day);
-                intent.putExtra("Order", new Order(new Date(), meals));
+                // Get date for current day of week
+                Calendar cal = Calendar.getInstance();
+                cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY + day);
+                intent.putExtra("Order", new Order(cal.getTime(), meals));
                 startActivity(intent);
             }
         });
