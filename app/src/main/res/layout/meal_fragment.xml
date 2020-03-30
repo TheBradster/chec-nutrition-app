@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/meal"
+    android:id="@+id/meal_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.meal.MealFragment">
@@ -64,5 +64,21 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="17dp"
         tools:layout_editor_absoluteY="187dp" />
+
+    <Button
+        android:id="@+id/nut_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="185dp"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="538dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="17dp"
+        android:text="Nutritional Information"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
