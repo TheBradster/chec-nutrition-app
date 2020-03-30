@@ -2,6 +2,7 @@ package com.example.checnutritionapp;
 
 import android.os.Bundle;
 
+import com.example.checnutritionapp.ui.home.HomeFragment;
 import com.example.checnutritionapp.utility.JSONUtilities;
 import com.example.checnutritionapp.utility.MealBank;
 import com.example.checnutritionapp.utility.Week;
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
+    private Week week;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         // Import data
-        Week week = null;
+
         try {
             // Get meal data
             JSONObject mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "meals.json");
@@ -75,11 +78,23 @@ public class MainActivity extends AppCompatActivity {
             week = new Week(scheduleJSON, meals);
         } catch (JSONException e) {
             e.printStackTrace();
+            this.finish();
         }
 
         Log.d("Main Activity", week.toString());
 
+        /*// Send data to home fragment
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Week", week);
+        HomeFragment fragment = new HomeFragment();
+        fragment.setArguments(bundle);*/
     }
+
+    public Week getWeek() {
+        return week;
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

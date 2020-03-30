@@ -16,12 +16,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.MealActivity;
 import com.example.checnutritionapp.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.SummaryActivity;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
+import com.example.checnutritionapp.utility.Week;
 
 
 import java.util.Date;
@@ -29,6 +31,7 @@ import java.util.Date;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    private Week week;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        MainActivity activity = (MainActivity) getActivity();
+        week = activity.getWeek();
 
         // Instantiate the meal buttons as established in home_fragment.xml
         final ImageButton m1 = (ImageButton) root.findViewById(R.id.imageButton2);
@@ -105,7 +111,7 @@ public class HomeFragment extends Fragment {
 
         // Enable the link between the respective day buttons and their order pages
         for (int i = 0; i < 4; i++) {
-            transferToPlaceOrder(dayButtons[i]);
+            transferToPlaceOrder(dayButtons[i], i);
         }
 
         return root;
@@ -121,13 +127,13 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void transferToPlaceOrder(Button i) {
+    private void transferToPlaceOrder(Button i, final int day) {
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
-                // Create new meals for the test
-                Meal[] meals = {new Meal(1, "Sample #1", 6), new Meal(2, "Sample #2", 5.5)};
+                // Get meals from schedule
+                Meal[] meals = week.getMealsForDay(day);
                 intent.putExtra("Order", new Order(new Date(), meals));
                 startActivity(intent);
             }

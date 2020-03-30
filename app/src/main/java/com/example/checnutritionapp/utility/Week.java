@@ -54,7 +54,7 @@ public class Week implements Serializable {
      * @param day
      * @return meal object for day of week
      */
-    public Meal[] getDayForDay(int day) {
+    public Meal[] getMealsForDay(int day) {
         try {
             return schedule[day];
         }
