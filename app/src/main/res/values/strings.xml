@@ -44,7 +44,8 @@
     <string name="nut_prot">Protein (g): </string>
     <string name="nut_vit">Relevant vitamins (various): </string>
 
-
+    <string name="proc_tit">Meal Procedure</string>
+    <string name="proc_head">Preparation</string>
 
 </resources>
 
