@@ -29,4 +29,22 @@
     <string name="description">A meal being offered</string>
     <string name="alert">Plan your week!</string>
 
+    <string name="ing_label">Ingredients</string>
+    <string name="ing_cont">- Sample Ingredient #1</string>
+
+    <string name="sample_meal_desc">This delicious meal is sure to make you feel great while also filling your stomach! Try it today. If not, I\'m sure there are plenty of other offerings we can provide for you.</string>
+
+    <string name="nut_title">Nutritional Facts</string>
+    <string name="nut_cal">Calories (kcal): </string>
+    <string name="nut_fat">Fat (g): </string>
+    <string name="nut_chol">Cholesterol (mg): </string>
+    <string name="nut_sod">Sodium (mg): </string>
+    <string name="nut_carb">Carbohydrates (g): </string>
+    <string name="nut_fib">Fiber (g): </string>
+    <string name="nut_prot">Protein (g): </string>
+    <string name="nut_vit">Relevant vitamins (various): </string>
+
+
+
 </resources>
+
