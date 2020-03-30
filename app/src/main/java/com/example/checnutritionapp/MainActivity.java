@@ -63,38 +63,20 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         // Import data
-        // Get meal data
-        JSONObject mealsJSON = null;
-        try {
-            mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "meals.json");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Log.d("Main Activity", mealsJSON.toString());
-
-        // Process meal JSON data
-        MealBank meals = null;
-        try {
-            meals = new MealBank(mealsJSON);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        // Get meal schedule
-        // For now we're importing test data
-        JSONObject scheduleJSON = null;
-        try {
-            scheduleJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "test_schedule.json");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         Week week = null;
         try {
+            // Get meal data
+            JSONObject mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "meals.json");
+            // Process meal JSON data
+            MealBank meals = new MealBank(mealsJSON);
+            // Get meal schedule
+            // For now we're importing test data
+            JSONObject scheduleJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "test_schedule.json");
             week = new Week(scheduleJSON, meals);
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         Log.d("Main Activity", week.toString());
 
     }
