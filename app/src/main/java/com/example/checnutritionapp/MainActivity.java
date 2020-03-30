@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.example.checnutritionapp.utility.JSONUtilities;
 import com.example.checnutritionapp.utility.MealBank;
+import com.example.checnutritionapp.utility.Week;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -72,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Main Activity", mealsJSON.toString());
 
         // Process meal JSON data
+        MealBank meals = null;
         try {
-            MealBank meals = new MealBank(mealsJSON);
+            meals = new MealBank(mealsJSON);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -86,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        Week week = null;
+        try {
+            week = new Week(scheduleJSON, meals);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.d("Main Activity", week.toString());
 
     }
 

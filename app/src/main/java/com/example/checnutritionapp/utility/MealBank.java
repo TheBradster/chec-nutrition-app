@@ -24,4 +24,9 @@ public class MealBank {
         }
         Log.d("MealBank", mealDictionary.toString());
     }
+
+    public Meal getMealById(int day) {
+        return mealDictionary.get(day);
+    }
+
 }

@@ -1,9 +1,16 @@
 package com.example.checnutritionapp.utility;
 
+import android.util.Log;
+
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * Class represents a schedule for a week.
@@ -17,8 +24,20 @@ public class Week implements Serializable {
      * Primary constructor. Should automatically retrieve schedule for the week.
      * Currently it references a JSON file to get test data.
      */
-    public Week() {
+    public Week(JSONObject jsonData, MealBank meals) throws JSONException {
+        orders = new Order[4];
+        schedule = new Meal[4][2];
 
+        // Process JSON data
+        JSONArray jsonArray = jsonData.getJSONArray("days");
+        Log.d("Week", jsonArray.toString());
+
+        //String[] dayNames = {"Monday", "Tuesday", "Wednesday", "Thursday"};
+        for (int i = 0; i < 4; i++) {
+            JSONArray day = jsonArray.getJSONArray(i);
+            schedule[i][0] = meals.getMealById(day.getInt(0));
+            schedule[i][1] = meals.getMealById(day.getInt(1));
+        }
     }
 
     /**
@@ -65,5 +84,10 @@ public class Week implements Serializable {
         else {
             throw new ArrayIndexOutOfBoundsException("Order does not exist for given day");
         }
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.deepToString(schedule);
     }
 }
