@@ -1,4 +1,4 @@
-package com.example.checnutritionapp.ui.slideshow;
+package com.example.checnutritionapp.ui.favorites;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.R;
 
-public class SlideshowFragment extends Fragment {
+public class FavoritesFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private FavoritesViewModel favoritesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        favoritesViewModel =
+                ViewModelProviders.of(this).get(FavoritesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_favorites, container, false);
+        final TextView textView = root.findViewById(R.id.text_favs);
+        favoritesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
