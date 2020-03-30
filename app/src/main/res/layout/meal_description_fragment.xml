@@ -6,8 +6,15 @@
     tools:context=".MealDescription">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="160dp"
+        android:layout_weight="1"
+        android:ellipsize="none"
+        android:paddingVertical="30dp"
+        android:paddingRight="30dp"
+        android:scrollHorizontally="false"
+        android:text="@string/sample_meal_desc" />
 
 </FrameLayout>
