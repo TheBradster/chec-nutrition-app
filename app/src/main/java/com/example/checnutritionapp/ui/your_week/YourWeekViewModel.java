@@ -1,16 +1,16 @@
-package com.example.checnutritionapp.ui.tools;
+package com.example.checnutritionapp.ui.your_week;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ToolsViewModel extends ViewModel {
+public class YourWeekViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ToolsViewModel() {
+    public YourWeekViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is tools fragment");
+        mText.setValue("Plan your week!");
     }
 
     public LiveData<String> getText() {

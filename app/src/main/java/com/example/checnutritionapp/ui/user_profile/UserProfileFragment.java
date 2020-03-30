@@ -1,4 +1,4 @@
-package com.example.checnutritionapp.ui.gallery;
+package com.example.checnutritionapp.ui.user_profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.R;
 
-public class GalleryFragment extends Fragment {
+public class UserProfileFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private UserProfileViewModel userProfileViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        userProfileViewModel =
+                ViewModelProviders.of(this).get(UserProfileViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_user_profile, container, false);
+        final TextView textView = root.findViewById(R.id.text_user_profile);
+        userProfileViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
