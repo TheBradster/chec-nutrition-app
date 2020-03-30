@@ -2,6 +2,8 @@ package com.example.checnutritionapp.ui.placeorder;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -100,6 +102,9 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
             @Override
             public void onClick(View v) {
                 Log.d("PlaceOrderFragment", "Order Placed\n" + mOrder.toString());
+                Intent intent = new Intent();
+                intent.putExtra("Order", mOrder);
+                getActivity().setResult(Activity.RESULT_OK, intent);
                 getActivity().finish();
             }
         });

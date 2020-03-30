@@ -139,8 +139,14 @@ public class HomeFragment extends Fragment {
                 Calendar cal = Calendar.getInstance();
                 cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY + day);
                 intent.putExtra("Order", new Order(cal.getTime(), meals));
-                startActivity(intent);
+                startActivityForResult(intent, 99);
             }
         });
+    }
+
+    // For reference: https://stackoverflow.com/questions/5060971/how-to-return-result-in-a-natural-way-when-the-called-the-called-activity-exit
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Order newOrder = (Order) data.getSerializableExtra("Order");
+        Log.d("OnActivityResult",newOrder.toString());
     }
 }
