@@ -29,4 +29,8 @@
     <string name="description">A meal being offered</string>
     <string name="alert">Plan your week!</string>
 
+    <string name="ing_label">Ingredients</string>
+    <string name="ing_cont">- Sample Ingredient #1</string>
+
 </resources>
+
