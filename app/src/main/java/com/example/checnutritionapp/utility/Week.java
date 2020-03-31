@@ -64,6 +64,15 @@ public class Week implements Serializable {
     }
 
     /**
+     * Updates an order for a given day to a new order
+     * @param day
+     * @param order
+     */
+    public void updateOrder(int day, Order order) {
+        orders[day] = order;
+    }
+
+    /**
      * Checks if order has been placed for given day.
      * @param day
      * @return
