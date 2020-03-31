@@ -1,5 +1,6 @@
 package com.example.checnutritionapp.ui.home;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -146,8 +147,11 @@ public class HomeFragment extends Fragment {
 
     // For reference: https://stackoverflow.com/questions/5060971/how-to-return-result-in-a-natural-way-when-the-called-the-called-activity-exit
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Order newOrder = (Order) data.getSerializableExtra("Order");
-        week.updateOrder(requestCode, newOrder);
-        Log.d("OnActivityResult",week.getOrder(requestCode)+"");
+        if (resultCode == Activity.RESULT_OK) {
+            Order newOrder = (Order) data.getSerializableExtra("Order");
+            week.updateOrder(requestCode, newOrder);
+            Log.d("OnActivityResult",week.getOrder(requestCode)+"");
+        }
+
     }
 }
