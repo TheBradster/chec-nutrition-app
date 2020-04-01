@@ -1,6 +1,7 @@
 package com.example.checnutritionapp.ui.your_week;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,12 @@ import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.utility.Week;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -148,9 +155,22 @@ public class YourWeekFragment extends Fragment {
     // For reference: https://stackoverflow.com/questions/5060971/how-to-return-result-in-a-natural-way-when-the-called-the-called-activity-exit
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
+
+            // Update week object
             Order newOrder = (Order) data.getSerializableExtra("Order");
             week.updateOrder(requestCode, newOrder);
             Log.d("OnActivityResult",week.getOrder(requestCode)+"");
+
+            // Save week object to file
+            try {
+                // Saved to /data/data/com.example.checnutritionapp
+                FileOutputStream out = getActivity().openFileOutput("saved_orders.json", Context.MODE_PRIVATE);
+                JSONArray weekData = week.getOrdersJSON();
+                out.write(weekData.toString().getBytes());
+                out.close();
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
         }
 
     }

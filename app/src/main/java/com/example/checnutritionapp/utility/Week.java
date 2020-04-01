@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -93,6 +94,19 @@ public class Week implements Serializable {
         else {
             throw new ArrayIndexOutOfBoundsException("Order does not exist for given day");
         }
+    }
+
+    public JSONArray getOrdersJSON() throws JSONException {
+        JSONArray array = new JSONArray();
+        for (Order order : orders) {
+            if (order != null) {
+                JSONObject orderJSON = new JSONObject();
+                orderJSON.put(order.pickupDayOfWeek(), order);
+                array.put(orderJSON);
+            }
+        }
+
+        return array;
     }
 
     @Override
