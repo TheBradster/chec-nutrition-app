@@ -32,7 +32,7 @@ public class QueueFragment extends Fragment {
     private Meal[] Meals={new Meal ("[Mon1]",5),new Meal("[Mon2]",5),
             new Meal("[Tues1]",5),new Meal("[Tues2]",5),
             new Meal("[Wed1]",5),new Meal("[Wed2]",5),
-            new Meal("[Thurs1]",5),new Meal("[Thurs2]",5)};
+            new Meal("[Thu1]",5),new Meal("[Thu2]",5)};
 
 
     private Location [] Locations={new Location("Claremont High","1601 N Indian Hill Blvd, Claremont, CA 91711"),
@@ -117,13 +117,13 @@ public class QueueFragment extends Fragment {
         String TWed=String.format("%.2f",TotalW);
         String TThurs=String.format("%.2f",TotalR);
 
-          mon= "\n "+Orders[0].getReadyDate()+"                             Total: $"+TMon+"\n\n "+Meals[0].getName()+": "+Tickets[0].numberOfServings()+"                          Pickup: "+Locations[0].getName()+" \n\n "+Meals[1].getName()+": "+Tickets[1].numberOfServings();
+          mon= "\n "+Orders[0].getReadyDate()+"                             Total: $"+TMon+"\n\n "+Meals[0].getName()+": "+Tickets[0].numberOfServings()+"\n                          Pickup: "+Locations[0].getName()+" \n "+Meals[1].getName()+": "+Tickets[1].numberOfServings();
 
-          tues= "\n "+Orders[1].getReadyDate()+"                             Total: $"+TTues+"\n\n "+Meals[2].getName()+": "+Tickets[2].numberOfServings()+"                           Pickup: "+Locations[1].getName()+" \n\n "+Meals[3].getName()+": "+Tickets[3].numberOfServings();
+          tues= "\n "+Orders[1].getReadyDate()+"                             Total: $"+TTues+"\n\n "+Meals[2].getName()+": "+Tickets[2].numberOfServings()+"\n                          Pickup: "+Locations[1].getName()+" \n "+Meals[3].getName()+": "+Tickets[3].numberOfServings();
 
-          wednes= "\n "+Orders[2].getReadyDate()+"                          Total: $"+TWed+"\n\n "+Meals[4].getName()+": "+Tickets[4].numberOfServings()+"                        Pickup: "+Locations[2].getName()+" \n\n "+Meals[5].getName()+": "+Tickets[5].numberOfServings();
+          wednes= "\n "+Orders[2].getReadyDate()+"                             Total: $"+TWed+"\n\n "+Meals[4].getName()+": "+Tickets[4].numberOfServings()+"\n                          Pickup: "+Locations[2].getName()+" \n "+Meals[5].getName()+": "+Tickets[5].numberOfServings();
 
-          thurs= "\n "+Orders[3].getReadyDate()+"                             Total: $"+TThurs+"\n\n "+Meals[6].getName()+": "+Tickets[6].numberOfServings()+"                          Pickup: "+Locations[3].getName()+" \n\n "+Meals[7].getName()+": "+Tickets[7].numberOfServings();
+          thurs= "\n "+Orders[3].getReadyDate()+"                             Total: $"+TThurs+"\n\n "+Meals[6].getName()+": "+Tickets[6].numberOfServings()+"\n                          Pickup: "+Locations[3].getName()+" \n "+Meals[7].getName()+": "+Tickets[7].numberOfServings();
 
 
         Monday = getView().findViewById(R.id.button7);
