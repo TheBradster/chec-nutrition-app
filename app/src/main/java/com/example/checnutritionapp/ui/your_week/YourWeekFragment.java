@@ -1,4 +1,4 @@
-package com.example.checnutritionapp.ui.home;
+package com.example.checnutritionapp.ui.your_week;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -30,18 +30,18 @@ import com.example.checnutritionapp.utility.Week;
 import java.util.Calendar;
 import java.util.Date;
 
-public class HomeFragment extends Fragment {
+public class YourWeekFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
     private Week week;
+    private YourWeekViewModel yourWeekViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        final View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        yourWeekViewModel =
+                ViewModelProviders.of(this).get(YourWeekViewModel.class);
+        final View root = inflater.inflate(R.layout.fragment_your_week, container, false);
+        final TextView textView = root.findViewById(R.id.text_your_week);
+        yourWeekViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
