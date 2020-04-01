@@ -24,7 +24,9 @@ import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Location;
 import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.model.Ticket;
+import com.example.checnutritionapp.utility.JSONUtilities;
 
+import org.json.JSONException;
 import org.w3c.dom.Text;
 
 public class PlaceOrderFragment extends Fragment implements View.OnClickListener {
@@ -48,7 +50,6 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(PlaceOrderViewModel.class);
-        // TODO: Use the ViewModel
 
         // Get order object from intent
         mOrder = (Order) getActivity().getIntent().getSerializableExtra("Order");
@@ -67,9 +68,16 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         // Set up location dropdown
         Spinner locationSelect = getView().findViewById(R.id.location);
         // TODO replace with something with JSON files
-        Location[] locations = {new Location("Location 1", "1111 Road Street, City, TN 55555"),
-                new Location("Location 2", "2120 Fennell Pl, Nesbit, MS 38651"),
-                new Location("Location 3", "0000 Something, City, XX 00000")};
+        // Import locations from JSON file
+        Location[] locations = null;
+        try {
+            locations = Location.convertLocationList(JSONUtilities.loadJSONFromAsset(getContext(),"test_locations.json"));
+        } catch (JSONException e) {
+            getActivity().setResult(Activity.RESULT_CANCELED);
+            getActivity().finish();
+            e.printStackTrace();
+        }
+
         ArrayAdapter<Location> adpt = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, locations);
         locationSelect.setAdapter(adpt);
 
