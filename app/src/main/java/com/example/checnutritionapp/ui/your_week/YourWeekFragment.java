@@ -10,19 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.MealActivity;
 import com.example.checnutritionapp.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
-import com.example.checnutritionapp.SummaryActivity;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.utility.Week;
@@ -40,6 +36,10 @@ public class YourWeekFragment extends Fragment {
 
     private Week week;
     private YourWeekViewModel yourWeekViewModel;
+
+    // Buttons
+    ImageButton[] mealButtons;
+    Button[] orderButtons;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -67,11 +67,12 @@ public class YourWeekFragment extends Fragment {
         final ImageButton m7 = (ImageButton) root.findViewById(R.id.thur_meal1);
         final ImageButton m8 = (ImageButton) root.findViewById(R.id.thur_meal2);
 
-        ImageButton[] imageButtons = {m1, m2, m3, m4, m5, m6, m7, m8};
+        ImageButton[] a = {m1, m2, m3, m4, m5, m6, m7, m8};
+        mealButtons = a;
 
         // Enable the link between the respective meal buttons and their meal pages
         for (int i = 0; i < 8; i++) {
-            transferToMeal(imageButtons[i]);
+            transferToMeal(mealButtons[i]);
         }
 
         // Instantiate the day buttons as established in home_fragment.xml
@@ -115,12 +116,13 @@ public class YourWeekFragment extends Fragment {
         });
         */
 
-        final Button[] dayButtons = {d1, d2, d3, d4};
+        Button[] array = {d1, d2, d3, d4};
+        orderButtons = array;
 
 
         // Enable the link between the respective day buttons and their order pages
         for (int i = 0; i < 4; i++) {
-            transferToPlaceOrder(dayButtons[i], i);
+            transferToPlaceOrder(orderButtons[i], i);
         }
 
         return root;
@@ -137,6 +139,7 @@ public class YourWeekFragment extends Fragment {
     }
 
     private void transferToPlaceOrder(Button i, final int day) {
+        i.setText((week.orderPlaced(day)) ? "View Order" : "Place Order");
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,6 +174,9 @@ public class YourWeekFragment extends Fragment {
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
+
+            // Update text
+            orderButtons[requestCode].setText("View Order");
         }
 
     }
