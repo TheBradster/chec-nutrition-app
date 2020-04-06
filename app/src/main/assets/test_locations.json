@@ -1,0 +1,17 @@
+{
+  "Locations":
+  [
+    {
+      "Name" : "Super Great Pickup Place",
+      "Address" : "2000 Super Great Street, Memphis TN"
+    },
+    {
+      "Name" : "Other Great Pickup Place",
+      "Address" : "3000 Other Street, Memphis TN"
+    },
+    {
+      "Name" : "I'm Not Coming Up With Great Names",
+      "Address" : "4444 Its An Address Street, Memphis TN"
+    }
+  ]
+}

@@ -1,29 +1,33 @@
 package com.example.checnutritionapp;
 
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
+import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.checnutritionapp.utility.JSONUtilities;
+import com.example.checnutritionapp.utility.MealBank;
+import com.example.checnutritionapp.utility.Week;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.view.Menu;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+
+    private Week week;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +55,37 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        // Import data
+
+        try {
+            // Get meal data
+            JSONObject mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "meals.json");
+            // Process meal JSON data
+            MealBank meals = new MealBank(mealsJSON);
+            // Get meal schedule
+            // For now we're importing test data
+            JSONObject scheduleJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "test_schedule.json");
+            week = new Week(scheduleJSON, meals);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            this.finish();
+        }
+
+        Log.d("Main Activity", week.toString());
+
+        /*// Send data to home fragment
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Week", week);
+        HomeFragment fragment = new HomeFragment();
+        fragment.setArguments(bundle);*/
     }
+
+    public Week getWeek() {
+        return week;
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
