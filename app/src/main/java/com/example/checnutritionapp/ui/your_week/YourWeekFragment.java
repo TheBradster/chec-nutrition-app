@@ -30,7 +30,6 @@ import com.example.checnutritionapp.utility.Week;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -47,26 +46,26 @@ public class YourWeekFragment extends Fragment {
         yourWeekViewModel =
                 ViewModelProviders.of(this).get(YourWeekViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_your_week, container, false);
-        final TextView textView = root.findViewById(R.id.text_your_week);
-        yourWeekViewModel.getText().observe(this, new Observer<String>() {
+        //final TextView textView = root.findViewById(R.id.text_your_week);
+/*        yourWeekViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
+        });*/
 
         MainActivity activity = (MainActivity) getActivity();
         week = activity.getWeek();
 
         // Instantiate the meal buttons as established in home_fragment.xml
-        final ImageButton m1 = (ImageButton) root.findViewById(R.id.imageButton2);
-        final ImageButton m2 = (ImageButton) root.findViewById(R.id.imageButton3);
-        final ImageButton m3 = (ImageButton) root.findViewById(R.id.imageButton4);
-        final ImageButton m4 = (ImageButton) root.findViewById(R.id.imageButton5);
-        final ImageButton m5 = (ImageButton) root.findViewById(R.id.imageButton6);
-        final ImageButton m6 = (ImageButton) root.findViewById(R.id.imageButton7);
-        final ImageButton m7 = (ImageButton) root.findViewById(R.id.imageButton8);
-        final ImageButton m8 = (ImageButton) root.findViewById(R.id.imageButton9);
+        final ImageButton m1 = (ImageButton) root.findViewById(R.id.monday_meal1);
+        final ImageButton m2 = (ImageButton) root.findViewById(R.id.monday_meal2);
+        final ImageButton m3 = (ImageButton) root.findViewById(R.id.tuesday_meal1);
+        final ImageButton m4 = (ImageButton) root.findViewById(R.id.tuesday_meal2);
+        final ImageButton m5 = (ImageButton) root.findViewById(R.id.wed_meal1);
+        final ImageButton m6 = (ImageButton) root.findViewById(R.id.wed_meal2);
+        final ImageButton m7 = (ImageButton) root.findViewById(R.id.thur_meal1);
+        final ImageButton m8 = (ImageButton) root.findViewById(R.id.thur_meal2);
 
         ImageButton[] imageButtons = {m1, m2, m3, m4, m5, m6, m7, m8};
 
@@ -76,12 +75,12 @@ public class YourWeekFragment extends Fragment {
         }
 
         // Instantiate the day buttons as established in home_fragment.xml
-        final Button d1 = (Button) root.findViewById(R.id.button2);
-        final Button d2 = (Button) root.findViewById(R.id.button3);
-        final Button d3 = (Button) root.findViewById(R.id.button4);
-        final Button d4 = (Button) root.findViewById(R.id.button5);
+        final Button d1 = (Button) root.findViewById(R.id.monday_order);
+        final Button d2 = (Button) root.findViewById(R.id.tuesday_order);
+        final Button d3 = (Button) root.findViewById(R.id.wednesday_order);
+        final Button d4 = (Button) root.findViewById(R.id.thursday_order);
 
-        // Button
+/*        // Button
         final Button orderButton = (Button) root.findViewById(R.id.orderButton);
         orderButton.setText("ORDER");
         orderButton.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +113,7 @@ public class YourWeekFragment extends Fragment {
                 startActivity(intent2);
             }
         });
+        */
 
         final Button[] dayButtons = {d1, d2, d3, d4};
 
