@@ -2,6 +2,7 @@ package com.example.checnutritionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -37,6 +38,7 @@ public class PlaceOrderActivity extends AppCompatActivity {
             int id = item.getItemId();
 
             if (id == android.R.id.home) {
+                this.setResult(Activity.RESULT_CANCELED);
                 this.finish();
             }
 
