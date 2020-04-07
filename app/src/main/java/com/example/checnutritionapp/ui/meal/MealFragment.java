@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.checnutritionapp.MealAllergensFragment;
 import com.example.checnutritionapp.MealNutrition;
 import com.example.checnutritionapp.MealProcedureFragment;
 import com.example.checnutritionapp.R;
@@ -54,6 +55,19 @@ public class MealFragment extends Fragment {
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
                 trans.replace(R.id.meal_layout, procFragment);
+                trans.addToBackStack(null);
+                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+            }
+        });
+
+        Button openAllergens = (Button) v.findViewById(R.id.allergen_button);
+        openAllergens.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MealAllergensFragment allergenFragment = new MealAllergensFragment();
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction trans = manager.beginTransaction();
+                trans.replace(R.id.meal_layout, allergenFragment);
                 trans.addToBackStack(null);
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
             }
