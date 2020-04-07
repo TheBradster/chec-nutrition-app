@@ -24,6 +24,8 @@ public class SummaryFragment extends Fragment  {
 
     private SummaryViewModel mViewModel;
 
+    private Order mOrder;
+
     public static SummaryFragment newInstance() {
         return new SummaryFragment();
     }
@@ -40,7 +42,7 @@ public class SummaryFragment extends Fragment  {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class);
         // TODO: Use the ViewModel
-        Meal[] meals = new Meal[]{new Meal("Meal1"), new Meal("meal2")};
-        Order x = new Order(new Date(), meals);
+        // Get order object from intent
+        mOrder = (Order) getActivity().getIntent().getSerializableExtra("Order");
     }
 }

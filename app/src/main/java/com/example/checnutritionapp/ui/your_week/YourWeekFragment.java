@@ -19,6 +19,7 @@ import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.MealActivity;
 import com.example.checnutritionapp.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.SummaryActivity;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.utility.Week;
@@ -121,9 +122,7 @@ public class YourWeekFragment extends Fragment {
 
 
         // Enable the link between the respective day buttons and their order pages
-        for (int i = 0; i < 4; i++) {
-            transferToPlaceOrder(orderButtons[i], i);
-        }
+        refreshButtons();
 
         return root;
         }
@@ -138,18 +137,34 @@ public class YourWeekFragment extends Fragment {
         });
     }
 
-    private void transferToPlaceOrder(Button i, final int day) {
-        i.setText((week.orderPlaced(day)) ? "View Order" : "Place Order");
+    private void refreshButtons() {
+        for (int i = 0; i < 4; i++) {
+            linkOrderButton(orderButtons[i], i);
+        }
+    }
+
+    private void linkOrderButton(Button i, final int day) {
+
+        final boolean alreadyPlaced = week.orderPlaced(day);
+
+        // Set button text
+        i.setText((alreadyPlaced) ? "View Order" : "Place Order");
+
+        // Get meals from schedule
+        final Meal[] meals = week.getMealsForDay(day);
+
+        // Get date for current day of week
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY + day);
+        final Date orderTime = cal.getTime();
+
+
+
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
-                // Get meals from schedule
-                Meal[] meals = week.getMealsForDay(day);
-                // Get date for current day of week
-                Calendar cal = Calendar.getInstance();
-                cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY + day);
-                intent.putExtra("Order", new Order(cal.getTime(), meals));
+                Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
+                intent.putExtra("Order", new Order(orderTime, meals));
                 startActivityForResult(intent, day);
             }
         });
@@ -176,7 +191,7 @@ public class YourWeekFragment extends Fragment {
             }
 
             // Update text
-            orderButtons[requestCode].setText("View Order");
+            refreshButtons();
         }
 
     }
