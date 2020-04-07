@@ -10,12 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.MainActivity;
@@ -30,7 +27,6 @@ import com.example.checnutritionapp.utility.Week;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -42,46 +38,51 @@ public class YourWeekFragment extends Fragment {
     private Week week;
     private YourWeekViewModel yourWeekViewModel;
 
+    // Buttons
+    ImageButton[] mealButtons;
+    Button[] orderButtons;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         yourWeekViewModel =
                 ViewModelProviders.of(this).get(YourWeekViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_your_week, container, false);
-        final TextView textView = root.findViewById(R.id.text_your_week);
-        yourWeekViewModel.getText().observe(this, new Observer<String>() {
+        //final TextView textView = root.findViewById(R.id.text_your_week);
+/*        yourWeekViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
+        });*/
 
         MainActivity activity = (MainActivity) getActivity();
         week = activity.getWeek();
 
         // Instantiate the meal buttons as established in home_fragment.xml
-        final ImageButton m1 = (ImageButton) root.findViewById(R.id.imageButton2);
-        final ImageButton m2 = (ImageButton) root.findViewById(R.id.imageButton3);
-        final ImageButton m3 = (ImageButton) root.findViewById(R.id.imageButton4);
-        final ImageButton m4 = (ImageButton) root.findViewById(R.id.imageButton5);
-        final ImageButton m5 = (ImageButton) root.findViewById(R.id.imageButton6);
-        final ImageButton m6 = (ImageButton) root.findViewById(R.id.imageButton7);
-        final ImageButton m7 = (ImageButton) root.findViewById(R.id.imageButton8);
-        final ImageButton m8 = (ImageButton) root.findViewById(R.id.imageButton9);
+        final ImageButton m1 = (ImageButton) root.findViewById(R.id.monday_meal1);
+        final ImageButton m2 = (ImageButton) root.findViewById(R.id.monday_meal2);
+        final ImageButton m3 = (ImageButton) root.findViewById(R.id.tuesday_meal1);
+        final ImageButton m4 = (ImageButton) root.findViewById(R.id.tuesday_meal2);
+        final ImageButton m5 = (ImageButton) root.findViewById(R.id.wed_meal1);
+        final ImageButton m6 = (ImageButton) root.findViewById(R.id.wed_meal2);
+        final ImageButton m7 = (ImageButton) root.findViewById(R.id.thur_meal1);
+        final ImageButton m8 = (ImageButton) root.findViewById(R.id.thur_meal2);
 
-        ImageButton[] imageButtons = {m1, m2, m3, m4, m5, m6, m7, m8};
+        ImageButton[] a = {m1, m2, m3, m4, m5, m6, m7, m8};
+        mealButtons = a;
 
         // Enable the link between the respective meal buttons and their meal pages
         for (int i = 0; i < 8; i++) {
-            transferToMeal(imageButtons[i]);
+            transferToMeal(mealButtons[i]);
         }
 
         // Instantiate the day buttons as established in home_fragment.xml
-        final Button d1 = (Button) root.findViewById(R.id.button2);
-        final Button d2 = (Button) root.findViewById(R.id.button3);
-        final Button d3 = (Button) root.findViewById(R.id.button4);
-        final Button d4 = (Button) root.findViewById(R.id.button5);
+        final Button d1 = (Button) root.findViewById(R.id.monday_order);
+        final Button d2 = (Button) root.findViewById(R.id.tuesday_order);
+        final Button d3 = (Button) root.findViewById(R.id.wednesday_order);
+        final Button d4 = (Button) root.findViewById(R.id.thursday_order);
 
-        // Button
+/*        // Button
         final Button orderButton = (Button) root.findViewById(R.id.orderButton);
         orderButton.setText("ORDER");
         orderButton.setOnClickListener(new View.OnClickListener() {
@@ -114,14 +115,14 @@ public class YourWeekFragment extends Fragment {
                 startActivity(intent2);
             }
         });
+        */
 
-        final Button[] dayButtons = {d1, d2, d3, d4};
+        Button[] array = {d1, d2, d3, d4};
+        orderButtons = array;
 
 
         // Enable the link between the respective day buttons and their order pages
-        for (int i = 0; i < 4; i++) {
-            transferToPlaceOrder(dayButtons[i], i);
-        }
+        refreshButtons();
 
         return root;
         }
@@ -136,17 +137,34 @@ public class YourWeekFragment extends Fragment {
         });
     }
 
-    private void transferToPlaceOrder(Button i, final int day) {
+    private void refreshButtons() {
+        for (int i = 0; i < 4; i++) {
+            linkOrderButton(orderButtons[i], i);
+        }
+    }
+
+    private void linkOrderButton(Button i, final int day) {
+
+        final boolean alreadyPlaced = week.orderPlaced(day);
+
+        // Set button text
+        i.setText((alreadyPlaced) ? "View Order" : "Place Order");
+
+        // Get meals from schedule
+        final Meal[] meals = week.getMealsForDay(day);
+
+        // Get date for current day of week
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY + day);
+        final Date orderTime = cal.getTime();
+
+
+
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PlaceOrderActivity.class);
-                // Get meals from schedule
-                Meal[] meals = week.getMealsForDay(day);
-                // Get date for current day of week
-                Calendar cal = Calendar.getInstance();
-                cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY + day);
-                intent.putExtra("Order", new Order(cal.getTime(), meals));
+                Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
+                intent.putExtra("Order", new Order(orderTime, meals));
                 startActivityForResult(intent, day);
             }
         });
@@ -171,6 +189,9 @@ public class YourWeekFragment extends Fragment {
             } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
+
+            // Update text
+            refreshButtons();
         }
 
     }
