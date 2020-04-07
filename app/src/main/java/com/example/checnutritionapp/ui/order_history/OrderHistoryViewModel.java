@@ -10,7 +10,7 @@ public class OrderHistoryViewModel extends ViewModel {
 
     public OrderHistoryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is tools fragment");
+        mText.setValue("This view will detail the user's order history.");
     }
 
     public LiveData<String> getText() {
