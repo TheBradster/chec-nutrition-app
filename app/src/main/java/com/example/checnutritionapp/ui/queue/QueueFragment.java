@@ -13,34 +13,52 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.model.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class QueueFragment extends Fragment {
 
     private QueueViewModel queueViewModel;
 
+    private Date Mon= new SimpleDateFormat("MM/dd/yyyy").parse("02/03/2020");
+    private Date Tues= new SimpleDateFormat("MM/dd/yyyy").parse("02/04/2020");
+    private Date Wed= new SimpleDateFormat("MM/dd/yyyy").parse("02/05/2020");
+    private Date Thurs= new SimpleDateFormat("MM/dd/yyyy").parse("02/06/2020");
+
+
+    private Meal[] Meals={new Meal (1,"[Mon1]",5),new Meal(2, "[Mon2]",5),
+            new Meal(3, "[Tues1]",5),new Meal(4,"[Tues2]",5),
+            new Meal(5,"[Wed1]",5),new Meal(6,"[Wed2]",5),
+            new Meal(7,"[Thu1]",5),new Meal(8,"[Thu2]",5)};
+
+
+    private Location [] Locations={new Location("Claremont High","1601 N Indian Hill Blvd, Claremont, CA 91711"),
+            new Location("Ohio State University","Columbus, OH 43210"),
+            new Location("University of Memphis","3720 Alumni Ave, Memphis, TN 38152"),
+            new Location("University of Cincinnati","2600 Clifton Ave, Cincinnati, OH 45221")};
+
+
+    private Order [] Orders={new Order (Mon,Meals),new Order (Tues,Meals),new Order (Wed,Meals),new Order (Thurs,Meals),};
+
+    private Ticket [] Tickets  =Orders[0].getTickets();
 
 
 
-     String mon= "\n Monday 02/03/2020                                           Total: $10.00\n\n [meal]: 2                                              Pickup:\n\n [meal]: 0                                             Time:";
+    private String mon;
     private Button Monday;
     private int M1=2;
     private int M2=0;
-    private float M3=M1*5;
-    private float M4=M2*5;
-    private float TotalM=M3+M4;
-    private String MMeal1="[Meal]";
-    private String MMeal2="[Meal]";
+    private double TotalM;
 
 
     private String tues;
     private Button Tuesday;
     private int T1=0;
     private int T2=0;
-    private float T3=T1*5;
-    private float T4=T2*5;
-    private float TotalT=T3+T4;
-    private String TMeal1="[Meal]";
-    private String TMeal2="[Meal]";
+    private double TotalT;
 
 
 
@@ -48,11 +66,7 @@ public class QueueFragment extends Fragment {
     private Button Wednesday;
     private int W1=0;
     private int W2=0;
-    private float W3=W1*5;
-    private float W4=W2*5;
-    private float TotalW=W3+W4;
-    private String WMeal1="[Meal]";
-    private String WMeal2="[Meal]";
+    private double TotalW;
 
 
 
@@ -60,44 +74,60 @@ public class QueueFragment extends Fragment {
     private Button Thursday;
     private int R1=0;
     private int R2=0;
-    private float R3=R1*5;
-    private float R4=R2*5;
-    private float TotalR=R3+R4;
-    private String RMeal1="[Meal]";
-    private String RMeal2="[Meal]";
+    private double TotalR;
 
 
 
 
-    private float TotalMoney=(M1+M2+T1+T2+W1+W2+R1+R2)*5;
-
-    String TM=String.format("%.2f",TotalMoney);
-    String TMon=String.format("%.2f",TotalM);
-    String TTues=String.format("%.2f",TotalT);
-    String TWed=String.format("%.2f",TotalW);
-    String TThurs=String.format("%.2f",TotalR);
+    private double TotalMoney;
 
 
 
-    //SimpleDateFormat date= new SimpleDateFormat("MM/DD/YYYY");
+    public QueueFragment() throws ParseException {
+    }
 
-    //String test = "\n Thursday 02/06/2020                                       Total: $0.00\n\n [meal]: 0                                              Pickup:\n\n [meal]: 0                                             Time:";
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-          mon= "\n Monday 02/03/2020                                           Total: $"+TMon+"\n\n "+MMeal1+": "+M1+"                                              Pickup:\n\n "+MMeal2+": "+M2+"                                             Time:";
+        Tickets[0].changeServing(M1);
+        Tickets[1].changeServing(M2);
 
-          tues= "\n Tuesday 02/04/2020                                           Total: $"+TTues+"\n\n "+TMeal1+": "+T1+"                                              Pickup:\n\n "+TMeal2+": "+T2+"                                             Time:";
+        Tickets[2].changeServing(T1);
+        Tickets[3].changeServing(T2);
 
-          wednes= "\n Wednesday 02/05/2020                                           Total: $"+TWed+"\n\n "+WMeal1+": "+W1+"                                              Pickup:\n\n "+WMeal2+": "+W2+"                                             Time:";
+        Tickets[4].changeServing(W1);
+        Tickets[5].changeServing(W2);
 
-          thurs= "\n Thursday 02/06/2020                                           Total: $"+TThurs+"\n\n "+RMeal1+": "+R1+"                                              Pickup:\n\n "+RMeal2+": "+R2+"                                             Time:";
+        Tickets[6].changeServing(R1);
+        Tickets[7].changeServing(R2);
+
+        TotalM=Tickets[0].total()+Tickets[1].total();
+        TotalT=Tickets[2].total()+Tickets[3].total();
+        TotalW=Tickets[4].total()+Tickets[5].total();
+        TotalR=Tickets[6].total()+Tickets[7].total();
+
+        TotalMoney=TotalM+TotalT+TotalW+TotalR;
+
+        String TM=String.format("%.2f",TotalMoney);
+        String TMon=String.format("%.2f",TotalM);
+        String TTues=String.format("%.2f",TotalT);
+        String TWed=String.format("%.2f",TotalW);
+        String TThurs=String.format("%.2f",TotalR);
+
+          mon= "\n "+Orders[0].getReadyDate()+"                             Total: $"+TMon+"\n\n "+Meals[0].getName()+": "+Tickets[0].numberOfServings()+"\n                          Pickup: "+Locations[0].getName()+" \n "+Meals[1].getName()+": "+Tickets[1].numberOfServings();
+
+          tues= "\n "+Orders[1].getReadyDate()+"                             Total: $"+TTues+"\n\n "+Meals[2].getName()+": "+Tickets[2].numberOfServings()+"\n                          Pickup: "+Locations[1].getName()+" \n "+Meals[3].getName()+": "+Tickets[3].numberOfServings();
+
+          wednes= "\n "+Orders[2].getReadyDate()+"                             Total: $"+TWed+"\n\n "+Meals[4].getName()+": "+Tickets[4].numberOfServings()+"\n                          Pickup: "+Locations[2].getName()+" \n "+Meals[5].getName()+": "+Tickets[5].numberOfServings();
+
+          thurs= "\n "+Orders[3].getReadyDate()+"                             Total: $"+TThurs+"\n\n "+Meals[6].getName()+": "+Tickets[6].numberOfServings()+"\n                          Pickup: "+Locations[3].getName()+" \n "+Meals[7].getName()+": "+Tickets[7].numberOfServings();
 
 
         Monday = getView().findViewById(R.id.button7);
-          Monday.setText(mon);
+        Monday.setText(mon);
 
 
         Tuesday = getView().findViewById(R.id.button6);

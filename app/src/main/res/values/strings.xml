@@ -44,7 +44,13 @@
     <string name="nut_prot">Protein (g): </string>
     <string name="nut_vit">Relevant vitamins (various): </string>
 
+    <string name="proc_tit">Meal Procedure</string>
+    <string name="proc_head">Preparation</string>
 
+    <string name="allerg_tit">Allergen Information</string>
+    <string name="allerg_head">Known allergens</string>
+    <string name="allerg_sample">- Nuts [X]\n- Dairy [ ]\n- Egg [X]\n- Fish [ ]\n- Mustard [ ]\n- Shellfish [ ]\n- Wheat [X]</string>
+    <string name="allerg_notice">It is important you do not consume food containing allergens if you are prone to allergic reactions.\n\nContact a medical professional for advice if you are unsure before selecting a meal.</string>
 
 </resources>
 
