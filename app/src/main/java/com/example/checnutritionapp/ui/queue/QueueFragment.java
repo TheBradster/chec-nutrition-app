@@ -29,10 +29,10 @@ public class QueueFragment extends Fragment {
     private Date Thurs= new SimpleDateFormat("MM/dd/yyyy").parse("02/06/2020");
 
 
-    private Meal[] Meals={new Meal ("[Mon1]",5),new Meal("[Mon2]",5),
-            new Meal("[Tues1]",5),new Meal("[Tues2]",5),
-            new Meal("[Wed1]",5),new Meal("[Wed2]",5),
-            new Meal("[Thu1]",5),new Meal("[Thu2]",5)};
+    private Meal[] Meals={new Meal (1,"[Mon1]",5),new Meal(2, "[Mon2]",5),
+            new Meal(3, "[Tues1]",5),new Meal(4,"[Tues2]",5),
+            new Meal(5,"[Wed1]",5),new Meal(6,"[Wed2]",5),
+            new Meal(7,"[Thu1]",5),new Meal(8,"[Thu2]",5)};
 
 
     private Location [] Locations={new Location("Claremont High","1601 N Indian Hill Blvd, Claremont, CA 91711"),
