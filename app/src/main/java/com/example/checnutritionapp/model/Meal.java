@@ -17,15 +17,17 @@ public class Meal implements Serializable {
     private String description;
     private String procedure;
     private String prepTime;
+    private String[] nutrition;
 
     // Constructors
-    public Meal(int id, String name, double price, String desc, String proc, String prep) {
+    public Meal(int id, String name, double price, String desc, String proc, String prep, String[] nut) {
         mId = id;
         mName = name;
         mPrice = price;
         description = desc;
         procedure = proc;
         prepTime = prep;
+        nutrition = nut;
     }
 
     public Meal(String meal1) {
@@ -45,6 +47,8 @@ public class Meal implements Serializable {
     public String getProcedure() { return procedure; }
 
     public String getPrepTime() { return prepTime; }
+
+    public String[] getNutrition() { return nutrition; }
 
     @Override
     public String toString() {

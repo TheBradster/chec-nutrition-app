@@ -34,15 +34,22 @@
 
     <string name="sample_meal_desc">This delicious meal is sure to make you feel great while also filling your stomach! Try it today. If not, I\'m sure there are plenty of other offerings we can provide for you.</string>
 
-    <string name="nut_title">Nutritional Facts</string>
-    <string name="nut_cal">Calories (kcal): </string>
-    <string name="nut_fat">Fat (g): </string>
-    <string name="nut_chol">Cholesterol (mg): </string>
-    <string name="nut_sod">Sodium (mg): </string>
-    <string name="nut_carb">Carbohydrates (g): </string>
-    <string name="nut_fib">Fiber (g): </string>
-    <string name="nut_prot">Protein (g): </string>
-    <string name="nut_vit">Relevant vitamins (various): </string>
+
+    <string name="nut_title">Nutrition Facts</string>
+    <string name="nut1">Calories (kcal): </string>
+    <string name="nut2">Total Fat: </string>
+    <string name="nut3">Saturated Fat: </string>
+    <string name="nut4">Trans Fat: </string>
+    <string name="nut5">Monounsaturated Fat: </string>
+    <string name="nut6">Polyunsaturated Fat: </string>
+    <string name="nut7">Omega 3: </string>
+    <string name="nut8">Omega 6: </string>
+    <string name="nut9">Cholesterol: </string>
+    <string name="nut10">Total Carbohydrates: </string>
+    <string name="nut11">Dietary Fiber: </string>
+    <string name="nut12">Sugars: </string>
+    <string name="nut13">Protein: </string>
+
 
     <string name="proc_tit">Meal Procedure</string>
     <string name="proc_head">Preparation</string>
