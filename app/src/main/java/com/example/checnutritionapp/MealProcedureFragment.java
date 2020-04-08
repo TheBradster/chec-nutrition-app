@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.example.checnutritionapp.model.Meal;
 
 public class MealProcedureFragment extends Fragment {
 
@@ -23,7 +26,13 @@ public class MealProcedureFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.meal_procedure_fragment, container, false);
+        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
+        View v = inflater.inflate(R.layout.meal_procedure_fragment, container, false);
+
+        TextView text = (TextView) v.findViewById(R.id.preparationText);
+        text.setText(m.getProcedure());
+
+        return v;
     }
 
     @Override
