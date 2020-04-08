@@ -42,6 +42,8 @@ public class YourWeekFragment extends Fragment {
     ImageButton[] mealButtons;
     Button[] orderButtons;
 
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         yourWeekViewModel =
@@ -58,6 +60,14 @@ public class YourWeekFragment extends Fragment {
         MainActivity activity = (MainActivity) getActivity();
         week = activity.getWeek();
 
+        // Create meal arrays for each of the days of the week
+        Meal[] mDay0 = week.getMealsForDay(0);
+        Meal[] mDay1 = week.getMealsForDay(1);
+        Meal[] mDay2 = week.getMealsForDay(2);
+        Meal[] mDay3 = week.getMealsForDay(3);
+
+        Meal[][] mDays = {mDay0, mDay1, mDay2, mDay3};
+
         // Instantiate the meal buttons as established in home_fragment.xml
         final ImageButton m1 = (ImageButton) root.findViewById(R.id.monday_meal1);
         final ImageButton m2 = (ImageButton) root.findViewById(R.id.monday_meal2);
@@ -72,8 +82,16 @@ public class YourWeekFragment extends Fragment {
         mealButtons = a;
 
         // Enable the link between the respective meal buttons and their meal pages
-        for (int i = 0; i < 8; i++) {
-            transferToMeal(mealButtons[i]);
+        for (int i = 0, j = 0, k = 0; i < 8; i++) {
+            if (j == 1) {
+                transferToMeal(mealButtons[i], mDays[k][1]);
+            } else if (j == 2) {
+                transferToMeal(mealButtons[i], mDays[++k][0]);
+                j = 0;
+            } else {
+                transferToMeal(mealButtons[i], mDays[k][0]);
+            }
+            j++;
         }
 
         // Instantiate the day buttons as established in home_fragment.xml
@@ -127,11 +145,12 @@ public class YourWeekFragment extends Fragment {
         return root;
         }
 
-    private void transferToMeal(ImageButton i) {
+    private void transferToMeal(ImageButton i, final Meal m) {
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MealActivity.class);
+                intent.putExtra("meal", m);
                 startActivity(intent);
             }
         });

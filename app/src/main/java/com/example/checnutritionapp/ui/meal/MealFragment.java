@@ -19,6 +19,7 @@ import com.example.checnutritionapp.MealAllergensFragment;
 import com.example.checnutritionapp.MealNutrition;
 import com.example.checnutritionapp.MealProcedureFragment;
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.model.Meal;
 
 public class MealFragment extends Fragment {
 
@@ -33,6 +34,11 @@ public class MealFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
+        // Handling meal object
+        Bundle b = this.getArguments();
+        Meal m = (Meal) b.getSerializable("meal");
+        System.out.println(m.getName() + " -- in Meal Fragment");
+        
         View v = inflater.inflate(R.layout.meal_fragment, container, false);
         Button openNutFacts = (Button) v.findViewById(R.id.nut_button);
         openNutFacts.setOnClickListener(new View.OnClickListener() {
