@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.checnutritionapp.model.Meal;
+
 public class MealIngredients extends Fragment {
 
     private MealIngredientsViewModel mViewModel;
@@ -23,7 +25,11 @@ public class MealIngredients extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.meal_ingredients_fragment, container, false);
+
+        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
+        View v = inflater.inflate(R.layout.meal_ingredients_fragment, container, false);
+
+        return v;
     }
 
     @Override
