@@ -16,14 +16,16 @@ public class Meal implements Serializable {
     private double mPrice;
     private String description;
     private String procedure;
+    private String prepTime;
 
     // Constructors
-    public Meal(int id, String name, double price, String desc, String proc) {
+    public Meal(int id, String name, double price, String desc, String proc, String prep) {
         mId = id;
         mName = name;
         mPrice = price;
         description = desc;
         procedure = proc;
+        prepTime = prep;
     }
 
     public Meal(String meal1) {
@@ -41,6 +43,8 @@ public class Meal implements Serializable {
     public String getDescription() { return description; }
 
     public String getProcedure() { return procedure; }
+
+    public String getPrepTime() { return prepTime; }
 
     @Override
     public String toString() {

@@ -32,6 +32,10 @@ public class MealProcedureFragment extends Fragment {
         TextView text = (TextView) v.findViewById(R.id.preparationText);
         text.setText(m.getProcedure());
 
+        TextView text2 = (TextView) v.findViewById(R.id.prepTimeText);
+        String prepString = "Time: " + m.getPrepTime();
+        text2.setText(prepString);
+
         return v;
     }
 
