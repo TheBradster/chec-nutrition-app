@@ -20,7 +20,7 @@ public class MealBank {
         for (int i = 0; i < mealsArray.length(); i++) {
             JSONObject meal = mealsArray.getJSONObject(i);
             Integer id = (Integer) meal.get("id");
-            mealDictionary.put(id, new Meal(id, meal.getString("Name"), Double.parseDouble(meal.getString("Price per serving ").substring(1))));
+            mealDictionary.put(id, new Meal(id, meal.getString("Name"), Double.parseDouble(meal.getString("Price per serving ").substring(1)), meal.getString("Description")));
         }
         Log.d("MealBank", mealDictionary.toString());
     }

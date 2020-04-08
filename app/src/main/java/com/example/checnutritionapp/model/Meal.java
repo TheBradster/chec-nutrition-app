@@ -14,12 +14,14 @@ public class Meal implements Serializable {
     private int mId;
     private String mName;
     private double mPrice;
+    private String description;
 
     // Constructors
-    public Meal(int id, String name, double price) {
+    public Meal(int id, String name, double price, String desc) {
         mId = id;
         mName = name;
         mPrice = price;
+        description = desc;
     }
 
     public Meal(String meal1) {
@@ -33,6 +35,8 @@ public class Meal implements Serializable {
     public int getId() { return mId; }
 
     public double price() { return mPrice; }
+
+    public String getDescription() { return description; }
 
     @Override
     public String toString() {

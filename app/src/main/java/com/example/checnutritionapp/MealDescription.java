@@ -30,6 +30,9 @@ public class MealDescription extends Fragment {
         Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
         View v = inflater.inflate(R.layout.meal_description_fragment, container, false);
 
+        TextView desc = (TextView) v.findViewById(R.id.mealDescText);
+        desc.setText(m.getDescription());
+
         return v;
     }
 
