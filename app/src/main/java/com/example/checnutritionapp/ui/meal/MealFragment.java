@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.checnutritionapp.MealAllergensFragment;
 import com.example.checnutritionapp.MealNutrition;
@@ -35,16 +36,23 @@ public class MealFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         // Handling meal object
-        Bundle b = this.getArguments();
+        final Bundle b = this.getArguments();
         Meal m = (Meal) b.getSerializable("meal");
         System.out.println(m.getName() + " -- in Meal Fragment");
-        
+
         View v = inflater.inflate(R.layout.meal_fragment, container, false);
+
+        TextView title = (TextView) v.findViewById(R.id.textView6);
+        title.setText(m.getName());
+
+
+
         Button openNutFacts = (Button) v.findViewById(R.id.nut_button);
         openNutFacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MealNutrition nutritionFragment = new MealNutrition();
+                nutritionFragment.setArguments(b);
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
                 trans.replace(R.id.meal_layout, nutritionFragment);
@@ -58,6 +66,7 @@ public class MealFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MealProcedureFragment procFragment = new MealProcedureFragment();
+                procFragment.setArguments(b);
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
                 trans.replace(R.id.meal_layout, procFragment);
@@ -71,6 +80,7 @@ public class MealFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MealAllergensFragment allergenFragment = new MealAllergensFragment();
+                allergenFragment.setArguments(b);
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
                 trans.replace(R.id.meal_layout, allergenFragment);
