@@ -3,7 +3,7 @@
         {
             "id": 1,
             "Name": "Hummus and Pearl Barley Bowls",
-            "Desciption": "Hummus and pearl barley bowl topped with roasted sesame butternut squash and pomegranate seeds.",
+            "Description": "Hummus and pearl barley bowl topped with roasted sesame butternut squash and pomegranate seeds.",
             "Time for prep": "45 min",
             "Price per serving ": "$2.86",
             "Ingre 1": "Butternut Squash",
@@ -42,7 +42,7 @@
         {
             "id": 2,
             "Name": "Chickpea Salad",
-            "Desciption": "Warm chickpea salad with red bell pepper and creamy and spicy yogurt sauce with spinach in a whole wheat tortilla.",
+            "Description": "Warm chickpea salad with red bell pepper and creamy and spicy yogurt sauce with spinach in a whole wheat tortilla.",
             "Time for prep": "15 min",
             "Price per serving ": "$1.85 ",
             "Ingre 1": "Chickpea",
@@ -75,7 +75,7 @@
         {
             "id": 3,
             "Name": "Mexican Quinoa Salad",
-            "Desciption": "Warm quinoa salad with a southwestern flare.",
+            "Description": "Warm quinoa salad with a southwestern flare.",
             "Time for prep": "20 min",
             "Price per serving ": "$2.63 ",
             "Ingre 1": "Quinoa",
@@ -107,7 +107,7 @@
         {
             "id": 4,
             "Name": "Vegan Couscous Salad",
-            "Desciption": "Fresh colorful vegan couscous salad. This super easy salad is ready in 15 minutes and it's filling, satisfying and delicious!",
+            "Description": "Fresh colorful vegan couscous salad. This super easy salad is ready in 15 minutes and it's filling, satisfying and delicious!",
             "Time for prep": "15 min",
             "Price per serving ": "$2.73 ",
             "Ingre 1": "Couscous",
@@ -146,7 +146,7 @@
         {
             "id": 5,
             "Name": "Creamy Coconut Lentil Curry",
-            "Desciption": "Warm up with a vegan spin on an Indian classic, creamy coconut lentil curry.",
+            "Description": "Warm up with a vegan spin on an Indian classic, creamy coconut lentil curry.",
             "Time for prep": "55 min",
             "Price per serving ": "$1.23",
             "Ingre 1": "Brown Lentils",
@@ -179,7 +179,7 @@
         {
             "id": 6,
             "Name": "One Pot Tandoori Quinoa",
-            "Desciption": "Indian inspired vegan one pot tandoori quinoa.",
+            "Description": "Indian inspired vegan one pot tandoori quinoa.",
             "Time for prep": "40 min",
             "Price per serving ": "$2.94 ",
             "Ingre 1": "Extra Virgin Olive Oil",
@@ -218,7 +218,7 @@
         {
             "id": 7,
             "Name": "Broccoli Cashew Stir fry",
-            "Desciption": "Steamed broccoli and roasted cashew stir fry over brown rice.",
+            "Description": "Steamed broccoli and roasted cashew stir fry over brown rice.",
             "Time for prep": "25 min",
             "Price per serving ": "$2.53 ",
             "Ingre 1": "Onion",
@@ -248,7 +248,7 @@
         {
             "id": 8,
             "Name": "Butternut Squash and Lentil Soup",
-            "Desciption": "Creamy roasted butternut squash and lentil soup.",
+            "Description": "Creamy roasted butternut squash and lentil soup.",
             "Time for prep": "90 min",
             "Price per serving ": "$3.04 ",
             "Ingre 1": "Butternut Squash",
@@ -281,7 +281,7 @@
         {
             "id": 9,
             "Name": "Spicy ground turkey and green bean stir fry",
-            "Desciption": "Asian inspired spicy ground turkey and fresh green bean stir fry.",
+            "Description": "Asian inspired spicy ground turkey and fresh green bean stir fry.",
             "Time for prep": "20 min",
             "Price per serving ": "$2.18 ",
             "Ingre 1": "Green Beans",
@@ -311,7 +311,7 @@
         {
             "id": 10,
             "Name": "Asado Chicken and Zucchini",
-            "Desciption": "Asado chicken and lemon sauteed zucchini.",
+            "Description": "Asado chicken and lemon sauteed zucchini.",
             "Time for prep": "20 min",
             "Price per serving ": "$4.43",
             "Ingre 1": "Chicken",

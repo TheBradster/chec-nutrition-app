@@ -14,11 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.checnutritionapp.MealAllergensFragment;
 import com.example.checnutritionapp.MealNutrition;
 import com.example.checnutritionapp.MealProcedureFragment;
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.model.Meal;
 
 public class MealFragment extends Fragment {
 
@@ -33,7 +35,20 @@ public class MealFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
+        // Handling meal object
+        final Bundle b = this.getArguments();
+        Meal m = (Meal) b.getSerializable("meal");
+        System.out.println(m.getName() + " -- in Meal Fragment");
+
         View v = inflater.inflate(R.layout.meal_fragment, container, false);
+
+        TextView title = (TextView) v.findViewById(R.id.textView6);
+        title.setText(m.getName());
+
+        TextView price = (TextView) v.findViewById(R.id.mealPrice);
+        String priceText = "Starting Price: $" + Double.toString(m.price());
+        price.setText(priceText);
+
         Button openNutFacts = (Button) v.findViewById(R.id.nut_button);
         openNutFacts.setOnClickListener(new View.OnClickListener() {
             @Override

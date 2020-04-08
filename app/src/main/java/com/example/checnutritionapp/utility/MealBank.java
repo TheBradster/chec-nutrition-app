@@ -20,7 +20,24 @@ public class MealBank {
         for (int i = 0; i < mealsArray.length(); i++) {
             JSONObject meal = mealsArray.getJSONObject(i);
             Integer id = (Integer) meal.get("id");
-            mealDictionary.put(id, new Meal(id, meal.getString("Name"), Double.parseDouble(meal.getString("Price per serving ").substring(1))));
+            String[] nutrition = {
+                    meal.getString("Calories/serving (kcal)"),
+                    meal.getString("Total Fat "),
+                    meal.getString("Sat "),
+                    meal.getString("Trans"),
+                    meal.getString("Monounsat"),
+                    meal.getString("Polyunsat"),
+                    meal.getString("Omega 3"),
+                    meal.getString("Omega 6"),
+                    meal.getString("Chol"),
+                    meal.getString("Total Carb"),
+                    meal.getString("Dietary fiber (g)"),
+                    meal.getString("Sugar"),
+                    meal.getString("Protein")
+            };
+
+            mealDictionary.put(id, new Meal(id, meal.getString("Name"), Double.parseDouble(meal.getString("Price per serving ").substring(1)), meal.getString("Description"), meal.getString("Procedure"),
+                    meal.getString("Time for prep"), nutrition));
         }
         Log.d("MealBank", mealDictionary.toString());
     }
