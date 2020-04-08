@@ -26,10 +26,10 @@ public class Order implements Serializable {
         this.mLocation = null;
     }
 
-     // Properties
-     public Ticket[] getTickets() {
-          return mTickets;
-     }
+    // Properties
+    public Ticket[] getTickets() {
+        return mTickets;
+    }
 
     public void pay() {
         this.mPayedFor = true;
@@ -59,7 +59,9 @@ public class Order implements Serializable {
 
     public double orderTotal() {
         double total = 0;
-        for (Ticket ticket : mTickets) { total += ticket.total(); }
+        for (Ticket ticket : mTickets) {
+            total += ticket.total();
+        }
         return total;
     }
 
@@ -70,6 +72,5 @@ public class Order implements Serializable {
                 + "Meals: " + java.util.Arrays.deepToString(mTickets) + "\n"
                 + "Total: " + orderTotal();
     }
-
 
 }
