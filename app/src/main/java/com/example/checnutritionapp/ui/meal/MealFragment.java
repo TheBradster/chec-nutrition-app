@@ -45,6 +45,10 @@ public class MealFragment extends Fragment {
         TextView title = (TextView) v.findViewById(R.id.textView6);
         title.setText(m.getName());
 
+        TextView price = (TextView) v.findViewById(R.id.mealPrice);
+        String priceText = "Starting Price: $" + Double.toString(m.price());
+        price.setText(priceText);
+
         Button openNutFacts = (Button) v.findViewById(R.id.nut_button);
         openNutFacts.setOnClickListener(new View.OnClickListener() {
             @Override
