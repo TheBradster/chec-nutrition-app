@@ -48,7 +48,7 @@
                     android:contentDescription="@string/description"
                     android:padding="3dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/chicken"
+                    app:srcCompat="@drawable/vegan"
                     tools:visibility="visible" />
 
                 <ImageButton
@@ -64,7 +64,7 @@
                     android:contentDescription="@string/description"
                     android:padding="3dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/quinoa"
+                    app:srcCompat="@drawable/tomato"
                     tools:visibility="visible" />
 
             </LinearLayout>
@@ -106,7 +106,7 @@
                     android:contentDescription="@string/description"
                     android:padding="3dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/hummus"
+                    app:srcCompat="@drawable/quinoa"
                     tools:visibility="visible" />
 
                 <ImageButton
@@ -122,7 +122,7 @@
                     android:contentDescription="@string/description"
                     android:padding="3dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/tomato"
+                    app:srcCompat="@drawable/oriental"
                     tools:visibility="visible" />
 
             </LinearLayout>
@@ -163,7 +163,7 @@
                     android:contentDescription="@string/description"
                     android:padding="3dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/dinner"
+                    app:srcCompat="@drawable/hummus"
                     tools:visibility="visible" />
 
                 <ImageButton
@@ -179,7 +179,7 @@
                     android:contentDescription="@string/description"
                     android:padding="3dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/oriental"
+                    app:srcCompat="@drawable/chicken"
                     tools:visibility="visible" />
             </LinearLayout>
 
@@ -219,7 +219,7 @@
                     android:contentDescription="@string/description"
                     android:padding="3dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/vegan"
+                    app:srcCompat="@drawable/dinner"
                     tools:visibility="visible" />
 
                 <ImageButton
