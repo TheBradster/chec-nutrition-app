@@ -1,6 +1,7 @@
 package com.example.checnutritionapp.ui.summary;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,13 +36,13 @@ public class SummaryFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class);
-        // TODO: Use the ViewModel
-        // Get order object from intent
         mOrder = (Order) getActivity().getIntent().getSerializableExtra("Order");
+        Log.d(getClass().toString(), mOrder.toString()); // We have object
+
         //update pickup address
-      //  Location location = mOrder.getLocation();
-       // TextView pickuplocation = getView().findViewById(R.id.address);
-       // pickuplocation.setText(location.getAddress());
+//  Location location = mOrder.getLocation();
+        // TextView pickuplocation = getView().findViewById(R.id.address);
+        // pickuplocation.setText(location.getAddress());
         // update servings1
         TextView servings1 = getView().findViewById(R.id.servings1);
         servings1.setText(String.valueOf(mOrder.getTickets()[0].numberOfServings()));
