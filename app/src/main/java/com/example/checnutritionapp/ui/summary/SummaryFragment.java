@@ -56,7 +56,7 @@ public class SummaryFragment extends Fragment {
         pickupTime.setText("Between 12:00pm and 5:00pm on " + mOrder.pickupDayOfWeek());
         // update total
         TextView total = getView().findViewById(R.id.total);
-        total.setText("  $" + String.format("%.2f", mOrder.orderTotal()));
+        total.setText("Total: $" + String.format("%.2f", mOrder.orderTotal()));
 
     }
 };
