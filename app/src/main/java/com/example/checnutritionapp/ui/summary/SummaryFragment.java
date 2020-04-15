@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.model.Location;
 import com.example.checnutritionapp.model.Order;
 
 public class SummaryFragment extends Fragment {
@@ -40,9 +41,10 @@ public class SummaryFragment extends Fragment {
         Log.d(getClass().toString(), mOrder.toString()); // We have object
 
         //update pickup address
-//  Location location = mOrder.getLocation();
-        // TextView pickuplocation = getView().findViewById(R.id.address);
-        // pickuplocation.setText(location.getAddress());
+        Location location = mOrder.getLocation();
+        Log.d("SummaryFragment", location.toString());
+        TextView pickupLocation = getView().findViewById(R.id.address);
+        pickupLocation.setText(location.getAddress());
         // update servings1
         TextView servings1 = getView().findViewById(R.id.servings1);
         servings1.setText(String.valueOf(mOrder.getTickets()[0].numberOfServings()));
