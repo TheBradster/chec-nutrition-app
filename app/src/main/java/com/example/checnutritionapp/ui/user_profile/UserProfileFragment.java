@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -17,6 +18,46 @@ import com.example.checnutritionapp.R;
 public class UserProfileFragment extends Fragment {
 
     private UserProfileViewModel userProfileViewModel;
+
+    private String Name;
+    private int age;
+    private String Age;
+    private double bmi;
+    private String BMI;
+
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        Name="Percy Jackson";
+
+        age=16;
+
+        Age="Age: "+age;
+
+        bmi=19.5;
+
+        BMI="BMI: "+bmi;
+
+        TextView name=getView().findViewById(R.id.textView8);
+
+        TextView a=getView().findViewById(R.id.textView5);
+
+        TextView b=getView().findViewById(R.id.textView7);
+
+        ImageView image =getView().findViewById(R.id.imageView3);
+
+        name.setText(Name);
+
+        a.setText(Age);
+
+        b.setText(BMI);
+
+        image.setImageResource(R.drawable.percyjackson);
+
+    }
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
