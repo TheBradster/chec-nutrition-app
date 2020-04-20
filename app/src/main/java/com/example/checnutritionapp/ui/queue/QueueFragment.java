@@ -1,6 +1,7 @@
 package com.example.checnutritionapp.ui.queue;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.*;
+import com.example.checnutritionapp.utility.Week;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,15 +26,21 @@ public class QueueFragment extends Fragment {
 
     private QueueViewModel queueViewModel;
 
-    public QueueFragment() throws ParseException {
+    private Week week;
+
+    public static QueueFragment newInstance() {
+        return new QueueFragment();
     }
 
-
-
+    @Nullable
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        // Load week data
+        MainActivity mainActivity = (MainActivity) getActivity();
+        week = mainActivity.getWeek();
+        Log.d("Queue", week.toString());
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,

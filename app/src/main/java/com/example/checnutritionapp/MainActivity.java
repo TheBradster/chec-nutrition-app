@@ -1,5 +1,6 @@
 package com.example.checnutritionapp;
 
+import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -8,11 +9,14 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.checnutritionapp.ui.queue.QueueFragment;
 import com.example.checnutritionapp.utility.JSONUtilities;
 import com.example.checnutritionapp.utility.MealBank;
 import com.example.checnutritionapp.utility.Week;
@@ -22,6 +26,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.ParseException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,6 +79,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.d("Main Activity", week.toString());
+
+/*        // Send data to queue page
+        QueueFragment queue = new QueueFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Week", week);
+        queue.setArguments(bundle);*/
+
+/*        FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.nav_queue, queue).commit();*/
 
         /*// Send data to home fragment
         Bundle bundle = new Bundle();
