@@ -31,10 +31,10 @@ public class User implements Serializable {
         String user_weight,
         String user_location,
         String user_occupation,
-        int user_familyc,
-        int user_glucose,
-        int user_a1c,
-        int user_cholesterol,
+        Integer user_familyc,
+        Integer user_glucose,
+        Integer user_a1c,
+        Integer user_cholesterol,
         String[] user_allergens
     ) {
         u_id = id;
@@ -62,7 +62,7 @@ public class User implements Serializable {
     }
 
     public String getFullName() {
-        String name = user_fname + " " + user_lname;
+        String name = u_fname + " " + u_lname;
         return name;
     }
 
