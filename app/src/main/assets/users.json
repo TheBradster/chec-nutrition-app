@@ -9,11 +9,11 @@
 			"user_height": "185cm",
 			"user_weight": "66kg",
 			"user_location": "Memphis, TN",
-			"user_occupation": "Student"
-			"user_familyc", 1
-			"user_glucose", 100
-			"user_a1c", 5
-			"user_cholesterol", 180
+			"user_occupation": "Student",
+			"user_familyc": 1,
+			"user_glucose": 100,
+			"user_a1c": 5,
+			"user_cholesterol": 180,
 			"user_allergens": ["Wheat", "Egg", "Nuts"]
 		},
 		{
@@ -25,11 +25,11 @@
 			"user_height": "165cm",
 			"user_weight": "44kg",
 			"user_location": "Millington, TN",
-			"user_occupation": "Pharmacist"
-			"user_familyc", 1
-			"user_glucose", 100
-			"user_a1c", 5
-			"user_cholesterol", 180
+			"user_occupation": "Pharmacist",
+			"user_familyc": 1,
+			"user_glucose": 100,
+			"user_a1c": 5,
+			"user_cholesterol": 180,
 			"user_allergens": ["Wheat", "Egg", "Nuts"]
 		},
 		{
@@ -41,11 +41,11 @@
 			"user_height": "175cm",
 			"user_weight": "78kg",
 			"user_location": "Albuquerque, NM",
-			"user_occupation": "Lawyer"
-			"user_familyc", 1
-			"user_glucose", 100
-			"user_a1c", 5
-			"user_cholesterol", 180
+			"user_occupation": "Lawyer",
+			"user_familyc": 1,
+			"user_glucose": 100,
+			"user_a1c": 5,
+			"user_cholesterol": 180,
 			"user_allergens": ["Wheat", "Egg", "Nuts"]
 		}
 	]
