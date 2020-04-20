@@ -13,8 +13,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.checnutritionapp.model.User;
 import com.example.checnutritionapp.utility.JSONUtilities;
 import com.example.checnutritionapp.utility.MealBank;
+import com.example.checnutritionapp.utility.UserSet;
 import com.example.checnutritionapp.utility.Week;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -56,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        // Import data
-
+        // Import Meal data
         try {
             // Get meal data
             JSONObject mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "meals.json");
@@ -68,11 +69,26 @@ public class MainActivity extends AppCompatActivity {
             JSONObject scheduleJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "test_schedule.json");
             week = new Week(scheduleJSON, meals);
         } catch (JSONException e) {
+            System.out.println("MEAL JSON FAILURE");
             e.printStackTrace();
             this.finish();
         }
 
         Log.d("Main Activity", week.toString());
+
+        // Import Users data
+        try {
+            JSONObject usersJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "users.json");
+            UserSet users = new UserSet(usersJSON);
+
+            // Debug only
+            User u = users.getUserById(2);
+            System.out.println(u.getFullName());
+        } catch (JSONException e) {
+            System.out.println("USER JSON FAILURE");
+            e.printStackTrace();
+            this.finish();
+        }
 
         /*// Send data to home fragment
         Bundle bundle = new Bundle();
