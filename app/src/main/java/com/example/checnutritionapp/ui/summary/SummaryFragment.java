@@ -1,26 +1,22 @@
 package com.example.checnutritionapp.ui.summary;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.R;
-import com.example.checnutritionapp.model.Meal;
+import com.example.checnutritionapp.model.Location;
 import com.example.checnutritionapp.model.Order;
 
-import java.util.Date;
-
-public class SummaryFragment extends Fragment  {
+public class SummaryFragment extends Fragment {
 
     private SummaryViewModel mViewModel;
 
@@ -41,8 +37,28 @@ public class SummaryFragment extends Fragment  {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(SummaryViewModel.class);
-        // TODO: Use the ViewModel
-        // Get order object from intent
         mOrder = (Order) getActivity().getIntent().getSerializableExtra("Order");
+        Log.d(getClass().toString(), mOrder.toString()); // We have object
+
+        //update pickup address
+        Location location = mOrder.getLocation();
+        Log.d("SummaryFragment", location.toString());
+        TextView pickupLocation = getView().findViewById(R.id.address);
+        pickupLocation.setText(location.getAddress());
+        // update servings1
+        TextView servings1 = getView().findViewById(R.id.servings1);
+        servings1.setText(String.valueOf(mOrder.getTickets()[0].numberOfServings()));
+        // update servings2
+        TextView servings2 = getView().findViewById(R.id.servings2);
+        servings2.setText(String.valueOf(mOrder.getTickets()[1].numberOfServings()));
+        // update pickup time
+        TextView pickupTime = getView().findViewById(R.id.pickupTime);
+        pickupTime.setText("Between 12:00pm and 5:00pm on " + mOrder.pickupDayOfWeek());
+        // update total
+        TextView total = getView().findViewById(R.id.total);
+        total.setText("Total: $" + String.format("%.2f", mOrder.orderTotal()));
+
     }
-}
+};
+
+
