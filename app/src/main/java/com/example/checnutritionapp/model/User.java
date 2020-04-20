@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     // User attribute fields
+    private int u_id;
     private String u_name;
     private String u_fname;
     private String u_lname;
@@ -21,6 +22,7 @@ public class User implements Serializable {
 
     // Constructors
     public User(
+        int id,
         String user_name,
         String user_fname,
         String user_lname,
@@ -35,6 +37,7 @@ public class User implements Serializable {
         int user_cholesterol,
         String[] user_allergens
     ) {
+        u_id = id;
         u_name = user_name;
         u_fname = user_fname;
         u_lname = user_lname;
