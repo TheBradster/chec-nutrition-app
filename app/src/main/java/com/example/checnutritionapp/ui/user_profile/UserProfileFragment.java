@@ -59,15 +59,31 @@ public class UserProfileFragment extends Fragment {
 
         Age="Age: "+age;
 
-        bmi=19.5;
+        foot=5;
+
+        inch=4;
+
+        height=foot+"\'"+inch+"\"";
+
+        lbs=130.01;
+
+        weight=lbs+" lbs";
+
+        bmi=(lbs/((foot*12+inch)*(foot*12+inch)))*703;
 
         BMI="BMI: "+bmi;
 
-        foot=5;
+        fbg=108;
 
-        inch=3;
+        FBG="FBG: "+fbg+" mg/dl";
 
+        a1c=(46.7+fbg)/28.7;
 
+        A1C="A1C: "+a1c;
+
+        cholest=150;
+
+        Cholest="Cholesterol: "+cholest+" mg/dl";
 
         TextView name=getView().findViewById(R.id.textView8);
 
