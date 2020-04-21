@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -41,6 +42,30 @@ public class QueueFragment extends Fragment {
         MainActivity mainActivity = (MainActivity) getActivity();
         week = mainActivity.getWeek();
         Log.d("Queue", week.toString());
+
+        CardView monday = getActivity().findViewById(R.id.monday_card);
+        // Make card disappear if there is no order
+        if (!week.orderPlaced(0)) {
+            monday.setVisibility(View.GONE);
+        }
+        else {
+            TextView meal1 = getActivity().findViewById(R.id.meal1_mon);
+            meal1.setText(week.getOrder(0).getTickets()[0].getMeal().getName());
+            TextView meal2 = getActivity().findViewById(R.id.meal2_mon);
+            meal2.setText(week.getOrder(0).getTickets()[1].getMeal().getName());
+            TextView q1 = getActivity().findViewById(R.id.q1_mon);
+            q1.setText("Quantity: " + week.getOrder(0).getTickets()[0].numberOfServings());
+            TextView q2 = getActivity().findViewById(R.id.q2_mon);
+            q2.setText("Quantity: " + week.getOrder(0).getTickets()[1].numberOfServings());
+            TextView locationName = getActivity().findViewById(R.id.location_mon);
+            locationName.setText(week.getOrder(0).getLocation().getName());
+            TextView address = getActivity().findViewById(R.id.address_mon);
+            address.setText(week.getOrder(0).getLocation().getAddress());
+            TextView total = getActivity().findViewById(R.id.total_mon);
+            total.setText(String.format("$%.2f", week.getOrder(0).orderTotal()));
+        }
+
+
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
