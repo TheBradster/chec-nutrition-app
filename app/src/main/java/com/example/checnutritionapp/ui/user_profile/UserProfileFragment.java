@@ -20,10 +20,25 @@ public class UserProfileFragment extends Fragment {
     private UserProfileViewModel userProfileViewModel;
 
     private String Name;
+    private String job;
+    private String occ;
+    private int fam;
+    private String Fam;
     private int age;
     private String Age;
     private double bmi;
     private String BMI;
+    private int foot;
+    private int inch;
+    private String height;
+    private double lbs;
+    private String weight;
+    private int fbg;
+    private String FBG;
+    private double a1c;
+    private String A1C;
+    private int cholest;
+    private String Cholest;
 
 
     @Override
@@ -32,6 +47,14 @@ public class UserProfileFragment extends Fragment {
 
         Name="Percy Jackson";
 
+        job="Hero";
+
+        occ="Occupation: "+job;
+
+        fam=5;
+
+        Fam="Family Size: "+fam;
+
         age=16;
 
         Age="Age: "+age;
@@ -39,6 +62,12 @@ public class UserProfileFragment extends Fragment {
         bmi=19.5;
 
         BMI="BMI: "+bmi;
+
+        foot=5;
+
+        inch=3;
+
+
 
         TextView name=getView().findViewById(R.id.textView8);
 
