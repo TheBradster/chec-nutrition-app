@@ -178,13 +178,14 @@ public class YourWeekFragment extends Fragment {
         cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY + day);
         final Date orderTime = cal.getTime();
 
+        final Order orderToPass = (alreadyPlaced) ? week.getOrder(day) : new Order(orderTime, meals);
 
 
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
-                intent.putExtra("Order", new Order(orderTime, meals));
+                intent.putExtra("Order", orderToPass);
                 startActivityForResult(intent, day);
             }
         });

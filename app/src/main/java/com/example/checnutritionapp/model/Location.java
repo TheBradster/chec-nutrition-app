@@ -38,6 +38,6 @@ public class Location implements Serializable {
 
     @Override
     public String toString() {
-        return mName;
+        return mName + ", " + mAddress;
     }
 }
