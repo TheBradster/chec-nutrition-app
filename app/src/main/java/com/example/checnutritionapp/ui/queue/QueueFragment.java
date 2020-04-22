@@ -65,6 +65,72 @@ public class QueueFragment extends Fragment {
             total.setText(String.format("$%.2f", week.getOrder(0).orderTotal()));
         }
 
+        CardView tuesday = getActivity().findViewById(R.id.tuesday_card);
+        // Make card disappear if there is no order
+        if (!week.orderPlaced(1)) {
+            tuesday.setVisibility(View.GONE);
+        }
+        else {
+            TextView meal1 = getActivity().findViewById(R.id.meal1_tue);
+            meal1.setText(week.getOrder(1).getTickets()[0].getMeal().getName());
+            TextView meal2 = getActivity().findViewById(R.id.meal2_tue);
+            meal2.setText(week.getOrder(1).getTickets()[1].getMeal().getName());
+            TextView q1 = getActivity().findViewById(R.id.q1_tue);
+            q1.setText("Quantity: " + week.getOrder(1).getTickets()[0].numberOfServings());
+            TextView q2 = getActivity().findViewById(R.id.q2_tue);
+            q2.setText("Quantity: " + week.getOrder(1).getTickets()[1].numberOfServings());
+            TextView locationName = getActivity().findViewById(R.id.location_tue);
+            locationName.setText(week.getOrder(1).getLocation().getName());
+            TextView address = getActivity().findViewById(R.id.address_tue);
+            address.setText(week.getOrder(1).getLocation().getAddress());
+            TextView total = getActivity().findViewById(R.id.total_tue);
+            total.setText(String.format("$%.2f", week.getOrder(1).orderTotal()));
+        }
+
+        CardView wednesday = getActivity().findViewById(R.id.wednesday_card);
+        // Make card disappear if there is no order
+        if (!week.orderPlaced(2)) {
+            wednesday.setVisibility(View.GONE);
+        }
+        else {
+            TextView meal1 = getActivity().findViewById(R.id.meal1_wed);
+            meal1.setText(week.getOrder(2).getTickets()[0].getMeal().getName());
+            TextView meal2 = getActivity().findViewById(R.id.meal2_wed);
+            meal2.setText(week.getOrder(2).getTickets()[1].getMeal().getName());
+            TextView q1 = getActivity().findViewById(R.id.q1_wed);
+            q1.setText("Quantity: " + week.getOrder(2).getTickets()[0].numberOfServings());
+            TextView q2 = getActivity().findViewById(R.id.q2_wed);
+            q2.setText("Quantity: " + week.getOrder(2).getTickets()[1].numberOfServings());
+            TextView locationName = getActivity().findViewById(R.id.location_wed);
+            locationName.setText(week.getOrder(2).getLocation().getName());
+            TextView address = getActivity().findViewById(R.id.address_wed);
+            address.setText(week.getOrder(2).getLocation().getAddress());
+            TextView total = getActivity().findViewById(R.id.total_wed);
+            total.setText(String.format("$%.2f", week.getOrder(2).orderTotal()));
+        }
+
+        CardView thursday = getActivity().findViewById(R.id.thursday_card);
+        // Make card disappear if there is no order
+        if (!week.orderPlaced(3)) {
+            thursday.setVisibility(View.GONE);
+        }
+        else {
+            TextView meal1 = getActivity().findViewById(R.id.meal1_thur);
+            meal1.setText(week.getOrder(3).getTickets()[0].getMeal().getName());
+            TextView meal2 = getActivity().findViewById(R.id.meal2_thur);
+            meal2.setText(week.getOrder(3).getTickets()[1].getMeal().getName());
+            TextView q1 = getActivity().findViewById(R.id.q1_thur);
+            q1.setText("Quantity: " + week.getOrder(3).getTickets()[0].numberOfServings());
+            TextView q2 = getActivity().findViewById(R.id.q2_thur);
+            q2.setText("Quantity: " + week.getOrder(3).getTickets()[1].numberOfServings());
+            TextView locationName = getActivity().findViewById(R.id.location_thur);
+            locationName.setText(week.getOrder(3).getLocation().getName());
+            TextView address = getActivity().findViewById(R.id.address_thur);
+            address.setText(week.getOrder(3).getLocation().getAddress());
+            TextView total = getActivity().findViewById(R.id.total_thur);
+            total.setText(String.format("$%.2f", week.getOrder(3).orderTotal()));
+        }
+
 
     }
 
