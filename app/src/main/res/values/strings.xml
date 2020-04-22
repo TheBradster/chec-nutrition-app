@@ -58,6 +58,18 @@
     <string name="allerg_head">Known allergens</string>
     <string name="allerg_sample">- Nuts [X]\n- Dairy [ ]\n- Egg [X]\n- Fish [ ]\n- Mustard [ ]\n- Shellfish [ ]\n- Wheat [X]</string>
     <string name="allerg_notice">It is important you do not consume food containing allergens if you are prone to allergic reactions.\n\nContact a medical professional for advice if you are unsure before selecting a meal.</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
 
