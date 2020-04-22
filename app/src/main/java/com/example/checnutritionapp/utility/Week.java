@@ -109,6 +109,14 @@ public class Week implements Serializable {
         return array;
     }
 
+    public double getWeekOrderTotal() {
+        double total = 0;
+        for (Order order : orders) {
+            total += order.orderTotal();
+        }
+        return total;
+    }
+
     @Override
     public String toString() {
         return Arrays.deepToString(schedule);

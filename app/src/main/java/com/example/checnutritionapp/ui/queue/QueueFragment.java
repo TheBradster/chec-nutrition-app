@@ -43,6 +43,10 @@ public class QueueFragment extends Fragment {
         week = mainActivity.getWeek();
         Log.d("Queue", week.toString());
 
+        // Update total
+        TextView grandTotal = getActivity().findViewById(R.id.total);
+        grandTotal.setText(String.format("Total: $%.2f", week.getWeekOrderTotal()));
+
         CardView monday = getActivity().findViewById(R.id.monday_card);
         // Make card disappear if there is no order
         if (!week.orderPlaced(0)) {
