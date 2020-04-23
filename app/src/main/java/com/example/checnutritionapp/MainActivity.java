@@ -1,5 +1,6 @@
 package com.example.checnutritionapp;
 
+import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -8,12 +9,18 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+<<<<<<< HEAD
 import com.example.checnutritionapp.model.User;
+=======
+import com.example.checnutritionapp.ui.queue.QueueFragment;
+>>>>>>> b3d4a0c6c08b97a29553eea8561bf413ebc5440a
 import com.example.checnutritionapp.utility.JSONUtilities;
 import com.example.checnutritionapp.utility.MealBank;
 import com.example.checnutritionapp.utility.UserSet;
@@ -24,6 +31,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.ParseException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -90,11 +99,6 @@ public class MainActivity extends AppCompatActivity {
             this.finish();
         }
 
-        /*// Send data to home fragment
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("Week", week);
-        HomeFragment fragment = new HomeFragment();
-        fragment.setArguments(bundle);*/
     }
 
     public Week getWeek() {
