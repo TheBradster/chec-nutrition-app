@@ -1,33 +1,23 @@
 package com.example.checnutritionapp;
 
-import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import com.example.checnutritionapp.ui.queue.QueueFragment;
+import com.example.checnutritionapp.model.User;
 import com.example.checnutritionapp.utility.JSONUtilities;
 import com.example.checnutritionapp.utility.MealBank;
+import com.example.checnutritionapp.utility.UserSet;
 import com.example.checnutritionapp.utility.Week;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.ParseException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,22 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
     private Week week;
 
+    private User currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -58,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_order_history, R.id.nav_queue)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        // Import data
-
+        // Import Meal data
         try {
             // Get meal data
             JSONObject mealsJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "meals.json");
@@ -74,34 +60,38 @@ public class MainActivity extends AppCompatActivity {
             JSONObject scheduleJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "test_schedule.json");
             week = new Week(scheduleJSON, meals);
         } catch (JSONException e) {
+            System.out.println("MEAL JSON FAILURE");
             e.printStackTrace();
             this.finish();
         }
 
         Log.d("Main Activity", week.toString());
 
-/*        // Send data to queue page
-        QueueFragment queue = new QueueFragment();
+        // Import Users data
+        try {
+            JSONObject usersJSON = JSONUtilities.loadJSONFromAsset(getApplicationContext(), "users.json");
+            UserSet users = new UserSet(usersJSON);
 
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("Week", week);
-        queue.setArguments(bundle);*/
+            // Debug only
+            User u = users.getUserById(2);
+            System.out.println(u.getFullName());
 
-/*        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.nav_queue, queue).commit();*/
+            // Sample user
+            currentUser = users.getUserById(2);
+        } catch (JSONException e) {
+            System.out.println("USER JSON FAILURE");
+            e.printStackTrace();
+            this.finish();
+        }
 
-        /*// Send data to home fragment
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("Week", week);
-        HomeFragment fragment = new HomeFragment();
-        fragment.setArguments(bundle);*/
+
     }
 
     public Week getWeek() {
         return week;
     }
 
-
+    public User getCurrentUser() { return currentUser; }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
