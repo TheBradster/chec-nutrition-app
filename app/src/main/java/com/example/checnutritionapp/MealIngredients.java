@@ -32,7 +32,7 @@ public class MealIngredients extends Fragment {
 
         String[] ingredients = m.getIngredients();
 
-        TextView text = v.findViewById(R.id.ingredients_list);
+        TextView ingList = v.findViewById(R.id.ingredients_list);
 
         String s = "";
         for (int i = 0; i < ingredients.length; i++) {
@@ -41,7 +41,14 @@ public class MealIngredients extends Fragment {
                 s = s + ", ";
         }
 
-        text.setText(s);
+        ingList.setText(s);
+
+        TextView vR = v.findViewById(R.id.vegan_response);
+        if (m.getVegan()) {
+            vR.setText("Yes!");
+        } else {
+            vR.setText("No!");
+        }
 
         return v;
     }
