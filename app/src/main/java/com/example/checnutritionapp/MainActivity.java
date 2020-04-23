@@ -25,22 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
     private Week week;
 
+    private User currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -48,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_order_history, R.id.nav_queue)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -78,11 +75,15 @@ public class MainActivity extends AppCompatActivity {
             // Debug only
             User u = users.getUserById(2);
             System.out.println(u.getFullName());
+
+            // Sample user
+            currentUser = users.getUserById(2);
         } catch (JSONException e) {
             System.out.println("USER JSON FAILURE");
             e.printStackTrace();
             this.finish();
         }
+
 
     }
 
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         return week;
     }
 
-
+    public User getCurrentUser() { return currentUser; }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
