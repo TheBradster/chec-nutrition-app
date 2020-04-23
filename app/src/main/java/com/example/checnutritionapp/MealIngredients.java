@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.checnutritionapp.model.Meal;
 
@@ -28,6 +29,19 @@ public class MealIngredients extends Fragment {
 
         Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
         View v = inflater.inflate(R.layout.meal_ingredients_fragment, container, false);
+
+        String[] ingredients = m.getIngredients();
+
+        TextView text = v.findViewById(R.id.ingredients_list);
+
+        String s = "";
+        for (int i = 0; i < ingredients.length; i++) {
+            s = s + ingredients[i];
+            if (i != ingredients.length - 1)
+                s = s + ", ";
+        }
+
+        text.setText(s);
 
         return v;
     }

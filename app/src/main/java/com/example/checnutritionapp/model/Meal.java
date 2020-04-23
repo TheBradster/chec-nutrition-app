@@ -54,6 +54,10 @@ public class Meal implements Serializable {
 
     public String[] getNutrition() { return nutrition; }
 
+    public String[] getIngredients() { return ingredients; }
+
+    public boolean getVegan() { return vegan; }
+
     @Override
     public String toString() {
         return "id: " + mId + " Name: " + mName + " Price: " + mPrice;
