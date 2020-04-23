@@ -18,9 +18,11 @@ public class Meal implements Serializable {
     private String procedure;
     private String prepTime;
     private String[] nutrition;
+    private String[] ingredients;
+    private boolean vegan;
 
     // Constructors
-    public Meal(int id, String name, double price, String desc, String proc, String prep, String[] nut) {
+    public Meal(int id, String name, double price, String desc, String proc, String prep, String[] nut, String[] ing, boolean v) {
         mId = id;
         mName = name;
         mPrice = price;
@@ -28,6 +30,8 @@ public class Meal implements Serializable {
         procedure = proc;
         prepTime = prep;
         nutrition = nut;
+        ingredients = ing;
+        vegan = v;
     }
 
     public Meal(String meal1) {
