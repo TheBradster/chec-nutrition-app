@@ -1,9 +1,10 @@
-package com.example.checnutritionapp.utility;
+package com.example.checnutritionapp.model;
 
 import android.util.Log;
 
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
+import com.example.checnutritionapp.utility.MealBank;
 
 import org.json.JSONArray;
 import org.json.JSONException;

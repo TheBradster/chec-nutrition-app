@@ -14,7 +14,7 @@ import com.example.checnutritionapp.model.User;
 import com.example.checnutritionapp.utility.JSONUtilities;
 import com.example.checnutritionapp.utility.MealBank;
 import com.example.checnutritionapp.utility.UserSet;
-import com.example.checnutritionapp.utility.Week;
+import com.example.checnutritionapp.model.Week;
 import com.google.android.material.navigation.NavigationView;
 import org.json.JSONException;
 import org.json.JSONObject;

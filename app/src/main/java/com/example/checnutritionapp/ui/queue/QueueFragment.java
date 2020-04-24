@@ -17,7 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.*;
-import com.example.checnutritionapp.utility.Week;
+import com.example.checnutritionapp.model.Week;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -23,7 +23,7 @@ import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.SummaryActivity;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
-import com.example.checnutritionapp.utility.Week;
+import com.example.checnutritionapp.model.Week;
 
 
 import org.json.JSONArray;
