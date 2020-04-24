@@ -11,23 +11,23 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.model.User;
 
-public class Edit_profile_Info<User> extends Fragment {
+public class EditProfileFragment extends Fragment {
 
     private EditProfileViewModel mViewModel;
-
-    public static Edit_profile_Info newInstance() {
-        return new Edit_profile_Info();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-         User u = (User) getActivity().getIntent().getSerializableExtra(name:"User");
+        MainActivity mainActivity = (MainActivity) getActivity();
+        User u = mainActivity.getCurrentUser();
+
         View v = inflater.inflate(R.layout.edit_profile_fragment, container, false);
-        String[] Users = u.getUsers();
+
         TextView[] vals = {
                 v.findViewById(R.id.user_name_B),
                 v.findViewById(R.id.emailID_B),
