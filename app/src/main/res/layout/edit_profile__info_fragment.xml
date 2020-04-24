@@ -22,10 +22,10 @@
         app:layout_constraintVertical_bias="0.068" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="115dp"
-        android:layout_height="28dp"
-        android:text="First name: "
+        android:id="@+id/user_name_A"
+        android:layout_width="174dp"
+        android:layout_height="25dp"
+        android:text="First and last name:"
         android:textSize="0.11in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,95 +35,82 @@
         app:layout_constraintVertical_bias="0.234" />
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last name: "
-        android:textSize="0.11in"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address: "
-        android:textSize="0.11in"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
-
-    <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/emailID_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email address: "
         android:textSize="0.11in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.314" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/occupation_A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Occupation: "
+        android:textSize="0.11in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393" />
+
+    <TextView
+        android:id="@+id/height_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Height: "
         android:textSize="0.11in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.564" />
+        app:layout_constraintVertical_bias="0.473" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/weight_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Weight: "
         android:textSize="0.11in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647" />
+        app:layout_constraintVertical_bias="0.552" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/age_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of family members: "
+        android:text="Your age: "
         android:textSize="0.11in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.732" />
+        app:layout_constraintVertical_bias="0.637" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/family_size_A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Known food allergies: "
+        android:text="Size of family: "
         android:textSize="0.11in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
+        app:layout_constraintVertical_bias="0.718" />
 
     <Button
         android:id="@+id/button"
