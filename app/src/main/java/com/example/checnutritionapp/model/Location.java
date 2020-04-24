@@ -9,11 +9,13 @@ import java.io.Serializable;
 public class Location implements Serializable {
 
     // Fields
+    private int mID;
     private String mName;
     private String mAddress;
 
     // Constructors
-    public Location(String name, String address) {
+    public Location(int id, String name, String address) {
+        mID = id;
         mName = name;
         mAddress = address;
     }
@@ -26,12 +28,17 @@ public class Location implements Serializable {
         return mAddress;
     }
 
+    public int getID() {
+        return mID;
+    }
+
     public static Location[] convertLocationList(JSONObject data) throws JSONException {
         JSONArray array = data.getJSONArray("Locations");
         Location[] locations = new Location[array.length()];
         for (int i = 0; i < array.length(); i++) {
             JSONObject obj = array.getJSONObject(i);
-            locations[i] = new Location(obj.getString("Name"), obj.getString("Address"));
+            locations[i] = new Location(Integer.parseInt(obj.getString("ID")),
+                    obj.getString("Name"), obj.getString("Address"));
         }
         return locations;
     }

@@ -67,7 +67,7 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
 
         // Set up location dropdown
         Spinner locationSelect = getView().findViewById(R.id.location);
-        // TODO replace with something with JSON files
+
         // Import locations from JSON file
         Location[] locations = null;
         try {
@@ -98,6 +98,10 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
 
             }
         };
+        // Set location to default at previously chosen location if we're editing
+        if (mOrder.getLocation() != null) {
+            locationSelect.setSelection(mOrder.getLocation().getID());
+        }
         locationSelect.setOnItemSelectedListener(selectListener);
 
         // Set correct pickup time
@@ -116,6 +120,7 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
                 getActivity().finish();
             }
         });
+        updateServing();
     }
 
     @Override
