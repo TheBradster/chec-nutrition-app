@@ -135,6 +135,15 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         if (mOrder.orderTotal() == 0) { // Hide if new order
             cancelOrder.setVisibility(View.GONE);
         }
+        cancelOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("Order", (Bundle) null);
+                getActivity().setResult(Activity.RESULT_OK, intent);
+                getActivity().finish();
+            }
+        });
 
         updateServing();
     }
