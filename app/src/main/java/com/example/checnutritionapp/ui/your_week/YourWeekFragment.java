@@ -1,7 +1,9 @@
 package com.example.checnutritionapp.ui.your_week;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -177,7 +179,7 @@ public class YourWeekFragment extends Fragment {
             i.setText("Edit Order");
         }
         else if (pastCutoff) {
-            i.setText("");
+            i.setText("Unavailable");
         }
         else {
             i.setText("Place Order");
@@ -201,6 +203,18 @@ public class YourWeekFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), (pastCutoff) ? SummaryActivity.class : PlaceOrderActivity.class);
                     intent.putExtra("Order", orderToPass);
                     startActivityForResult(intent, day);
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Day Unavailable");
+                    builder.setMessage("You cannot place an order for " + getDay(day) + " as you have passed the 24-hour cutoff. Please try again next week.");
+                    builder.setNeutralButton("OK, thanks!", new DialogInterface.OnClickListener()
+                    {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alert = builder.create();
+                    alert.show();
                 }
             }
         });
@@ -231,5 +245,15 @@ public class YourWeekFragment extends Fragment {
             refreshButtons();
         }
 
+    }
+
+    private static String getDay(int i) {
+        switch (i) {
+            case 0: return "Monday";
+            case 1: return "Tuesday";
+            case 2: return "Wednesday";
+            case 3: return "Thursday";
+            default: return "this day";
+        }
     }
 }
