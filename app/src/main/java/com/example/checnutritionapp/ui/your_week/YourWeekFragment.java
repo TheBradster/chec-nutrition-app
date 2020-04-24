@@ -198,7 +198,7 @@ public class YourWeekFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!pastCutoff || alreadyPlaced) {
-                    Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
+                    Intent intent = new Intent(getActivity(), (pastCutoff) ? SummaryActivity.class : PlaceOrderActivity.class);
                     intent.putExtra("Order", orderToPass);
                     startActivityForResult(intent, day);
                 }
