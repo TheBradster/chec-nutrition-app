@@ -1,0 +1,52 @@
+{
+	"Users": [
+		{
+			"id": 0,
+			"user_name": "johndoe",
+			"user_fname": "John",
+			"user_lname": "Doe",
+			"user_age": "21",
+			"user_height": "185cm",
+			"user_weight": "66kg",
+			"user_location": "Memphis, TN",
+			"user_occupation": "Student",
+			"user_familyc": 1,
+			"user_glucose": 100,
+			"user_a1c": 5,
+			"user_cholesterol": 180,
+			"user_allergens": ["Wheat", "Egg", "Nuts"]
+		},
+		{
+			"id": 1,
+			"user_name": "janesample",
+			"user_fname": "Jane",
+			"user_lname": "Sample",
+			"user_age": "29",
+			"user_height": "165cm",
+			"user_weight": "44kg",
+			"user_location": "Millington, TN",
+			"user_occupation": "Pharmacist",
+			"user_familyc": 1,
+			"user_glucose": 100,
+			"user_a1c": 5,
+			"user_cholesterol": 180,
+			"user_allergens": ["Wheat", "Egg", "Nuts"]
+		},
+		{
+			"id": 2,
+			"user_name": "saulgoodman",
+			"user_fname": "Saul",
+			"user_lname": "Goodman",
+			"user_age": "49",
+			"user_height": "175cm",
+			"user_weight": "78kg",
+			"user_location": "Albuquerque, NM",
+			"user_occupation": "Lawyer",
+			"user_familyc": 1,
+			"user_glucose": 100,
+			"user_a1c": 5,
+			"user_cholesterol": 180,
+			"user_allergens": ["Wheat", "Egg", "Nuts"]
+		}
+	]
+}

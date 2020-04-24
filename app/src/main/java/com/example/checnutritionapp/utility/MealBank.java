@@ -16,9 +16,11 @@ public class MealBank {
 
     public MealBank(JSONObject jsonData) throws JSONException {
         JSONArray mealsArray = jsonData.getJSONArray("Meals");
+
         // Log.d("MealBank",mealsArray.toString());
         for (int i = 0; i < mealsArray.length(); i++) {
             JSONObject meal = mealsArray.getJSONObject(i);
+            JSONArray ing = meal.getJSONArray("Ingredients");
             Integer id = (Integer) meal.get("id");
             String[] nutrition = {
                     meal.getString("Calories/serving (kcal)"),
@@ -36,14 +38,33 @@ public class MealBank {
                     meal.getString("Protein")
             };
 
+            String[] ingredients = convertJSONtoString(ing);
+            String v = meal.getString("Vegan");
+            boolean vegan = false;
+            if (v.equals("Yes"))
+                vegan = true;
+
             mealDictionary.put(id, new Meal(id, meal.getString("Name"), Double.parseDouble(meal.getString("Price per serving ").substring(1)), meal.getString("Description"), meal.getString("Procedure"),
-                    meal.getString("Time for prep"), nutrition));
+                    meal.getString("Time for prep"), nutrition, ingredients, vegan));
         }
         Log.d("MealBank", mealDictionary.toString());
     }
 
     public Meal getMealById(int day) {
         return mealDictionary.get(day);
+    }
+
+    public static String[] convertJSONtoString(JSONArray j) {
+        String[] s = null;
+
+        if (j != null) {
+            int l = j.length();
+            s = new String[l];
+            for (int i = 0; i < l; i++) {
+                s[i] = j.optString(i);
+            }
+        }
+        return s;
     }
 
 }

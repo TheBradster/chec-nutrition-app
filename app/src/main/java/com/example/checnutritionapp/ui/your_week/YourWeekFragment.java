@@ -1,7 +1,9 @@
 package com.example.checnutritionapp.ui.your_week;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,7 +25,7 @@ import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.SummaryActivity;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
-import com.example.checnutritionapp.utility.Week;
+import com.example.checnutritionapp.model.Week;
 
 
 import org.json.JSONArray;
@@ -31,6 +33,7 @@ import org.json.JSONException;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -166,9 +169,21 @@ public class YourWeekFragment extends Fragment {
     private void linkOrderButton(Button i, final int day) {
 
         final boolean alreadyPlaced = week.orderPlaced(day);
+        final boolean pastCutoff = week.dayPastCutoff(day);
 
         // Set button text
-        i.setText((alreadyPlaced) ? "View Order" : "Place Order");
+        if (alreadyPlaced && pastCutoff) {
+            i.setText("View Order");
+        }
+        else if (alreadyPlaced) {
+            i.setText("Edit Order");
+        }
+        else if (pastCutoff) {
+            i.setText("Unavailable");
+        }
+        else {
+            i.setText("Place Order");
+        }
 
         // Get meals from schedule
         final Meal[] meals = week.getMealsForDay(day);
@@ -184,9 +199,23 @@ public class YourWeekFragment extends Fragment {
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
-                intent.putExtra("Order", orderToPass);
-                startActivityForResult(intent, day);
+                if (!pastCutoff || alreadyPlaced) {
+                    Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
+                    intent.putExtra("Order", orderToPass);
+                    startActivityForResult(intent, day);
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Day Unavailable");
+                    builder.setMessage("You cannot place an order for " + getDay(day) + " as you have passed the 24-hour cutoff. Please try again next week.");
+                    builder.setNeutralButton("OK, thanks!", new DialogInterface.OnClickListener()
+                    {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
             }
         });
     }
@@ -203,11 +232,12 @@ public class YourWeekFragment extends Fragment {
             // Save week object to file
             try {
                 // Saved to /data/data/com.example.checnutritionapp
-                FileOutputStream out = getActivity().openFileOutput("saved_orders.json", Context.MODE_PRIVATE);
-                JSONArray weekData = week.getOrdersJSON();
-                out.write(weekData.toString().getBytes());
+                FileOutputStream fileOutputStream = getActivity().openFileOutput("saved_week", Context.MODE_PRIVATE);
+                ObjectOutputStream out = new ObjectOutputStream(fileOutputStream);
+                out.writeObject(week);
                 out.close();
-            } catch (IOException | JSONException e) {
+                fileOutputStream.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
@@ -215,5 +245,15 @@ public class YourWeekFragment extends Fragment {
             refreshButtons();
         }
 
+    }
+
+    private static String getDay(int i) {
+        switch (i) {
+            case 0: return "Monday";
+            case 1: return "Tuesday";
+            case 2: return "Wednesday";
+            case 3: return "Thursday";
+            default: return "this day";
+        }
     }
 }
