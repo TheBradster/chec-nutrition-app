@@ -1,5 +1,6 @@
 package com.example.checnutritionapp.ui.queue;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,6 +54,9 @@ public class QueueFragment extends Fragment {
             monday.setVisibility(View.GONE);
         }
         else {
+            if (week.dayPastCutoff(0)) {
+                monday.setCardBackgroundColor(Color.GRAY);
+            }
             TextView meal1 = getActivity().findViewById(R.id.meal1_mon);
             meal1.setText(week.getOrder(0).getTickets()[0].getMeal().getName());
             TextView meal2 = getActivity().findViewById(R.id.meal2_mon);
@@ -75,6 +79,9 @@ public class QueueFragment extends Fragment {
             tuesday.setVisibility(View.GONE);
         }
         else {
+            if (week.dayPastCutoff(1)) {
+                monday.setCardBackgroundColor(Color.GRAY);
+            }
             TextView meal1 = getActivity().findViewById(R.id.meal1_tue);
             meal1.setText(week.getOrder(1).getTickets()[0].getMeal().getName());
             TextView meal2 = getActivity().findViewById(R.id.meal2_tue);
@@ -97,6 +104,9 @@ public class QueueFragment extends Fragment {
             wednesday.setVisibility(View.GONE);
         }
         else {
+            if (week.dayPastCutoff(2)) {
+                monday.setCardBackgroundColor(Color.GRAY);
+            }
             TextView meal1 = getActivity().findViewById(R.id.meal1_wed);
             meal1.setText(week.getOrder(2).getTickets()[0].getMeal().getName());
             TextView meal2 = getActivity().findViewById(R.id.meal2_wed);
@@ -119,6 +129,9 @@ public class QueueFragment extends Fragment {
             thursday.setVisibility(View.GONE);
         }
         else {
+            if (week.dayPastCutoff(3)) {
+                monday.setCardBackgroundColor(Color.GRAY);
+            }
             TextView meal1 = getActivity().findViewById(R.id.meal1_thur);
             meal1.setText(week.getOrder(3).getTickets()[0].getMeal().getName());
             TextView meal2 = getActivity().findViewById(R.id.meal2_thur);
