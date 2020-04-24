@@ -13,6 +13,8 @@ import org.json.JSONObject;
 import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Class represents a schedule for a week.
@@ -21,6 +23,7 @@ public class Week implements Serializable {
 
     private Meal[][] schedule;
     private Order[] orders;
+    private Date firstDayOfWeek = getFirstDayOfWeek();
 
     /**
      * Primary constructor. Should automatically retrieve schedule for the week.
@@ -117,6 +120,17 @@ public class Week implements Serializable {
                 total += order.orderTotal();
         }
         return total;
+    }
+
+    public Date getFirstDayOfWeek() {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        return cal.getTime();
+    }
+
+    public boolean dayPastCutoff(int day) {
+        
+        return false;
     }
 
     @Override
