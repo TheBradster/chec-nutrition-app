@@ -200,7 +200,7 @@ public class YourWeekFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (!pastCutoff || alreadyPlaced) {
-                    Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
+                    Intent intent = new Intent(getActivity(), (pastCutoff) ? SummaryActivity.class : PlaceOrderActivity.class);
                     intent.putExtra("Order", orderToPass);
                     startActivityForResult(intent, day);
                 } else {
@@ -227,7 +227,7 @@ public class YourWeekFragment extends Fragment {
             // Update week object
             Order newOrder = (Order) data.getSerializableExtra("Order");
             week.updateOrder(requestCode, newOrder);
-            Log.d("OnActivityResult",week.getOrder(requestCode)+"");
+//            Log.d("OnActivityResult",week.getOrder(requestCode)+"");
 
             // Save week object to file
             try {

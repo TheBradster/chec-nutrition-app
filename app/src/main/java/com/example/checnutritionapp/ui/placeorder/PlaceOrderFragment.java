@@ -67,7 +67,7 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
 
         // Set up location dropdown
         Spinner locationSelect = getView().findViewById(R.id.location);
-        // TODO replace with something with JSON files
+
         // Import locations from JSON file
         Location[] locations = null;
         try {
@@ -98,6 +98,10 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
 
             }
         };
+        // Set location to default at previously chosen location if we're editing
+        if (mOrder.getLocation() != null) {
+            locationSelect.setSelection(mOrder.getLocation().getID());
+        }
         locationSelect.setOnItemSelectedListener(selectListener);
 
         // Set correct pickup time
@@ -106,16 +110,42 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
 
         // Place order button
         Button placeOrder = getView().findViewById(R.id.placeorderbutton);
+        if (mOrder.orderTotal() != 0) {
+            placeOrder.setText("UPDATE ORDER");
+        }
         placeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("PlaceOrderFragment", "Order Placed\n" + mOrder.toString());
+                // Only place orders if there are items selected
+                if (mOrder.orderTotal() != 0) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Order", mOrder);
+                    getActivity().setResult(Activity.RESULT_OK, intent);
+                }
+                else {
+                    getActivity().setResult(Activity.RESULT_CANCELED);
+                }
+                getActivity().finish();
+            }
+        });
+
+        // Cancel order button
+        Button cancelOrder = getView().findViewById(R.id.cancelorderbutton);
+        if (mOrder.orderTotal() == 0) { // Hide if new order
+            cancelOrder.setVisibility(View.GONE);
+        }
+        cancelOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.putExtra("Order", mOrder);
+                intent.putExtra("Order", (Bundle) null);
                 getActivity().setResult(Activity.RESULT_OK, intent);
                 getActivity().finish();
             }
         });
+
+        updateServing();
     }
 
     @Override
