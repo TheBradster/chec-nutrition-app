@@ -1,9 +1,10 @@
-package com.example.checnutritionapp.utility;
+package com.example.checnutritionapp.model;
 
 import android.util.Log;
 
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
+import com.example.checnutritionapp.utility.MealBank;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,6 +13,8 @@ import org.json.JSONObject;
 import java.io.FileOutputStream;
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Class represents a schedule for a week.
@@ -20,6 +23,7 @@ public class Week implements Serializable {
 
     private Meal[][] schedule;
     private Order[] orders;
+    private Date firstDayOfWeek = createFirstDayOfWeek();
 
     /**
      * Primary constructor. Should automatically retrieve schedule for the week.
@@ -116,6 +120,36 @@ public class Week implements Serializable {
                 total += order.orderTotal();
         }
         return total;
+    }
+
+    public double getRemainingOrderTotal() {
+        double total = 0;
+        for (Order order : orders) {
+            if (order != null && !order.pastCutoff())
+                total += order.orderTotal();
+        }
+        return total;
+    }
+
+    private Date createFirstDayOfWeek() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        return cal.getTime();
+    }
+
+    public boolean dayPastCutoff(int day) {
+        Date today = new Date();
+        // Get order day
+        Calendar cal  = Calendar.getInstance();
+        cal.setTime(firstDayOfWeek);
+        cal.add(Calendar.DAY_OF_WEEK, day);
+        Date orderDay = cal.getTime();
+        return today.compareTo(orderDay) > 0;
+    }
+
+    public Date getFirstDayOfWeek() {
+        return firstDayOfWeek;
     }
 
     @Override
