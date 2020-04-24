@@ -86,13 +86,6 @@ public class MainActivity extends AppCompatActivity {
             this.finish();
         }
 
-        // Debug
-        Log.d("Cutoff Test", week.dayPastCutoff(3) + "");
-        Log.d("Cutoff Test", week.getFirstDayOfWeek().toString());
-        Log.d("Cutoff Test", new Date().toString());
-        Log.d("Cutoff Test", week.dayPastCutoff(6) +"");
-
-
     }
 
     public Week getWeek() {

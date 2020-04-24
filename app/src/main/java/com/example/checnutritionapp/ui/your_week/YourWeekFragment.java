@@ -166,9 +166,21 @@ public class YourWeekFragment extends Fragment {
     private void linkOrderButton(Button i, final int day) {
 
         final boolean alreadyPlaced = week.orderPlaced(day);
+        final boolean pastCutoff = week.dayPastCutoff(day);
 
         // Set button text
-        i.setText((alreadyPlaced) ? "View Order" : "Place Order");
+        if (alreadyPlaced && pastCutoff) {
+            i.setText("View Order");
+        }
+        else if (alreadyPlaced) {
+            i.setText("Edit Order");
+        }
+        else if (pastCutoff) {
+            i.setText("");
+        }
+        else {
+            i.setText("Place Order");
+        }
 
         // Get meals from schedule
         final Meal[] meals = week.getMealsForDay(day);
@@ -184,9 +196,11 @@ public class YourWeekFragment extends Fragment {
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
-                intent.putExtra("Order", orderToPass);
-                startActivityForResult(intent, day);
+                if (!pastCutoff || alreadyPlaced) {
+                    Intent intent = new Intent(getActivity(), (alreadyPlaced) ? SummaryActivity.class : PlaceOrderActivity.class);
+                    intent.putExtra("Order", orderToPass);
+                    startActivityForResult(intent, day);
+                }
             }
         });
     }
