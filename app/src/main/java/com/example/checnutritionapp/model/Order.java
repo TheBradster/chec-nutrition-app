@@ -2,6 +2,7 @@ package com.example.checnutritionapp.model;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -63,6 +64,16 @@ public class Order implements Serializable {
             total += ticket.total();
         }
         return total;
+    }
+
+    public boolean pastCutoff() {
+        Date today = new Date();
+        // Get order day
+        Calendar cal  = Calendar.getInstance();
+        cal.setTime(mPlacedTime);
+        cal.add(Calendar.DAY_OF_WEEK, - 1);
+        Date orderDay = cal.getTime();
+        return today.compareTo(orderDay) > 0;
     }
 
     @Override

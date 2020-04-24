@@ -31,6 +31,7 @@ import org.json.JSONException;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -217,11 +218,12 @@ public class YourWeekFragment extends Fragment {
             // Save week object to file
             try {
                 // Saved to /data/data/com.example.checnutritionapp
-                FileOutputStream out = getActivity().openFileOutput("saved_orders.json", Context.MODE_PRIVATE);
-                JSONArray weekData = week.getOrdersJSON();
-                out.write(weekData.toString().getBytes());
+                FileOutputStream fileOutputStream = getActivity().openFileOutput("saved_week", Context.MODE_PRIVATE);
+                ObjectOutputStream out = new ObjectOutputStream(fileOutputStream);
+                out.writeObject(week);
                 out.close();
-            } catch (IOException | JSONException e) {
+                fileOutputStream.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 

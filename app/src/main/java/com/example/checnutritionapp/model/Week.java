@@ -23,7 +23,7 @@ public class Week implements Serializable {
 
     private Meal[][] schedule;
     private Order[] orders;
-    private Date firstDayOfWeek = getFirstDayOfWeek();
+    private Date firstDayOfWeek = createFirstDayOfWeek();
 
     /**
      * Primary constructor. Should automatically retrieve schedule for the week.
@@ -122,7 +122,16 @@ public class Week implements Serializable {
         return total;
     }
 
-    public Date getFirstDayOfWeek() {
+    public double getRemainingOrderTotal() {
+        double total = 0;
+        for (Order order : orders) {
+            if (order != null && !order.pastCutoff())
+                total += order.orderTotal();
+        }
+        return total;
+    }
+
+    private Date createFirstDayOfWeek() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
@@ -137,6 +146,10 @@ public class Week implements Serializable {
         cal.add(Calendar.DAY_OF_WEEK, day - 1);
         Date orderDay = cal.getTime();
         return today.compareTo(orderDay) > 0;
+    }
+
+    public Date getFirstDayOfWeek() {
+        return firstDayOfWeek;
     }
 
     @Override
