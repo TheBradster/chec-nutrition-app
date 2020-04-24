@@ -110,16 +110,32 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
 
         // Place order button
         Button placeOrder = getView().findViewById(R.id.placeorderbutton);
+        if (mOrder.orderTotal() != 0) {
+            placeOrder.setText("UPDATE ORDER");
+        }
         placeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("PlaceOrderFragment", "Order Placed\n" + mOrder.toString());
-                Intent intent = new Intent();
-                intent.putExtra("Order", mOrder);
-                getActivity().setResult(Activity.RESULT_OK, intent);
+                // Only place orders if there are items selected
+                if (mOrder.orderTotal() != 0) {
+                    Intent intent = new Intent();
+                    intent.putExtra("Order", mOrder);
+                    getActivity().setResult(Activity.RESULT_OK, intent);
+                }
+                else {
+                    getActivity().setResult(Activity.RESULT_CANCELED);
+                }
                 getActivity().finish();
             }
         });
+
+        // Cancel order button
+        Button cancelOrder = getView().findViewById(R.id.cancelorderbutton);
+        if (mOrder.orderTotal() == 0) { // Hide if new order
+            cancelOrder.setVisibility(View.GONE);
+        }
+
         updateServing();
     }
 
