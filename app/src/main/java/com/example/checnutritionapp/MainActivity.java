@@ -19,6 +19,8 @@ import com.google.android.material.navigation.NavigationView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -83,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             this.finish();
         }
+
+        // Debug
+        Log.d("Cutoff Test", week.dayPastCutoff(3) + "");
+        Log.d("Cutoff Test", week.getFirstDayOfWeek().toString());
+        Log.d("Cutoff Test", new Date().toString());
+        Log.d("Cutoff Test", week.dayPastCutoff(6) +"");
 
 
     }

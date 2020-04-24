@@ -124,13 +124,19 @@ public class Week implements Serializable {
 
     public Date getFirstDayOfWeek() {
         Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
         cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
         return cal.getTime();
     }
 
     public boolean dayPastCutoff(int day) {
-        
-        return false;
+        Date today = new Date();
+        // Get order day
+        Calendar cal  = Calendar.getInstance();
+        cal.setTime(firstDayOfWeek);
+        cal.add(Calendar.DAY_OF_WEEK, day - 1);
+        Date orderDay = cal.getTime();
+        return today.compareTo(orderDay) > 0;
     }
 
     @Override
