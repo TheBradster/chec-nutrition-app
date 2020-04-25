@@ -122,7 +122,7 @@ public class UserProfileFragment extends Fragment {
 
         o.setText(user.getOccupation());
 
-      //  f.setText(user.getFamilyCount());
+      f.setText(Integer.toString(user.getFamilyCount()));
 
         a.setText(user.getAge());
 
@@ -130,13 +130,13 @@ public class UserProfileFragment extends Fragment {
 
         h.setText(user.getHeight());
 
-       // fb.setText(user.getGlucose());
+       fb.setText(Integer.toString(user.getGlucose()));
 
         a1.setText(A1C);
 
         l.setText(user.getWeight());
 
-       // c.setText(user.getCholesterol());
+       c.setText(Integer.toString(user.getCholesterol()));
 
         image.setImageResource(R.drawable.percyjackson);
 
