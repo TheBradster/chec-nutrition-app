@@ -14,8 +14,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.checnutritionapp.MainActivity;
+import com.example.checnutritionapp.MealActivity;
 import com.example.checnutritionapp.MealAllergensFragment;
 import com.example.checnutritionapp.MealNutrition;
 import com.example.checnutritionapp.MealProcedureFragment;
@@ -87,6 +90,15 @@ public class MealFragment extends Fragment {
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
             }
         });
+
+        MealActivity mainActivity = (MealActivity) getActivity();
+
+        ImageView pic = (ImageView) v.findViewById(R.id.meal_image);
+
+        String filename = m.getImageNameRef();
+        String packageName = mainActivity.getApplicationContext().getPackageName();
+        int imgID = getResources().getIdentifier(packageName + ":drawable/" + filename, null, null);
+        pic.setImageResource(imgID);
 
         return v;
     }
