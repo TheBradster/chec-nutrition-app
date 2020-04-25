@@ -28,15 +28,17 @@ public class UserProfileFragment extends Fragment {
     private String occ;
     private int fam;
     private String Fam;
-    private int age;
+    private String age;
     private String Age;
     private double bmi;
     private String BMI;
-    private int foot;
+    private double foot;
     private int inch;
     private String height;
+    private String CM;
     private double lbs;
     private String weight;
+    private String KG;
     private int fbg;
     private String FBG;
     private double a1c;
@@ -50,35 +52,41 @@ public class UserProfileFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         MainActivity mainActivity = (MainActivity) getActivity();
         User user = mainActivity.getCurrentUser();
-        Name="Percy Jackson";
+        Name=user.getFullName();
 
-        job="Hero";
+        job=user.getOccupation();
 
         occ="Occupation: "+job;
 
-        fam=5;
+        fam=user.getFamilyCount();
 
         Fam="Family Size: "+fam;
 
-        age=16;
+        age=user.getAge();
 
         Age="Age: "+age;
 
-        foot=5;
+        height=user.getHeight();
 
-        inch=4;
+        CM=height.substring(0,height.length()-2);
 
-        height=foot+"\'"+inch+"\"";
+        inch=Integer.parseInt(CM);
 
-        lbs=130.01;
+        foot=inch/30.48;
 
-        weight=lbs+" lbs";
+        weight=user.getWeight();
 
-        bmi=(lbs/((foot*12+inch)*(foot*12+inch)))*703;
+        KG=weight.substring(0,weight.length()-2);
+
+        lbs=Integer.parseInt(KG);
+
+        lbs=lbs/2.205;
+
+        bmi=(lbs/((foot)*(foot)))*703;
 
         BMI="BMI: "+ String.format("%.1f",bmi);
 
-        fbg=108;
+        fbg=user.getGlucose();
 
         FBG="FBG: "+fbg+" mg/dl";
 
@@ -86,7 +94,7 @@ public class UserProfileFragment extends Fragment {
 
         A1C="A1C: "+String.format("%.1f",a1c);
 
-        cholest=150;
+        cholest=user.getCholesterol();
 
         Cholest="Cholesterol: "+cholest+" mg/dl";
 
@@ -118,9 +126,9 @@ public class UserProfileFragment extends Fragment {
 
         ImageView image =getView().findViewById(R.id.imageView3);
 
-        name.setText(user.getFullName());
+        name.setText(Name);
 
-        o.setText(user.getOccupation());
+        o.setText(occ);
 
       f.setText(Integer.toString(user.getFamilyCount()));
 
