@@ -25,22 +25,15 @@ public class EditProfileFragment extends Fragment {
 
         MainActivity mainActivity = (MainActivity) getActivity();
         User u = mainActivity.getCurrentUser();
-
         View v = inflater.inflate(R.layout.edit_profile_fragment, container, false);
+                u.getFullName(),
+                u.getOccupation(),
+                u.getHeight(),
+                u.getWeight(),
+                u.getAge(),
+                u.getFamilyCount()};
 
-        TextView[] vals = {
-                v.findViewById(R.id.user_name_B),
-                v.findViewById(R.id.emailID_B),
-                v.findViewById(R.id.occupation_B),
-                v.findViewById(R.id.height_B),
-                v.findViewById(R.id.weight_B),
-                v.findViewById(R.id.age_B),
-                v.findViewById(R.id.family_size_B)};
-        for (int i = 0; i < 7; i++) {
-            // vals[i].setText(Users[i]);
-        }
-        return v;
-    }
+}
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
