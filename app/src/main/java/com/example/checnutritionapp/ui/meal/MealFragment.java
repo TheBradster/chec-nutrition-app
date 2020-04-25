@@ -92,7 +92,6 @@ public class MealFragment extends Fragment {
         });
 
         MealActivity mainActivity = (MealActivity) getActivity();
-
         ImageView pic = (ImageView) v.findViewById(R.id.meal_image);
 
         String filename = m.getImageNameRef();

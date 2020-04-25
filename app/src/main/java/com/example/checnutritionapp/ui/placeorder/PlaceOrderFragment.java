@@ -17,9 +17,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.checnutritionapp.MainActivity;
+import com.example.checnutritionapp.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Location;
 import com.example.checnutritionapp.model.Order;
@@ -43,7 +47,10 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.place_order_fragment, container, false);
+        View v = inflater.inflate(R.layout.place_order_fragment, container, false);
+
+
+        return v;
     }
 
     @Override
@@ -54,6 +61,16 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         // Get order object from intent
         mOrder = (Order) getActivity().getIntent().getSerializableExtra("Order");
         Log.d(getClass().toString(), mOrder.toString()); // We have object
+
+        // Set placeholder images with respective meal object references
+        PlaceOrderActivity mainActivity = (PlaceOrderActivity) getActivity();
+        String p = mainActivity.getApplicationContext().getPackageName();
+
+        ImageView leftMeal = (ImageView) mainActivity.findViewById(R.id.order_meal_1);
+        ImageView rightMeal = (ImageView) mainActivity.findViewById(R.id.order_meal_2);
+
+        setMealImage(leftMeal,0, p);
+        setMealImage(rightMeal,1, p);
 
         // Get buttons and set on click listener
         Button plus1 = (Button) getView().findViewById(R.id.plus1);
@@ -171,6 +188,12 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         servings2.setText(String.valueOf(mOrder.getTickets()[1].numberOfServings()));
         TextView total = getView().findViewById(R.id.total);
         total.setText("Total: $" + String.format("%.2f", mOrder.orderTotal()));
+    }
+
+    private void setMealImage(ImageView img, int i, String p) {
+        String f = mOrder.getTickets()[i].getMeal().getImageNameRef();
+        int id = getResources().getIdentifier(p + ":drawable/" + f,null,null);
+        img.setImageResource(id);
     }
 
 }
