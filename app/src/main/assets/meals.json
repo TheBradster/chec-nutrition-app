@@ -21,7 +21,8 @@
             "Sugar": "19.7g",
             "Protein": "24.6g",
             "Vegan": "Yes",
-            "Procedure": "First, roast the squash. Preheat oven to 400 degrees. Next slice the peeled and deseeded squash into thick slices. Toss them in a bowl with sesame seeds, cumin, paprika, vinegar and a generous amount of salt. Finally, lay them out of a tray and bake for 18-20 minutes until tender. Now place the chickpeas, aquafaba (juice from chickpeas), salt, garlic cloves, cumin, lemon juice, and tahini in a food processor and blend until smooth. Set this aside for now. Next, place the barley in a pot of boiling water and boil for 10 minutes, until cooked but still with a slight chew. Drain and set this aside. Now it is time to temper the spices, heat your oil in a saucepan over medium heat, and fry the cumin and coriander seeds for 10-20 seconds until they start to pop. Pour this out onto a plate to cool so it doesn’t cook further in the pan. Assemble your bowls, divide the hummus between two plates and spread it out with a spoon. Lay the butternut squash sizes over and pour the barley on top. Take the tempered spices and oil and pour this over the barley. Finally garnish with pomegranate seeds. Enjoy!"
+            "Procedure": "First, roast the squash. Preheat oven to 400 degrees. Next slice the peeled and deseeded squash into thick slices. Toss them in a bowl with sesame seeds, cumin, paprika, vinegar and a generous amount of salt. Finally, lay them out of a tray and bake for 18-20 minutes until tender. Now place the chickpeas, aquafaba (juice from chickpeas), salt, garlic cloves, cumin, lemon juice, and tahini in a food processor and blend until smooth. Set this aside for now. Next, place the barley in a pot of boiling water and boil for 10 minutes, until cooked but still with a slight chew. Drain and set this aside. Now it is time to temper the spices, heat your oil in a saucepan over medium heat, and fry the cumin and coriander seeds for 10-20 seconds until they start to pop. Pour this out onto a plate to cool so it doesn’t cook further in the pan. Assemble your bowls, divide the hummus between two plates and spread it out with a spoon. Lay the butternut squash sizes over and pour the barley on top. Take the tempered spices and oil and pour this over the barley. Finally garnish with pomegranate seeds. Enjoy!",
+			"IMGNAMEREF": "hummus"
         },
         {
             "id": 2,
@@ -44,7 +45,8 @@
             "Sugar": "9.5g",
             "Protein": "17.1g",
 			"Vegan": "No",
-            "Procedure": "In a large bowl mash chickpeas with a potato masher or a fork until the texture becomes flaky.Add celery, red onions, pickles, bell peppers, greek yogurt, and garlic and mix together. Add spicy mustard and season with lemon juice and pepper. At this point the chickpea salad can be refrigerated until ready to serve. Prepare wraps just before eating. Layer each tortilla with a handful of spinach and chickpea salad. Fold burrito style and enjoy. "
+            "Procedure": "In a large bowl mash chickpeas with a potato masher or a fork until the texture becomes flaky.Add celery, red onions, pickles, bell peppers, greek yogurt, and garlic and mix together. Add spicy mustard and season with lemon juice and pepper. At this point the chickpea salad can be refrigerated until ready to serve. Prepare wraps just before eating. Layer each tortilla with a handful of spinach and chickpea salad. Fold burrito style and enjoy. ",
+			"IMGNAMEREF": "salad"
         },
         {
             "id": 3,
@@ -67,7 +69,8 @@
             "Sugar": "7g",
             "Protein": "20.8g",
 			"Vegan": "No",
-            "Procedure": "Placed the rinse quinoa and water into a pot and cook according to package.Transfer to a large bowl once cooked and fluff with a fork. Soak red onion in lime juice and set aside. In a separate large bowl, create the bean mixture: mix the black beans, corn, tomatoes, cheese, jalapenos, cilantro, and oil. Mix the cooled quinoa into the bean mixture. Add red onion and lime juice, season with salt and oil. Serve room temperature. "
+            "Procedure": "Placed the rinse quinoa and water into a pot and cook according to package.Transfer to a large bowl once cooked and fluff with a fork. Soak red onion in lime juice and set aside. In a separate large bowl, create the bean mixture: mix the black beans, corn, tomatoes, cheese, jalapenos, cilantro, and oil. Mix the cooled quinoa into the bean mixture. Add red onion and lime juice, season with salt and oil. Serve room temperature. ",
+			"IMGNAMEREF": "dinner"
         },
         {
             "id": 4,
@@ -90,7 +93,8 @@
             "Sugar": "13.8g",
             "Protein": "14.7g",
             "Vegan": "Yes",
-            "Procedure": "Add couscous to a bowl and pour boiling water over it. Cover and let rest for a few minutes. Then fluff with a fork and add in vegan butter, salt and pepper and mix together.  Add chopped lettuce, cucumber, halved cherry tomatoes, sun dried tomatoes, olives, and sweet corn into a mixing bowl and toss together. Add in the finished couscous and mix well. Combine all dressing ingredients except for water into a separate bowl and whisk. Slowly add in just enough water to desired consistency. Pour dressing over couscous salad and garnish with sliced avocado and cilantro. Enjoy!"
+            "Procedure": "Add couscous to a bowl and pour boiling water over it. Cover and let rest for a few minutes. Then fluff with a fork and add in vegan butter, salt and pepper and mix together.  Add chopped lettuce, cucumber, halved cherry tomatoes, sun dried tomatoes, olives, and sweet corn into a mixing bowl and toss together. Add in the finished couscous and mix well. Combine all dressing ingredients except for water into a separate bowl and whisk. Slowly add in just enough water to desired consistency. Pour dressing over couscous salad and garnish with sliced avocado and cilantro. Enjoy!",
+			"IMGNAMEREF": "vegan"
         },
         {
             "id": 5,
@@ -113,7 +117,8 @@
             "Sugar": "4.9g",
             "Protein": "10.5g",
             "Vegan": "Yes",
-            "Procedure": "Heat the coconut oil in a large pot over medium heat. Add the cumin and coriander seeds to the pot until they start to brown, about 45 seconds. Add garlic to the pot and let it brown about two minutes. Add the can of crushed tomatoes, ginger, turmeric, and salt to the pot and cook, stirring the pot a few times, for 5 minutes. Add the lentils and, if using, cayenne powder, and 3 cups of water to pot and bring to a boil. Reduce the heat to low, cover the pot, and simmer for 35-40 minutes, or until the lentils are soft. Stir the pot a few times to prevent the lentils from sticking to the bottom. If the curry starts to look dry, add an extra ½-1 cups of water. Once the lentils are soft, add the coconut milk and cherry tomatoes and bring the pot back to a simmer. Remove the pot from the heat and stir in the cilantro. Serve with a slice of vegan bread or your choice of starch. Enjoy!"
+            "Procedure": "Heat the coconut oil in a large pot over medium heat. Add the cumin and coriander seeds to the pot until they start to brown, about 45 seconds. Add garlic to the pot and let it brown about two minutes. Add the can of crushed tomatoes, ginger, turmeric, and salt to the pot and cook, stirring the pot a few times, for 5 minutes. Add the lentils and, if using, cayenne powder, and 3 cups of water to pot and bring to a boil. Reduce the heat to low, cover the pot, and simmer for 35-40 minutes, or until the lentils are soft. Stir the pot a few times to prevent the lentils from sticking to the bottom. If the curry starts to look dry, add an extra ½-1 cups of water. Once the lentils are soft, add the coconut milk and cherry tomatoes and bring the pot back to a simmer. Remove the pot from the heat and stir in the cilantro. Serve with a slice of vegan bread or your choice of starch. Enjoy!",
+			"IMGNAMEREF": "food1"
         },
         {
             "id": 6,
@@ -136,7 +141,8 @@
             "Sugar": "19.7g",
             "Protein": "14.9g",
             "Vegan": "Yes",
-            "Procedure": "In a large skillet, heat the olive oil over medium high heat. Add the sweet potatoes and stir. Cook sweet potatoes, stirring frequently, for about 6-8 minutes or until softened significantly. Add the onion and cook for another 2-3 minutes, stirring frequently, until softened. Add garlic, jalapeno, and ginger, and cook for another minute until fragrant. Finally, stir in garam masala and cayenne pepper and cook for 30 seconds. Add the quinoa, vegetable broth, chickpeas, tomatoes, and sugar, and stir to combine. Bring the mixture to a boil, then reduce to a simmer and cover, stirring occasionally. Cook until the quinoa and sweet potatoes are cooked through, about 20 minutes. If there seems to be too much liquid, simmer uncovered for a few minutes to evaporate excess. If the liquid runs out before the quinoa is done, add more water or broth and continue simmering. Add salt, pepper, and additional garam masala and cayenne pepper to taste. Serve with a squeeze of fresh lime juice and a sprinkle of cilantro.  "
+            "Procedure": "In a large skillet, heat the olive oil over medium high heat. Add the sweet potatoes and stir. Cook sweet potatoes, stirring frequently, for about 6-8 minutes or until softened significantly. Add the onion and cook for another 2-3 minutes, stirring frequently, until softened. Add garlic, jalapeno, and ginger, and cook for another minute until fragrant. Finally, stir in garam masala and cayenne pepper and cook for 30 seconds. Add the quinoa, vegetable broth, chickpeas, tomatoes, and sugar, and stir to combine. Bring the mixture to a boil, then reduce to a simmer and cover, stirring occasionally. Cook until the quinoa and sweet potatoes are cooked through, about 20 minutes. If there seems to be too much liquid, simmer uncovered for a few minutes to evaporate excess. If the liquid runs out before the quinoa is done, add more water or broth and continue simmering. Add salt, pepper, and additional garam masala and cayenne pepper to taste. Serve with a squeeze of fresh lime juice and a sprinkle of cilantro.  ",
+			"IMGNAMEREF": "quinoa"
         },
         {
             "id": 7,
@@ -159,7 +165,8 @@
             "Sugar": "9.5g",
             "Protein": "25.4g",
             "Vegan": "Yes",
-            "Procedure": "Begin cooking your brown rice according to the package. Meanwhile, thinly slice the onion. In a large skillet over medium high heat, saute onion for 8-10 minutes. (Feel free to add a little water to the pan to prevent burning.) Meanwhile, mince garlic, grate ginger, and cut broccoli into florets. When inion in translucent, add garlic, ginger, and broccoli. Stir. Add ¼ cup water or vegetable stock if you have it, let broccoli stem for 5 minutes, stir occasionally. Add more water or broth to keep the pan from drying out if needed. Add cashews and tamari. Stir well and heat another 2-3 minutes or until broccoli is desired tenderness. Serve sprinkled with sesame seeds over a warm bed of brown rice. "
+            "Procedure": "Begin cooking your brown rice according to the package. Meanwhile, thinly slice the onion. In a large skillet over medium high heat, saute onion for 8-10 minutes. (Feel free to add a little water to the pan to prevent burning.) Meanwhile, mince garlic, grate ginger, and cut broccoli into florets. When inion in translucent, add garlic, ginger, and broccoli. Stir. Add ¼ cup water or vegetable stock if you have it, let broccoli stem for 5 minutes, stir occasionally. Add more water or broth to keep the pan from drying out if needed. Add cashews and tamari. Stir well and heat another 2-3 minutes or until broccoli is desired tenderness. Serve sprinkled with sesame seeds over a warm bed of brown rice. ",
+			"IMGNAMEREF": "food2"
         },
         {
             "id": 8,
@@ -182,7 +189,8 @@
             "Sugar": "7g",
             "Protein": "9g",
 			"Vegan": "Yes",
-            "Procedure": "Preheat oven to 425 degrees and cut squash in half and scoop out seeds. Place on roasting pan, sprinkle with salt and pepper, drizzle with a little olive oil. This process will take 45 minutes to roasted then let cool. Meanwhile in a 6-quart saucepan over medium heat. Add garlic, carrots, celery, and onion. Cook, stir occasionally until soft. Stir in cumin, squash, salt, pepper. Saute for 5 minutes. Add stock and lentils. Bring to a boil and reduce heat. Simmer for 20 minutes until lentils are very tender. When soup has cooled slightly, puree until smooth. Stir paprika and olive oil into yogurt to make sauce. Ladle soup into bowls. Garnish with parsley, paprika and yogurt sauce. Enjoy!"
+            "Procedure": "Preheat oven to 425 degrees and cut squash in half and scoop out seeds. Place on roasting pan, sprinkle with salt and pepper, drizzle with a little olive oil. This process will take 45 minutes to roasted then let cool. Meanwhile in a 6-quart saucepan over medium heat. Add garlic, carrots, celery, and onion. Cook, stir occasionally until soft. Stir in cumin, squash, salt, pepper. Saute for 5 minutes. Add stock and lentils. Bring to a boil and reduce heat. Simmer for 20 minutes until lentils are very tender. When soup has cooled slightly, puree until smooth. Stir paprika and olive oil into yogurt to make sauce. Ladle soup into bowls. Garnish with parsley, paprika and yogurt sauce. Enjoy!",
+			"IMGNAMEREF": "tomato"
         },
         {
             "id": 9,
@@ -205,7 +213,8 @@
             "Sugar": "3.8g",
             "Protein": "39.2g",
 			"Vegan": "No",
-            "Procedure": "Preheat the oven to broil. Toss the green beans with half of the coconut oil. Lay flat on a baking sheet covered in foil. Broil for 6-8 minutes until tender and beginning to char. Shake the pan once during cooking. Meanwhile, heat the remaining coconut and sesame oil over medium high heat. Add the ground turkey, garlic, and ginger. Brown until turkey is fully cooked. Add the green beans to the pan and stir. Then add the soy sauce, rice vinegar, and chili sauce. Cook for 1 minute. Taste and season with additional soy sauce if needed. Place into a bowl and serve!"
+            "Procedure": "Preheat the oven to broil. Toss the green beans with half of the coconut oil. Lay flat on a baking sheet covered in foil. Broil for 6-8 minutes until tender and beginning to char. Shake the pan once during cooking. Meanwhile, heat the remaining coconut and sesame oil over medium high heat. Add the ground turkey, garlic, and ginger. Brown until turkey is fully cooked. Add the green beans to the pan and stir. Then add the soy sauce, rice vinegar, and chili sauce. Cook for 1 minute. Taste and season with additional soy sauce if needed. Place into a bowl and serve!",
+			"IMGNAMEREF": "chicken"
         },
         {
             "id": 10,
@@ -228,7 +237,9 @@
             "Sugar": "4.5g",
             "Protein": "73.3g",
 			"Vegan": "No",
-            "Procedure": "To make this Asado chicken recipe: In a bowl combine paprika, cumin, chicken stock, lemon juice, onion powder, oregano, garlic, chili flakes, and olive oil. Taste and adjust salt before adding to chicken. Add in chicken breast and coat all sides. Cover and marinate chicken for at least 30 minutes in refrigerate. When ready to cook, remove chicken from marinade and reserve marinade for later. Heat 1 tablespoon of olive oil in a skillet over medium heat and cook chicken on both sides until enteral temperature is 165 degrees. Remove chicken breast and place on a plate for later. Add diced zucchini to the same pan and season with salt, and pepper and red chili flakes and a bit of oil if necessary. Saute zucchini for 2-3 minutes over medium heat and add remaining marinade. Cook zucchini for 3-4 minutes for the sauce to reduce a bit and the zucchini is tender. Divide zucchini and sauce onto plates or bowls and top with sliced chicken. Garnish with parsley and sliced lemon. Enjoy!"
+            "Procedure": "To make this Asado chicken recipe: In a bowl combine paprika, cumin, chicken stock, lemon juice, onion powder, oregano, garlic, chili flakes, and olive oil. Taste and adjust salt before adding to chicken. Add in chicken breast and coat all sides. Cover and marinate chicken for at least 30 minutes in refrigerate. When ready to cook, remove chicken from marinade and reserve marinade for later. Heat 1 tablespoon of olive oil in a skillet over medium heat and cook chicken on both sides until enteral temperature is 165 degrees. Remove chicken breast and place on a plate for later. Add diced zucchini to the same pan and season with salt, and pepper and red chili flakes and a bit of oil if necessary. Saute zucchini for 2-3 minutes over medium heat and add remaining marinade. Cook zucchini for 3-4 minutes for the sauce to reduce a bit and the zucchini is tender. Divide zucchini and sauce onto plates or bowls and top with sliced chicken. Garnish with parsley and sliced lemon. Enjoy!",
+			"IMGNAMEREF": "chicken"
+			
         }
     ]
 }
