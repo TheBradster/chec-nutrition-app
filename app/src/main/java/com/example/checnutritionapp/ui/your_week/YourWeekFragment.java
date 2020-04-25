@@ -150,6 +150,13 @@ public class YourWeekFragment extends Fragment {
         }
 
     private void transferToMeal(ImageButton i, final Meal m) {
+        MainActivity mainActivity = (MainActivity) getActivity();
+
+        String filename = m.getImageNameRef();
+        String packageName = mainActivity.getApplicationContext().getPackageName();
+        int imgID = getResources().getIdentifier(packageName + ":drawable/" + filename, null, null);
+        i.setImageResource(imgID);
+
         i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

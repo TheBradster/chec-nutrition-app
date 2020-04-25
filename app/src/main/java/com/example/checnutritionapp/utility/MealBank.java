@@ -45,7 +45,7 @@ public class MealBank {
                 vegan = true;
 
             mealDictionary.put(id, new Meal(id, meal.getString("Name"), Double.parseDouble(meal.getString("Price per serving ").substring(1)), meal.getString("Description"), meal.getString("Procedure"),
-                    meal.getString("Time for prep"), nutrition, ingredients, vegan));
+                    meal.getString("Time for prep"), nutrition, ingredients, vegan, meal.getString("IMGNAMEREF")));
         }
         Log.d("MealBank", mealDictionary.toString());
     }

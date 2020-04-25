@@ -9,7 +9,7 @@
     tools:context=".ui.meal.MealFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/meal_image"
         android:layout_width="149dp"
         android:layout_height="149dp"
         android:layout_marginStart="16dp"
