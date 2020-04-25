@@ -130,21 +130,21 @@ public class UserProfileFragment extends Fragment {
 
         o.setText(occ);
 
-      f.setText(Integer.toString(user.getFamilyCount()));
+      f.setText(Fam);
 
-        a.setText(user.getAge());
+        a.setText(Age);
 
         b.setText(BMI);
 
-        h.setText(user.getHeight());
+        h.setText(height);
 
-       fb.setText(Integer.toString(user.getGlucose()));
+       fb.setText(FBG);
 
         a1.setText(A1C);
 
-        l.setText(user.getWeight());
+        l.setText(weight);
 
-       c.setText(Integer.toString(user.getCholesterol()));
+       c.setText(Cholest);
 
         image.setImageResource(R.drawable.percyjackson);
 
