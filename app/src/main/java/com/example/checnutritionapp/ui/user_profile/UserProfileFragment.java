@@ -130,19 +130,19 @@ public class UserProfileFragment extends Fragment {
 
         o.setText(occ);
 
-      f.setText(Fam);
+        f.setText(Fam);
 
         a.setText(Age);
 
         b.setText(BMI);
 
-        h.setText(height);
+        h.setText("hgt: "+height);
 
        fb.setText(FBG);
 
         a1.setText(A1C);
 
-        l.setText(weight);
+        l.setText("wgt: "+weight);
 
        c.setText(Cholest);
 
