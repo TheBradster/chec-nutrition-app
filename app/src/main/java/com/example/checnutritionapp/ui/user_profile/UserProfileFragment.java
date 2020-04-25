@@ -14,7 +14,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
+import com.example.checnutritionapp.model.User;
+import com.example.checnutritionapp.utility.UserSet;
 
 public class UserProfileFragment extends Fragment {
 
@@ -45,7 +48,8 @@ public class UserProfileFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        MainActivity mainActivity = (MainActivity) getActivity();
+        User user = mainActivity.getCurrentUser();
         Name="Percy Jackson";
 
         job="Hero";
@@ -86,6 +90,12 @@ public class UserProfileFragment extends Fragment {
 
         Cholest="Cholesterol: "+cholest+" mg/dl";
 
+
+
+
+
+
+
         TextView name=getView().findViewById(R.id.textView8);
 
         TextView o=getView().findViewById(R.id.textView11);
@@ -108,35 +118,38 @@ public class UserProfileFragment extends Fragment {
 
         ImageView image =getView().findViewById(R.id.imageView3);
 
-        name.setText(Name);
+        name.setText(user.getFullName());
 
-        o.setText(occ);
+        o.setText(user.getOccupation());
 
-        f.setText(Fam);
+      //  f.setText(user.getFamilyCount());
 
-        a.setText(Age);
+        a.setText(user.getAge());
 
         b.setText(BMI);
 
-        h.setText(height);
+        h.setText(user.getHeight());
 
-        fb.setText(FBG);
+       // fb.setText(user.getGlucose());
 
         a1.setText(A1C);
 
-        l.setText(weight);
+        l.setText(user.getWeight());
 
-        c.setText(Cholest);
+       // c.setText(user.getCholesterol());
 
         image.setImageResource(R.drawable.percyjackson);
 
     }
 
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         userProfileViewModel =
-                ViewModelProviders.of(this).get(UserProfileViewModel.class);
+               ViewModelProviders.of(this).get(UserProfileViewModel.class);
+
+
         View root = inflater.inflate(R.layout.fragment_user_profile, container, false);
        // final TextView textView = root.findViewById(R.id.text_user_profile);
         //userProfileViewModel.getText().observe(this, new Observer<String>() {
@@ -145,6 +158,8 @@ public class UserProfileFragment extends Fragment {
           //      textView.setText(s);
             //}
         //});
+
+
         return root;
     }
 }
