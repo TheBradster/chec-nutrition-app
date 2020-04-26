@@ -1,15 +1,16 @@
 package com.example.checnutritionapp.ui;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -23,7 +24,7 @@ import com.example.checnutritionapp.ui.user_profile.UserProfileFragment;
 public class EditProfileFragment extends Fragment {
 
     private EditProfileViewModel mViewModel;
-    private String name;
+    private String Name;
     private String job;
     private String occ;
     private int fam;
@@ -42,6 +43,7 @@ public class EditProfileFragment extends Fragment {
         return new EditProfileFragment();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -50,13 +52,10 @@ public class EditProfileFragment extends Fragment {
         mViewModel = ViewModelProviders.of(this).get(EditProfileViewModel.class);
         MainActivity mainActivity = (MainActivity) getActivity();
         User user = mainActivity.getCurrentUser();
-        name = user.getFullName();
+        Name = user.getFullName();
         job = user.getOccupation();
-        occ ="Occupation: "+job;
         fam = user.getFamilyCount();
-        Fam = "Family Size: "+fam;
         age=user.getAge();
-        Age="Age: "+age;
         height=user.getHeight();
         CM=height.substring(0,height.length()-2);
         inch=Integer.parseInt(CM);
@@ -66,21 +65,19 @@ public class EditProfileFragment extends Fragment {
         lbs=Integer.parseInt(KG);
         lbs=lbs/2.205;
 
-        TextView fullname = getView().findViewById(R.id.FullName);
+        TextView name = getView().findViewById(R.id.FullName);
         TextView occupation = getView().findViewById(R.id.Occupation);
         TextView Height = getView().findViewById(R.id.Height);
         TextView Weight = getView().findViewById(R.id.Weight);
-        TextView age = getView().findViewById(R.id.Age);
+        TextView Age = getView().findViewById(R.id.Age);
         TextView family_size = getView().findViewById(R.id.FamilyCount);
-        ImageView profile_pic = getView().findViewById(R.id.Profile_pic);
 
-        fullname.setText(name);
-        occupation.setText(occ);
+        name.setText(Name);
+        occupation.setText(job);
         Height.setText(height);
         Weight.setText(weight);
-        age.setText(Age);
+        Age.setText(age);
         family_size.setText(fam);
-        profile_pic.setImageResource(R.drawable.percyjackson);
 
         Button openProfileFragment = (Button) v.findViewById(R.id.cancel_change);
         openProfileFragment.setOnClickListener(new View.OnClickListener() {

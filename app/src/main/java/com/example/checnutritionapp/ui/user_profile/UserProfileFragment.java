@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
@@ -156,13 +155,10 @@ public class UserProfileFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        userProfileViewModel =
-
-                ViewModelProviders.of(this).get(UserProfileViewModel.class);
         View v = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
-        Button openEditFragment = (Button) v.findViewById(R.id.edit_button);
-        openEditFragment.setOnClickListener(new View.OnClickListener() {
+        Button openEdit = (Button) v.findViewById(R.id.edit_button);
+        openEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditProfileFragment editFragment = new EditProfileFragment();
@@ -174,23 +170,6 @@ public class UserProfileFragment extends Fragment {
             }
         });
 
-
-
-
         return v;
-    //ViewModelProviders.of(this).get(UserProfileViewModel.class);
-
-
-        //View root = inflater.inflate(R.layout.fragment_user_profile, container, false);
-       // final TextView textView = root.findViewById(R.id.text_user_profile);
-        //userProfileViewModel.getText().observe(this, new Observer<String>() {
-            //@Override
-           // public void onChanged(@Nullable String s) {
-          //      textView.setText(s);
-            //}
-        //});
-
-
-        //return root;
-    }
+        }
 }
