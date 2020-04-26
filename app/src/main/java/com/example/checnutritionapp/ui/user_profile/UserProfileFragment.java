@@ -17,10 +17,8 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
-import com.example.checnutritionapp.ui.EditProfileFragment;
-
 import com.example.checnutritionapp.model.User;
-import com.example.checnutritionapp.utility.UserSet;
+import com.example.checnutritionapp.ui.EditProfileFragment;
 
 
 public class UserProfileFragment extends Fragment {
@@ -163,18 +161,21 @@ public class UserProfileFragment extends Fragment {
                 ViewModelProviders.of(this).get(UserProfileViewModel.class);
         View v = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
-        Button openEditProfile = (Button) v.findViewById(R.id.edit_button);
-            openEditProfile.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                EditProfileFragment editProfileFragment = new EditProfileFragment();
+        Button openEditFragment = (Button) v.findViewById(R.id.edit_button);
+        openEditFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditProfileFragment editFragment = new EditProfileFragment();
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
-              //  trans.replace(R.id., editProfileFragment);
+                trans.replace(R.id.user_fragment, editFragment);
                 trans.addToBackStack(null);
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
             }
         });
+
+
+
 
         return v;
     //ViewModelProviders.of(this).get(UserProfileViewModel.class);
