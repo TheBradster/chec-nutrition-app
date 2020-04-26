@@ -17,7 +17,7 @@
         android:text="-"
         app:layout_constraintBottom_toTopOf="@+id/divider2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal1" />
+        app:layout_constraintTop_toBottomOf="@+id/order_meal_2" />
 
     <Button
         android:id="@+id/plus2"
@@ -30,14 +30,14 @@
         app:layout_constraintStart_toEndOf="@+id/divider" />
 
     <ImageView
-        android:id="@+id/imageViewMeal1"
+        android:id="@+id/order_meal_2"
         android:layout_width="209dp"
         android:layout_height="208dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewMeal2"
+        app:layout_constraintBottom_toBottomOf="@+id/order_meal_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/divider"
@@ -47,7 +47,7 @@
         tools:src="@drawable/food1" />
 
     <ImageView
-        android:id="@+id/imageViewMeal2"
+        android:id="@+id/order_meal_1"
         android:layout_width="203dp"
         android:layout_height="208dp"
         android:contentDescription="@string/app_name"
@@ -61,12 +61,13 @@
 
     <Button
         android:id="@+id/placeorderbutton"
-        android:layout_width="200dp"
-        android:layout_height="44dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginBottom="16dp"
         android:text="Place Order"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/total"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
@@ -118,7 +119,7 @@
         app:layout_constraintEnd_toEndOf="@+id/divider"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/plus1"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal2" />
+        app:layout_constraintTop_toBottomOf="@+id/order_meal_1" />
 
     <TextView
         android:id="@+id/servings2"
@@ -226,15 +227,24 @@
         android:id="@+id/total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:text="Total: $0.00"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/placeorderbutton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/placeorderbutton" />
+
+    <Button
+        android:id="@+id/cancelorderbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="CANCEL ORDER"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/total"
         app:layout_constraintStart_toEndOf="@+id/placeorderbutton"
         app:layout_constraintTop_toTopOf="@+id/placeorderbutton" />
 

@@ -69,18 +69,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.669"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal1"
+        app:layout_constraintTop_toBottomOf="@+id/order_meal_2"
         app:layout_constraintVertical_bias="0.486" />
 
     <ImageView
-        android:id="@+id/imageViewMeal1"
+        android:id="@+id/order_meal_2"
         android:layout_width="209dp"
         android:layout_height="208dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewMeal2"
+        app:layout_constraintBottom_toBottomOf="@+id/order_meal_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/divider"
@@ -90,7 +90,7 @@
         tools:src="@drawable/food1" />
 
     <ImageView
-        android:id="@+id/imageViewMeal2"
+        android:id="@+id/order_meal_1"
         android:layout_width="203dp"
         android:layout_height="208dp"
         android:contentDescription="@string/app_name"
@@ -138,7 +138,7 @@
         app:layout_constraintBottom_toTopOf="@+id/divider2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal1"
+        app:layout_constraintTop_toBottomOf="@+id/order_meal_2"
         app:layout_constraintVertical_bias="0.513" />
 
     <TextView
@@ -153,7 +153,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/divider2"
         app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal2" />
+        app:layout_constraintTop_toBottomOf="@+id/order_meal_1" />
 
     <TextView
         android:id="@+id/textView16"
@@ -167,7 +167,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMeal2"
+        app:layout_constraintTop_toBottomOf="@+id/order_meal_1"
         app:layout_constraintVertical_bias="0.478" />
 
     <TextView

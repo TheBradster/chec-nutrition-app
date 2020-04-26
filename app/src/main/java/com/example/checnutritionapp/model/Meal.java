@@ -1,5 +1,7 @@
 package com.example.checnutritionapp.model;
 
+import android.widget.ImageView;
+
 import java.io.Serializable;
 
 /**
@@ -20,9 +22,10 @@ public class Meal implements Serializable {
     private String[] nutrition;
     private String[] ingredients;
     private boolean vegan;
+    String imageNameRef;
 
     // Constructors
-    public Meal(int id, String name, double price, String desc, String proc, String prep, String[] nut, String[] ing, boolean v) {
+    public Meal(int id, String name, double price, String desc, String proc, String prep, String[] nut, String[] ing, boolean v, String imgNameRef) {
         mId = id;
         mName = name;
         mPrice = price;
@@ -32,6 +35,7 @@ public class Meal implements Serializable {
         nutrition = nut;
         ingredients = ing;
         vegan = v;
+        imageNameRef = imgNameRef;
     }
 
     public Meal(String meal1) {
@@ -57,6 +61,8 @@ public class Meal implements Serializable {
     public String[] getIngredients() { return ingredients; }
 
     public boolean getVegan() { return vegan; }
+
+    public String getImageNameRef() { return imageNameRef; }
 
     @Override
     public String toString() {

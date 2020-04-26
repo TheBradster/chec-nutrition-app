@@ -15,8 +15,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.ui.EditProfileFragment;
+
+import com.example.checnutritionapp.model.User;
+import com.example.checnutritionapp.utility.UserSet;
+
 
 public class UserProfileFragment extends Fragment {
 
@@ -27,15 +32,17 @@ public class UserProfileFragment extends Fragment {
     private String occ;
     private int fam;
     private String Fam;
-    private int age;
+    private String age;
     private String Age;
     private double bmi;
     private String BMI;
-    private int foot;
+    private double foot;
     private int inch;
     private String height;
+    private String CM;
     private double lbs;
     private String weight;
+    private String KG;
     private int fbg;
     private String FBG;
     private double a1c;
@@ -47,36 +54,43 @@ public class UserProfileFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        MainActivity mainActivity = (MainActivity) getActivity();
+        User user = mainActivity.getCurrentUser();
+        Name=user.getFullName();
 
-        Name="Percy Jackson";
-
-        job="Hero";
+        job=user.getOccupation();
 
         occ="Occupation: "+job;
 
-        fam=5;
+        fam=user.getFamilyCount();
 
         Fam="Family Size: "+fam;
 
-        age=16;
+        age=user.getAge();
 
         Age="Age: "+age;
 
-        foot=5;
+        height=user.getHeight();
 
-        inch=4;
+        CM=height.substring(0,height.length()-2);
 
-        height=foot+"\'"+inch+"\"";
+        inch=Integer.parseInt(CM);
 
-        lbs=130.01;
+        foot=inch/30.48;
 
-        weight=lbs+" lbs";
+        weight=user.getWeight();
 
-        bmi=(lbs/((foot*12+inch)*(foot*12+inch)))*703;
+        KG=weight.substring(0,weight.length()-2);
+
+        lbs=Integer.parseInt(KG);
+
+        lbs=lbs/2.205;
+
+        bmi=(lbs/((foot)*(foot)))*703;
 
         BMI="BMI: "+ String.format("%.1f",bmi);
 
-        fbg=108;
+        fbg=user.getGlucose();
 
         FBG="FBG: "+fbg+" mg/dl";
 
@@ -84,9 +98,15 @@ public class UserProfileFragment extends Fragment {
 
         A1C="A1C: "+String.format("%.1f",a1c);
 
-        cholest=150;
+        cholest=user.getCholesterol();
 
         Cholest="Cholesterol: "+cholest+" mg/dl";
+
+
+
+
+
+
 
         TextView name=getView().findViewById(R.id.textView8);
 
@@ -120,24 +140,26 @@ public class UserProfileFragment extends Fragment {
 
         b.setText(BMI);
 
-        h.setText(height);
+        h.setText("hgt: "+height);
 
-        fb.setText(FBG);
+       fb.setText(FBG);
 
         a1.setText(A1C);
 
-        l.setText(weight);
+        l.setText("wgt: "+weight);
 
-        c.setText(Cholest);
+       c.setText(Cholest);
 
         image.setImageResource(R.drawable.percyjackson);
 
     }
 
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         userProfileViewModel =
+
                 ViewModelProviders.of(this).get(UserProfileViewModel.class);
         View v = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
@@ -155,5 +177,19 @@ public class UserProfileFragment extends Fragment {
         });
 
         return v;
+    //ViewModelProviders.of(this).get(UserProfileViewModel.class);
+
+
+        //View root = inflater.inflate(R.layout.fragment_user_profile, container, false);
+       // final TextView textView = root.findViewById(R.id.text_user_profile);
+        //userProfileViewModel.getText().observe(this, new Observer<String>() {
+            //@Override
+           // public void onChanged(@Nullable String s) {
+          //      textView.setText(s);
+            //}
+        //});
+
+
+        //return root;
     }
 }

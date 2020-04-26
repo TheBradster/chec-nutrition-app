@@ -36,7 +36,6 @@ public class Order implements Serializable {
         this.mPayedFor = true;
     }
 
-    // TODO replace with Date getCutOffTime() or boolean pastCutOffTime()
     public Date getPlacedTime() {
         return mPlacedTime;
     }
