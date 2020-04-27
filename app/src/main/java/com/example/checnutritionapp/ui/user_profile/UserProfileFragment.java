@@ -153,10 +153,9 @@ public class UserProfileFragment extends Fragment {
 
 
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_user_profile, container, false);
-
         Button openEdit = (Button) v.findViewById(R.id.edit_button);
         openEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,7 +163,7 @@ public class UserProfileFragment extends Fragment {
                 EditProfileFragment editFragment = new EditProfileFragment();
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
-                trans.replace(R.id.user_fragment, editFragment);
+               trans.replace(R.id.user_fragment, editFragment);
                 trans.addToBackStack(null);
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
             }
