@@ -27,6 +27,7 @@ import com.example.checnutritionapp.ui.meal.procedure.MealProcedureFragment;
 public class MealFragment extends Fragment {
 
     private MealViewModel mViewModel;
+    private MealActivity mainActivity = (MealActivity) getActivity();
 
     public static MealFragment newInstance() {
         return new MealFragment();
@@ -37,21 +38,25 @@ public class MealFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        // Handling meal object
-        final Bundle b = this.getArguments();
-        Meal m = (Meal) b.getSerializable("meal");
-        System.out.println(m.getName() + " -- in Meal Fragment");
-
         View v = inflater.inflate(R.layout.meal_fragment, container, false);
 
-        TextView title = (TextView) v.findViewById(R.id.textView6);
+        // Retrieve the meal object to be parsed through in the lifespan of MealFragment
+        final Bundle b = this.getArguments();
+        Meal m = (Meal) b.getSerializable("meal");
+
+        // Pull and display the TextView for the meal title
+        TextView title = v.findViewById(R.id.mealTitle_text);
         title.setText(m.getName());
 
-        TextView price = (TextView) v.findViewById(R.id.mealPrice);
+        // Pull and display the TextView for the meal price
+        TextView price = v.findViewById(R.id.mealPrice_text);
         String priceText = "Starting Price: $" + Double.toString(m.getPrice());
         price.setText(priceText);
 
-        Button openNutFacts = (Button) v.findViewById(R.id.nut_button);
+        // TODO: Likely a way to create a method for these all to reduce repetitive code
+
+        // Create listener for button to display MealNutrition fragment
+        Button openNutFacts = v.findViewById(R.id.nut_button);
         openNutFacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +69,7 @@ public class MealFragment extends Fragment {
             }
         });
 
+        // Create listener for button to display MealProcedure fragment
         Button openProcedure = (Button) v.findViewById(R.id.proc_button);
         openProcedure.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +83,7 @@ public class MealFragment extends Fragment {
             }
         });
 
+        // Create listener for button to display MealAllergens fragment
         Button openAllergens = (Button) v.findViewById(R.id.allergen_button);
         openAllergens.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,9 +97,8 @@ public class MealFragment extends Fragment {
             }
         });
 
-        MealActivity mainActivity = (MealActivity) getActivity();
-        ImageView pic = (ImageView) v.findViewById(R.id.meal_image);
-
+        // Pluck meal image reference from meal object to be set dynamically
+        ImageView pic = v.findViewById(R.id.meal_image);
         String filename = m.getImageNameRef();
         String packageName = mainActivity.getApplicationContext().getPackageName();
         int imgID = getResources().getIdentifier(packageName + ":drawable/" + filename, null, null);
