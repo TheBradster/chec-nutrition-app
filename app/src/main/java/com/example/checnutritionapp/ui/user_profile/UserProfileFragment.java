@@ -71,6 +71,8 @@ public class UserProfileFragment extends Fragment {
 
         CM=height.substring(0,height.length()-2);
 
+        double centimeters = Double.parseDouble(CM);
+
         inch=Integer.parseInt(CM);
 
         foot=inch/30.48;
@@ -79,11 +81,13 @@ public class UserProfileFragment extends Fragment {
 
         KG=weight.substring(0,weight.length()-2);
 
+        double kilograms = Double.parseDouble(KG);
+
         lbs=Integer.parseInt(KG);
 
         lbs=lbs/2.205;
 
-        bmi=(lbs/((foot)*(foot)))*703;
+        bmi= (kilograms / Math.pow((centimeters / 100) , 2));
 
         BMI="BMI: "+ String.format("%.1f",bmi);
 
