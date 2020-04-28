@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SummaryActivity" />
-        <activity android:name=".MealActivity" />
-        <activity android:name=".PlaceOrderActivity" />
+        <activity android:name=".activities.SummaryActivity" />
+        <activity android:name=".activities.MealActivity" />
+        <activity android:name=".activities.PlaceOrderActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

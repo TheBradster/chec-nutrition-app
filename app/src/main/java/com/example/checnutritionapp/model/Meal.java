@@ -12,7 +12,6 @@ import java.io.Serializable;
 public class Meal implements Serializable {
 
     // Fields
-    // TODO add rest of fields
     private int mId;
     private String mName;
     private double mPrice;
@@ -41,27 +40,18 @@ public class Meal implements Serializable {
     public Meal(String meal1) {
     }
 
-    // Properties
+    // Getter methods for each of the relevant fields
     public String getName() {
         return mName;
     }
-
     public int getId() { return mId; }
-
-    public double price() { return mPrice; }
-
+    public double getPrice() { return mPrice; }
     public String getDescription() { return description; }
-
     public String getProcedure() { return procedure; }
-
     public String getPrepTime() { return prepTime; }
-
     public String[] getNutrition() { return nutrition; }
-
     public String[] getIngredients() { return ingredients; }
-
     public boolean getVegan() { return vegan; }
-
     public String getImageNameRef() { return imageNameRef; }
 
     @Override

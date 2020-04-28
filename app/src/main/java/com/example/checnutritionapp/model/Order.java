@@ -27,36 +27,35 @@ public class Order implements Serializable {
         this.mLocation = null;
     }
 
-    // Properties
+    // Getter methods for relevant fields
     public Ticket[] getTickets() {
         return mTickets;
     }
-
-    public void pay() {
-        this.mPayedFor = true;
+    public Location getLocation() {
+        return this.mLocation;
     }
-
     public Date getPlacedTime() {
         return mPlacedTime;
     }
-
     public Date getReadyDate() {
         return mReadyDate;
     }
 
+    // Setter methods for relevant fields
+    public void pay() {
+        this.mPayedFor = true;
+    }
     public void setLocation(Location location) {
         this.mLocation = location;
     }
 
-    public Location getLocation() {
-        return this.mLocation;
-    }
-
+    // Parse and return the pick-up day for the week
     public String pickupDayOfWeek() {
         SimpleDateFormat format = new SimpleDateFormat("EEEE");
         return format.format(mReadyDate);
     }
 
+    // Calculate and return the total of the order
     public double orderTotal() {
         double total = 0;
         for (Ticket ticket : mTickets) {
@@ -65,6 +64,7 @@ public class Order implements Serializable {
         return total;
     }
 
+    // Determine whether or not an order is past the allowed cut-off
     public boolean pastCutoff() {
         Date today = new Date();
         // Get order day

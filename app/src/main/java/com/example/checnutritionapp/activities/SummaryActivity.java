@@ -1,10 +1,11 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.ui.summary.SummaryFragment;
 
 public class SummaryActivity extends AppCompatActivity {

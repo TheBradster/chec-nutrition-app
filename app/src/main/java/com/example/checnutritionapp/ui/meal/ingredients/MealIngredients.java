@@ -1,4 +1,4 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.ui.meal.ingredients;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Meal;
 
 public class MealIngredients extends Fragment {
@@ -27,13 +28,17 @@ public class MealIngredients extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
         View v = inflater.inflate(R.layout.meal_ingredients_fragment, container, false);
 
+        // Store serializable meal object so that its data may be referenced
+        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
+
+        // Create ingredients list based upon data stored in meal object
         String[] ingredients = m.getIngredients();
 
-        TextView ingList = v.findViewById(R.id.ingredients_list);
+        TextView ingredientsTextView = v.findViewById(R.id.ingredients_list);
 
+        // Build a string with all the ingredients concatenated together in a listing
         String s = "";
         for (int i = 0; i < ingredients.length; i++) {
             s = s + ingredients[i];
@@ -41,13 +46,15 @@ public class MealIngredients extends Fragment {
                 s = s + ", ";
         }
 
-        ingList.setText(s);
+        // Set the TextView to display the list of ingredients
+        ingredientsTextView.setText(s);
 
-        TextView vR = v.findViewById(R.id.vegan_response);
+        // View meal object data and determine if it is vegan friendly
+        TextView isVeganTextView = v.findViewById(R.id.vegan_response);
         if (m.getVegan()) {
-            vR.setText("Yes!");
+            isVeganTextView.setText("Yes!");
         } else {
-            vR.setText("No!");
+            isVeganTextView.setText("No!");
         }
 
         return v;

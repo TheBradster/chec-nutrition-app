@@ -53,51 +53,35 @@ public class User implements Serializable {
         u_allergens = user_allergens;
     }
 
-    public User(String user) {
-    }
-
-    // Properties
+    // Getter methods for each of the relevant fields
     public String getUsername() {
         return u_name;
     }
-
-    public String getFullName() {
-        String name = u_fname + " " + u_lname;
-        return name;
-    }
-
+    public String getFullName() { return u_fname + " " + u_lname; }
     public String getAge() {
         return u_age;
     }
-
     public String getHeight() {
         return u_height;
     }
-
     public String getWeight() {
         return u_weight;
     }
-
     public String getLocation() {
         return u_location;
     }
-
     public String getOccupation() {
         return u_occupation;
     }
-
     public int getFamilyCount() {
         return u_familyc;
     }
-
     public int getGlucose() {
         return u_glucose;
     }
-
     public int getCholesterol() {
         return u_cholesterol;
     }
-
     public String[] getAllergens() {
         return u_allergens;
     }

@@ -1,4 +1,4 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.ui.meal.procedure;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Meal;
 
 public class MealProcedureFragment extends Fragment {
@@ -26,15 +27,20 @@ public class MealProcedureFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
+
         View v = inflater.inflate(R.layout.meal_procedure_fragment, container, false);
 
-        TextView text = (TextView) v.findViewById(R.id.preparationText);
-        text.setText(m.getProcedure());
+        // Store serializable meal object so that its data may be referenced
+        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
 
-        TextView text2 = (TextView) v.findViewById(R.id.prepTimeText);
+        // Pull the preparation instructions from meal object and set into respective TextView
+        TextView preparationTextView = v.findViewById(R.id.preparationText);
+        preparationTextView.setText(m.getProcedure());
+
+        // Pull the preparation time from the meal object and set into respective TextView
+        TextView prepTimeTextView = v.findViewById(R.id.prepTimeText);
         String prepString = "Time: " + m.getPrepTime();
-        text2.setText(prepString);
+        prepTimeTextView.setText(prepString);
 
         return v;
     }

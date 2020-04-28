@@ -1,4 +1,4 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.ui.meal.allergens;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Meal;
 
 public class MealAllergensFragment extends Fragment {
@@ -26,8 +27,12 @@ public class MealAllergensFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
         View v = inflater.inflate(R.layout.meal_allergens_fragment, container, false);
+
+        // Store serializable meal object so that its data may be referenced
+        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
+
+        // TODO: Pull allergen data from meals JSON and prepare it for presentation
 
         return v;
     }

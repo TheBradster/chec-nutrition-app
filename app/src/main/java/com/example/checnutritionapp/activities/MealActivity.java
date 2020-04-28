@@ -1,10 +1,11 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.ui.meal.MealFragment;
 
@@ -13,19 +14,21 @@ public class MealActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // Retrieve the serializable meal object to be passed in a bundle
         Meal m = (Meal) getIntent().getSerializableExtra("meal");
-        // Debug
-        System.out.println(m.getName() + " -- in Meal Activity");
 
+        // Establish bundle that will contain the serializable meal object
         Bundle b = new Bundle();
         b.putSerializable("meal", m);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.meal_activity);
 
+        // Create a MealFragment and store within it the meal-containing bundle
         MealFragment frag = new MealFragment();
         frag.setArguments(b);
 
+        // If appropriate, begin the transaction that will direct user to the meal object
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, frag)
@@ -34,7 +37,8 @@ public class MealActivity extends AppCompatActivity {
 
         // Edit toolbar
         getSupportActionBar().setTitle(m.getName());
-        // Add back button
+
+        // Provide the back button
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

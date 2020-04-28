@@ -17,13 +17,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.checnutritionapp.MainActivity;
-import com.example.checnutritionapp.PlaceOrderActivity;
+import com.example.checnutritionapp.activities.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Location;
 import com.example.checnutritionapp.model.Order;
@@ -31,7 +29,6 @@ import com.example.checnutritionapp.model.Ticket;
 import com.example.checnutritionapp.utility.JSONUtilities;
 
 import org.json.JSONException;
-import org.w3c.dom.Text;
 
 public class PlaceOrderFragment extends Fragment implements View.OnClickListener {
 
