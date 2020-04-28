@@ -1,4 +1,4 @@
-package com.example.checnutritionapp.ui;
+package com.example.checnutritionapp.ui.user_profile.edit;
 
 import androidx.lifecycle.ViewModel;
 

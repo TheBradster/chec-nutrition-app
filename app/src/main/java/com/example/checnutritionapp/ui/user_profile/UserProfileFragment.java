@@ -17,7 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.User;
-import com.example.checnutritionapp.ui.EditProfileFragment;
+import com.example.checnutritionapp.ui.user_profile.edit.EditProfileFragment;
 
 
 public class UserProfileFragment extends Fragment {

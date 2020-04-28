@@ -1,25 +1,21 @@
-package com.example.checnutritionapp.ui;
+package com.example.checnutritionapp.ui.user_profile.edit;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.User;
-import com.example.checnutritionapp.ui.user_profile.UserProfileFragment;
 
 public class EditProfileFragment extends Fragment {
 
@@ -79,7 +75,7 @@ public class EditProfileFragment extends Fragment {
         ages.setText(a);
         String b = Integer.toString(fam);
         family_size.setText(b);
-        
+
         /*
         Button openProfileFragment = (Button) v.findViewById(R.id.cancel_change);
         openProfileFragment.setOnClickListener(new View.OnClickListener() {
