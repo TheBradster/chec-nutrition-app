@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -15,14 +14,9 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.checnutritionapp.MainActivity;
+import com.example.checnutritionapp.activities.MainActivity;
 import com.example.checnutritionapp.R;
-import com.example.checnutritionapp.model.*;
 import com.example.checnutritionapp.model.Week;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class QueueFragment extends Fragment {
 

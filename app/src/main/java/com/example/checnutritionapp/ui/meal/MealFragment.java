@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.checnutritionapp.MealActivity;
+import com.example.checnutritionapp.activities.MealActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.ui.meal.allergens.MealAllergensFragment;

@@ -1,4 +1,4 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.ui.placeorder.PlaceOrderFragment;
 

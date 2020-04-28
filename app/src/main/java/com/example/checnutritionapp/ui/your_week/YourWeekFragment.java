@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,20 +15,16 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.Navigation;
 
-import com.example.checnutritionapp.MainActivity;
-import com.example.checnutritionapp.MealActivity;
-import com.example.checnutritionapp.PlaceOrderActivity;
+import com.example.checnutritionapp.activities.MainActivity;
+import com.example.checnutritionapp.activities.MealActivity;
+import com.example.checnutritionapp.activities.PlaceOrderActivity;
 import com.example.checnutritionapp.R;
-import com.example.checnutritionapp.SummaryActivity;
+import com.example.checnutritionapp.activities.SummaryActivity;
 import com.example.checnutritionapp.model.Meal;
 import com.example.checnutritionapp.model.Order;
 import com.example.checnutritionapp.model.Week;
 
-
-import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

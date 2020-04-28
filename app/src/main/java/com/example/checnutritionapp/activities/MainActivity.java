@@ -1,4 +1,4 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.activities;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +9,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.User;
 import com.example.checnutritionapp.utility.JSONUtilities;
 import com.example.checnutritionapp.utility.MealBank;
