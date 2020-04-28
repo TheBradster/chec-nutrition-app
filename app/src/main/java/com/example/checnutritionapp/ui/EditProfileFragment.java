@@ -79,7 +79,8 @@ public class EditProfileFragment extends Fragment {
         ages.setText(a);
         String b = Integer.toString(fam);
         family_size.setText(b);
-
+        
+        /*
         Button openProfileFragment = (Button) v.findViewById(R.id.cancel_change);
         openProfileFragment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +94,7 @@ public class EditProfileFragment extends Fragment {
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
             }
         });
+         */
 
         return v;
     }
