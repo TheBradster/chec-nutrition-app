@@ -30,7 +30,7 @@ public class Ticket implements Serializable {
     public Meal getMeal() {
         return mMeal;
     }
-    public double total() { return mNumServings * mMeal.price(); }
+    public double total() { return mNumServings * mMeal.getPrice(); }
     public int numberOfServings() {
         return mNumServings;
     }

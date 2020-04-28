@@ -45,7 +45,7 @@ public class Meal implements Serializable {
         return mName;
     }
     public int getId() { return mId; }
-    public double price() { return mPrice; }
+    public double getPrice() { return mPrice; }
     public String getDescription() { return description; }
     public String getProcedure() { return procedure; }
     public String getPrepTime() { return prepTime; }

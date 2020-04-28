@@ -48,7 +48,7 @@ public class MealFragment extends Fragment {
         title.setText(m.getName());
 
         TextView price = (TextView) v.findViewById(R.id.mealPrice);
-        String priceText = "Starting Price: $" + Double.toString(m.price());
+        String priceText = "Starting Price: $" + Double.toString(m.getPrice());
         price.setText(priceText);
 
         Button openNutFacts = (Button) v.findViewById(R.id.nut_button);
