@@ -27,8 +27,12 @@ public class MealAllergensFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
         View v = inflater.inflate(R.layout.meal_allergens_fragment, container, false);
+
+        // Store serializable meal object so that its data may be referenced
+        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
+
+        // TODO: Pull allergen data from meals JSON and prepare it for presentation
 
         return v;
     }
