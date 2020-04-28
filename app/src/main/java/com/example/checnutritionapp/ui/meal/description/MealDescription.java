@@ -28,11 +28,14 @@ public class MealDescription extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
         View v = inflater.inflate(R.layout.meal_description_fragment, container, false);
 
-        TextView desc = (TextView) v.findViewById(R.id.mealDescText);
-        desc.setText(m.getDescription());
+        // Store serializable meal object so that its data may be referenced
+        Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
+
+        // Pull the description TextView by its ID and set the value based on meal object data
+        TextView descriptionTextView = (TextView) v.findViewById(R.id.mealDescText);
+        descriptionTextView.setText(m.getDescription());
 
         return v;
     }
