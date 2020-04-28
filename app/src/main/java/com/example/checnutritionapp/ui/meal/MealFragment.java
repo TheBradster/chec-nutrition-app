@@ -27,7 +27,6 @@ import com.example.checnutritionapp.ui.meal.procedure.MealProcedureFragment;
 public class MealFragment extends Fragment {
 
     private MealViewModel mViewModel;
-    private MealActivity mainActivity = (MealActivity) getActivity();
 
     public static MealFragment newInstance() {
         return new MealFragment();
@@ -96,6 +95,8 @@ public class MealFragment extends Fragment {
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
             }
         });
+
+        MealActivity mainActivity = (MealActivity) getActivity();
 
         // Pluck meal image reference from meal object to be set dynamically
         ImageView pic = v.findViewById(R.id.meal_image);
