@@ -1,4 +1,4 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.ui.meal.description;
 
 import androidx.lifecycle.ViewModel;
 

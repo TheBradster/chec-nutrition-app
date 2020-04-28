@@ -1,4 +1,4 @@
-package com.example.checnutritionapp;
+package com.example.checnutritionapp.ui.meal.allergens;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -11,16 +11,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
+import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Meal;
 
-public class MealDescription extends Fragment {
+public class MealAllergensFragment extends Fragment {
 
-    private MealDescriptionViewModel mViewModel;
+    private MealAllergensViewModel mViewModel;
 
-    public static MealDescription newInstance() {
-        return new MealDescription();
+    public static MealAllergensFragment newInstance() {
+        return new MealAllergensFragment();
     }
 
     @Override
@@ -28,10 +28,7 @@ public class MealDescription extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         Meal m = (Meal) getActivity().getIntent().getSerializableExtra("meal");
-        View v = inflater.inflate(R.layout.meal_description_fragment, container, false);
-
-        TextView desc = (TextView) v.findViewById(R.id.mealDescText);
-        desc.setText(m.getDescription());
+        View v = inflater.inflate(R.layout.meal_allergens_fragment, container, false);
 
         return v;
     }
@@ -39,7 +36,7 @@ public class MealDescription extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(MealDescriptionViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(MealAllergensViewModel.class);
         // TODO: Use the ViewModel
     }
 

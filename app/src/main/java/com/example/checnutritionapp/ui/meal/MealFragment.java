@@ -17,13 +17,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.checnutritionapp.MainActivity;
 import com.example.checnutritionapp.MealActivity;
-import com.example.checnutritionapp.MealAllergensFragment;
-import com.example.checnutritionapp.MealNutrition;
-import com.example.checnutritionapp.MealProcedureFragment;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.Meal;
+import com.example.checnutritionapp.ui.meal.allergens.MealAllergensFragment;
+import com.example.checnutritionapp.ui.meal.nutrition.MealNutrition;
+import com.example.checnutritionapp.ui.meal.procedure.MealProcedureFragment;
 
 public class MealFragment extends Fragment {
 
