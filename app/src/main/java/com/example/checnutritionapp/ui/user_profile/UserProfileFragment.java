@@ -163,8 +163,7 @@ public class UserProfileFragment extends Fragment {
                 EditProfileFragment editFragment = new EditProfileFragment();
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction trans = manager.beginTransaction();
-               trans.replace(R.id.user_fragment, editFragment);
-                trans.addToBackStack(null);
+               trans.replace(R.id.user_fragment, editFragment).addToBackStack(null);
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
             }
         });
