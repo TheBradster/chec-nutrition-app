@@ -11,11 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.checnutritionapp.activities.MainActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.User;
+import com.example.checnutritionapp.ui.user_profile.edit.EditProfileFragment;
 
 public class UserProfileFragment extends Fragment {
 

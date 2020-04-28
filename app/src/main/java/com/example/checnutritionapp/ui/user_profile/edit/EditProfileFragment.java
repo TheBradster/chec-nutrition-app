@@ -13,7 +13,7 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.checnutritionapp.MainActivity;
+import com.example.checnutritionapp.activities.MainActivity;
 import com.example.checnutritionapp.R;
 import com.example.checnutritionapp.model.User;
 
