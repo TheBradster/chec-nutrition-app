@@ -20,18 +20,18 @@ public class Location implements Serializable {
         mAddress = address;
     }
 
+    // Getter methods for relevant fields
     public String getName() {
         return mName;
     }
-
     public String getAddress() {
         return mAddress;
     }
-
     public int getID() {
         return mID;
     }
 
+    // Parse locations into a list for later use
     public static Location[] convertLocationList(JSONObject data) throws JSONException {
         JSONArray array = data.getJSONArray("Locations");
         Location[] locations = new Location[array.length()];

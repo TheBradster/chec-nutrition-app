@@ -26,14 +26,13 @@ public class Ticket implements Serializable {
         else { return true; }
     }
 
-    public int numberOfServings() {
-        return mNumServings;
-    }
-
-    public double total() { return mNumServings * mMeal.price(); }
-
+    // Getter methods for each of the relevant fields
     public Meal getMeal() {
         return mMeal;
+    }
+    public double total() { return mNumServings * mMeal.price(); }
+    public int numberOfServings() {
+        return mNumServings;
     }
 
     /**
