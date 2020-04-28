@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -149,22 +150,21 @@ public class UserProfileFragment extends Fragment {
 
 
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        userProfileViewModel =
-               ViewModelProviders.of(this).get(UserProfileViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_user_profile, container, false);
+        Button openEdit = (Button) v.findViewById(R.id.edit_button);
+        openEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditProfileFragment editFragment = new EditProfileFragment();
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction trans = manager.beginTransaction();
+               trans.replace(R.id.user_fragment, editFragment).addToBackStack(null);
+                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+            }
+        });
 
-
-        View root = inflater.inflate(R.layout.fragment_user_profile, container, false);
-       // final TextView textView = root.findViewById(R.id.text_user_profile);
-        //userProfileViewModel.getText().observe(this, new Observer<String>() {
-            //@Override
-           // public void onChanged(@Nullable String s) {
-          //      textView.setText(s);
-            //}
-        //});
-
-
-        return root;
-    }
+        return v;
+        }
 }
